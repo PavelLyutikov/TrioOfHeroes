@@ -1,0 +1,2075 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		AC2F6585233AEA3A0083AEE7 /* rewardSound.wav in Resources */ = {isa = PBXBuildFile; fileRef = AC2F657E233AEA390083AEE7 /* rewardSound.wav */; };
+		AC2F6587233AEA3A0083AEE7 /* ?.m4a in Resources */ = {isa = PBXBuildFile; fileRef = AC2F6580233AEA390083AEE7 /* ?.m4a */; };
+		AC2F6589233AEA3A0083AEE7 /* ?.wav in Resources */ = {isa = PBXBuildFile; fileRef = AC2F6582233AEA390083AEE7 /* ?.wav */; };
+		AC2F658D233AEAAB0083AEE7 /* GameOver.sks in Resources */ = {isa = PBXBuildFile; fileRef = AC2F658C233AEAAA0083AEE7 /* GameOver.sks */; };
+		AC2F658F233AEB210083AEE7 /* GameOver.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC2F658E233AEB210083AEE7 /* GameOver.swift */; };
+		AC2F6591233AEC500083AEE7 /* Level1.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC2F6590233AEC500083AEE7 /* Level1.swift */; };
+		AC2F6593233B01380083AEE7 /* Level2.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC2F6592233B01380083AEE7 /* Level2.swift */; };
+		AC2F6599233B076B0083AEE7 /* Sound.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC2F6598233B076B0083AEE7 /* Sound.swift */; };
+		AC68CD35233865A9002530AD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC68CD34233865A9002530AD /* AppDelegate.swift */; };
+		AC68CD37233865A9002530AD /* Level1.sks in Resources */ = {isa = PBXBuildFile; fileRef = AC68CD36233865A9002530AD /* Level1.sks */; };
+		AC68CD3B233865A9002530AD /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC68CD3A233865A9002530AD /* GameScene.swift */; };
+		AC68CD40233865A9002530AD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC68CD3E233865A9002530AD /* Main.storyboard */; };
+		AC68CD45233865AA002530AD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC68CD43233865AA002530AD /* LaunchScreen.storyboard */; };
+		ACAB994523398D4B00A079CC /* PlayerStateMachine.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACAB994423398D4B00A079CC /* PlayerStateMachine.swift */; };
+		B519FD7025355CCB00861982 /* Level39.sks in Resources */ = {isa = PBXBuildFile; fileRef = B519FD6E25355CCB00861982 /* Level39.sks */; };
+		B519FD7125355CCB00861982 /* Level39.swift in Sources */ = {isa = PBXBuildFile; fileRef = B519FD6F25355CCB00861982 /* Level39.swift */; };
+		B51F873A253D42E100D13B3D /* Level58.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51F8738253D42E100D13B3D /* Level58.swift */; };
+		B51F873B253D42E100D13B3D /* Level58.sks in Resources */ = {isa = PBXBuildFile; fileRef = B51F8739253D42E100D13B3D /* Level58.sks */; };
+		B51F8744253D66EE00D13B3D /* Level59.sks in Resources */ = {isa = PBXBuildFile; fileRef = B51F8742253D66EE00D13B3D /* Level59.sks */; };
+		B51F8745253D66EE00D13B3D /* Level59.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51F8743253D66EE00D13B3D /* Level59.swift */; };
+		B52930932532F6FD00044170 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B52930922532F6F500044170 /* Assets.xcassets */; };
+		B52E2C292539D649004909F1 /* Level48.sks in Resources */ = {isa = PBXBuildFile; fileRef = B52E2C272539D649004909F1 /* Level48.sks */; };
+		B52E2C2A2539D649004909F1 /* Level48.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52E2C282539D649004909F1 /* Level48.swift */; };
+		B52E2C302539ED38004909F1 /* Level49.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52E2C2E2539ED38004909F1 /* Level49.swift */; };
+		B52E2C312539ED38004909F1 /* Level49.sks in Resources */ = {isa = PBXBuildFile; fileRef = B52E2C2F2539ED38004909F1 /* Level49.sks */; };
+		B52E2C3B2539FB23004909F1 /* Level50.sks in Resources */ = {isa = PBXBuildFile; fileRef = B52E2C392539FB23004909F1 /* Level50.sks */; };
+		B52E2C3C2539FB23004909F1 /* Level50.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52E2C3A2539FB23004909F1 /* Level50.swift */; };
+		B52E2C43253ABA74004909F1 /* Level51.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52E2C41253ABA74004909F1 /* Level51.swift */; };
+		B52E2C44253ABA74004909F1 /* Level51.sks in Resources */ = {isa = PBXBuildFile; fileRef = B52E2C42253ABA74004909F1 /* Level51.sks */; };
+		B52E2C4C253AD06D004909F1 /* Level52.sks in Resources */ = {isa = PBXBuildFile; fileRef = B52E2C4A253AD06D004909F1 /* Level52.sks */; };
+		B52E2C4D253AD06D004909F1 /* Level52.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52E2C4B253AD06D004909F1 /* Level52.swift */; };
+		B52E2C56253B3483004909F1 /* Level53.sks in Resources */ = {isa = PBXBuildFile; fileRef = B52E2C54253B3483004909F1 /* Level53.sks */; };
+		B52E2C57253B3483004909F1 /* Level53.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52E2C55253B3483004909F1 /* Level53.swift */; };
+		B52FF7DD253F11B300D68EA6 /* LevelDialogue1.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52FF7DC253F11B300D68EA6 /* LevelDialogue1.swift */; };
+		B52FF7E0253F11C900D68EA6 /* LevelDialogue1.sks in Resources */ = {isa = PBXBuildFile; fileRef = B52FF7DF253F11C900D68EA6 /* LevelDialogue1.sks */; };
+		B52FF7E9253F165300D68EA6 /* LevelDialogue15.sks in Resources */ = {isa = PBXBuildFile; fileRef = B52FF7E3253F165200D68EA6 /* LevelDialogue15.sks */; };
+		B52FF7EA253F165300D68EA6 /* LevelDialogue9.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52FF7E4253F165200D68EA6 /* LevelDialogue9.swift */; };
+		B52FF7EB253F165300D68EA6 /* LevelDialogue2.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52FF7E5253F165200D68EA6 /* LevelDialogue2.swift */; };
+		B52FF7EC253F165300D68EA6 /* LevelDialogue9.sks in Resources */ = {isa = PBXBuildFile; fileRef = B52FF7E6253F165200D68EA6 /* LevelDialogue9.sks */; };
+		B52FF7ED253F165300D68EA6 /* LevelDialogue2.sks in Resources */ = {isa = PBXBuildFile; fileRef = B52FF7E7253F165200D68EA6 /* LevelDialogue2.sks */; };
+		B52FF7EE253F165300D68EA6 /* LevelDialogue15.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52FF7E8253F165300D68EA6 /* LevelDialogue15.swift */; };
+		B52FF8002540196A00D68EA6 /* LevelDialogue4.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52FF7FE2540196A00D68EA6 /* LevelDialogue4.swift */; };
+		B52FF8012540196A00D68EA6 /* LevelDialogue4.sks in Resources */ = {isa = PBXBuildFile; fileRef = B52FF7FF2540196A00D68EA6 /* LevelDialogue4.sks */; };
+		B52FF80925401A3400D68EA6 /* LevelDialogue7.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52FF80725401A3400D68EA6 /* LevelDialogue7.swift */; };
+		B52FF80A25401A3400D68EA6 /* LevelDialogue7.sks in Resources */ = {isa = PBXBuildFile; fileRef = B52FF80825401A3400D68EA6 /* LevelDialogue7.sks */; };
+		B52FF82125408B5200D68EA6 /* LevelDialogue18.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52FF81F25408B5200D68EA6 /* LevelDialogue18.swift */; };
+		B52FF82225408B5200D68EA6 /* LevelDialogue18.sks in Resources */ = {isa = PBXBuildFile; fileRef = B52FF82025408B5200D68EA6 /* LevelDialogue18.sks */; };
+		B52FF82725408C0A00D68EA6 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52FF82625408C0A00D68EA6 /* GameViewController.swift */; };
+		B52FF82C25408E9D00D68EA6 /* LevelDialogue20.sks in Resources */ = {isa = PBXBuildFile; fileRef = B52FF82A25408E9D00D68EA6 /* LevelDialogue20.sks */; };
+		B52FF82D25408E9D00D68EA6 /* LevelDialogue20.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52FF82B25408E9D00D68EA6 /* LevelDialogue20.swift */; };
+		B52FF8342540933B00D68EA6 /* LevelDialogue22.sks in Resources */ = {isa = PBXBuildFile; fileRef = B52FF8322540933B00D68EA6 /* LevelDialogue22.sks */; };
+		B52FF8352540933B00D68EA6 /* LevelDialogue22.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52FF8332540933B00D68EA6 /* LevelDialogue22.swift */; };
+		B52FF83D2540959000D68EA6 /* LevelDialogue25.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52FF83B2540958F00D68EA6 /* LevelDialogue25.swift */; };
+		B52FF83E2540959000D68EA6 /* LevelDialogue25.sks in Resources */ = {isa = PBXBuildFile; fileRef = B52FF83C2540958F00D68EA6 /* LevelDialogue25.sks */; };
+		B52FF8462540964600D68EA6 /* LevelDialogue27.sks in Resources */ = {isa = PBXBuildFile; fileRef = B52FF8442540964600D68EA6 /* LevelDialogue27.sks */; };
+		B52FF8472540964600D68EA6 /* LevelDialogue27.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52FF8452540964600D68EA6 /* LevelDialogue27.swift */; };
+		B52FF84F254138E900D68EA6 /* LevelDialogue30.sks in Resources */ = {isa = PBXBuildFile; fileRef = B52FF84D254138E900D68EA6 /* LevelDialogue30.sks */; };
+		B52FF850254138E900D68EA6 /* LevelDialogue30.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52FF84E254138E900D68EA6 /* LevelDialogue30.swift */; };
+		B52FF85825413F1900D68EA6 /* LevelDialogue31.sks in Resources */ = {isa = PBXBuildFile; fileRef = B52FF85625413F1800D68EA6 /* LevelDialogue31.sks */; };
+		B52FF85925413F1900D68EA6 /* LevelDialogue31.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52FF85725413F1800D68EA6 /* LevelDialogue31.swift */; };
+		B52FF85D25413F1F00D68EA6 /* LevelDialogue32.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52FF85B25413F1F00D68EA6 /* LevelDialogue32.swift */; };
+		B52FF85E25413F1F00D68EA6 /* LevelDialogue32.sks in Resources */ = {isa = PBXBuildFile; fileRef = B52FF85C25413F1F00D68EA6 /* LevelDialogue32.sks */; };
+		B52FF8692541417300D68EA6 /* LevelDialogue34.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52FF8672541417300D68EA6 /* LevelDialogue34.swift */; };
+		B52FF86A2541417300D68EA6 /* LevelDialogue34.sks in Resources */ = {isa = PBXBuildFile; fileRef = B52FF8682541417300D68EA6 /* LevelDialogue34.sks */; };
+		B52FF8722541428100D68EA6 /* LevelDialogue35.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52FF8702541428100D68EA6 /* LevelDialogue35.swift */; };
+		B52FF8732541428100D68EA6 /* LevelDialogue35.sks in Resources */ = {isa = PBXBuildFile; fileRef = B52FF8712541428100D68EA6 /* LevelDialogue35.sks */; };
+		B52FF87C254143E400D68EA6 /* LevelDialogue38.sks in Resources */ = {isa = PBXBuildFile; fileRef = B52FF87A254143E400D68EA6 /* LevelDialogue38.sks */; };
+		B52FF87D254143E400D68EA6 /* LevelDialogue38.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52FF87B254143E400D68EA6 /* LevelDialogue38.swift */; };
+		B52FF886254149E300D68EA6 /* LevelDialogue40.sks in Resources */ = {isa = PBXBuildFile; fileRef = B52FF884254149E300D68EA6 /* LevelDialogue40.sks */; };
+		B52FF887254149E300D68EA6 /* LevelDialogue40.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52FF885254149E300D68EA6 /* LevelDialogue40.swift */; };
+		B52FF88F25414AB800D68EA6 /* LevelDialogue45.sks in Resources */ = {isa = PBXBuildFile; fileRef = B52FF88D25414AB800D68EA6 /* LevelDialogue45.sks */; };
+		B52FF89025414AB800D68EA6 /* LevelDialogue45.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52FF88E25414AB800D68EA6 /* LevelDialogue45.swift */; };
+		B52FF89725414C9F00D68EA6 /* LevelDialogue48.sks in Resources */ = {isa = PBXBuildFile; fileRef = B52FF89525414C9F00D68EA6 /* LevelDialogue48.sks */; };
+		B52FF89825414C9F00D68EA6 /* LevelDialogue48.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52FF89625414C9F00D68EA6 /* LevelDialogue48.swift */; };
+		B52FF8A025414D5B00D68EA6 /* LevelDialogue50.sks in Resources */ = {isa = PBXBuildFile; fileRef = B52FF89E25414D5B00D68EA6 /* LevelDialogue50.sks */; };
+		B52FF8A125414D5B00D68EA6 /* LevelDialogue50.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52FF89F25414D5B00D68EA6 /* LevelDialogue50.swift */; };
+		B52FF8A925414E0700D68EA6 /* LevelDialogue52.sks in Resources */ = {isa = PBXBuildFile; fileRef = B52FF8A725414E0700D68EA6 /* LevelDialogue52.sks */; };
+		B52FF8AA25414E0700D68EA6 /* LevelDialogue52.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52FF8A825414E0700D68EA6 /* LevelDialogue52.swift */; };
+		B52FF8B1254150C300D68EA6 /* LevelDialogue55.sks in Resources */ = {isa = PBXBuildFile; fileRef = B52FF8AF254150C300D68EA6 /* LevelDialogue55.sks */; };
+		B52FF8B2254150C300D68EA6 /* LevelDialogue55.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52FF8B0254150C300D68EA6 /* LevelDialogue55.swift */; };
+		B538F61D25347F8C00879453 /* Level37.swift in Sources */ = {isa = PBXBuildFile; fileRef = B538F61B25347F8C00879453 /* Level37.swift */; };
+		B538F61E25347F8C00879453 /* Level37.sks in Resources */ = {isa = PBXBuildFile; fileRef = B538F61C25347F8C00879453 /* Level37.sks */; };
+		B538F6262534A34400879453 /* Level38.swift in Sources */ = {isa = PBXBuildFile; fileRef = B538F6242534A34400879453 /* Level38.swift */; };
+		B538F6302534A60F00879453 /* Level38.sks in Resources */ = {isa = PBXBuildFile; fileRef = B538F62F2534A60F00879453 /* Level38.sks */; };
+		B53B6E1F251079D900B7CF4A /* MenuScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53B6E1E251079D900B7CF4A /* MenuScene.swift */; };
+		B54A069C2534B93D006FBFBA /* PortalRed.sks in Resources */ = {isa = PBXBuildFile; fileRef = B54A069B2534B93D006FBFBA /* PortalRed.sks */; };
+		B54A06A02534C4B0006FBFBA /* FireTorch.sks in Resources */ = {isa = PBXBuildFile; fileRef = B54A069F2534C4B0006FBFBA /* FireTorch.sks */; };
+		B553E5B425122175000B07E1 /* Level2.sks in Resources */ = {isa = PBXBuildFile; fileRef = B553E5B325122175000B07E1 /* Level2.sks */; };
+		B553E5B625122A16000B07E1 /* Level3.swift in Sources */ = {isa = PBXBuildFile; fileRef = B553E5B525122A16000B07E1 /* Level3.swift */; };
+		B553E5B825122A31000B07E1 /* Level3.sks in Resources */ = {isa = PBXBuildFile; fileRef = B553E5B725122A31000B07E1 /* Level3.sks */; };
+		B553E5BA25127B18000B07E1 /* Level4.swift in Sources */ = {isa = PBXBuildFile; fileRef = B553E5B925127B18000B07E1 /* Level4.swift */; };
+		B553E5BC25127B27000B07E1 /* Level4.sks in Resources */ = {isa = PBXBuildFile; fileRef = B553E5BB25127B27000B07E1 /* Level4.sks */; };
+		B55D92BF2529EDD4007D1D12 /* Level32.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55D92BE2529EDD4007D1D12 /* Level32.swift */; };
+		B55D9308252B0B7F007D1D12 /* Level31.sks in Resources */ = {isa = PBXBuildFile; fileRef = B55D9304252B0B7E007D1D12 /* Level31.sks */; };
+		B55D9309252B0B7F007D1D12 /* Level33.sks in Resources */ = {isa = PBXBuildFile; fileRef = B55D9305252B0B7F007D1D12 /* Level33.sks */; };
+		B55D930A252B0B7F007D1D12 /* Level33.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55D9306252B0B7F007D1D12 /* Level33.swift */; };
+		B55D930B252B0B7F007D1D12 /* Level31.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55D9307252B0B7F007D1D12 /* Level31.swift */; };
+		B55D9318252B0FE7007D1D12 /* KillWoodman.sks in Resources */ = {isa = PBXBuildFile; fileRef = B55D9317252B0FE7007D1D12 /* KillWoodman.sks */; };
+		B55D931C252B26E0007D1D12 /* MenuLevel31_60.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55D931A252B26E0007D1D12 /* MenuLevel31_60.swift */; };
+		B55D931D252B26E0007D1D12 /* MenuLevel31_60.sks in Resources */ = {isa = PBXBuildFile; fileRef = B55D931B252B26E0007D1D12 /* MenuLevel31_60.sks */; };
+		B55D9321252B360C007D1D12 /* LevelBlue.sks in Resources */ = {isa = PBXBuildFile; fileRef = B55D9320252B360C007D1D12 /* LevelBlue.sks */; };
+		B55F7EDF24F6528A00AEB9A3 /* SKButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55F7EDE24F6528A00AEB9A3 /* SKButton.swift */; };
+		B5623FBE25376E3100E89F26 /* Level42.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5623FBC25376E3100E89F26 /* Level42.swift */; };
+		B5623FBF25376E3100E89F26 /* Level42.sks in Resources */ = {isa = PBXBuildFile; fileRef = B5623FBD25376E3100E89F26 /* Level42.sks */; };
+		B5623FC9253878AD00E89F26 /* Level43.sks in Resources */ = {isa = PBXBuildFile; fileRef = B5623FC7253878AC00E89F26 /* Level43.sks */; };
+		B5623FCA253878AD00E89F26 /* Level43.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5623FC8253878AD00E89F26 /* Level43.swift */; };
+		B5623FD32538A5C800E89F26 /* Level44.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5623FD12538A5C800E89F26 /* Level44.swift */; };
+		B5623FD42538A5C800E89F26 /* Level44.sks in Resources */ = {isa = PBXBuildFile; fileRef = B5623FD22538A5C800E89F26 /* Level44.sks */; };
+		B5623FDB2539633300E89F26 /* Level45.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5623FD92539633200E89F26 /* Level45.swift */; };
+		B566E3E12526FC61002D7F76 /* Level.sks in Resources */ = {isa = PBXBuildFile; fileRef = B566E3E02526FC61002D7F76 /* Level.sks */; };
+		B567005A254894240075206A /* goblinKillSound.wav in Resources */ = {isa = PBXBuildFile; fileRef = B5670059254894240075206A /* goblinKillSound.wav */; };
+		B567005D2548960C0075206A /* maleWoodmanSound.wav in Resources */ = {isa = PBXBuildFile; fileRef = B567005C2548960C0075206A /* maleWoodmanSound.wav */; };
+		B567E1B1253D9193009B0C4D /* Level60.sks in Resources */ = {isa = PBXBuildFile; fileRef = B567E1AF253D9192009B0C4D /* Level60.sks */; };
+		B567E1B2253D9193009B0C4D /* Level60.swift in Sources */ = {isa = PBXBuildFile; fileRef = B567E1B0253D9193009B0C4D /* Level60.swift */; };
+		B56EDAFE253BF34100D72C90 /* Level54.swift in Sources */ = {isa = PBXBuildFile; fileRef = B56EDAFC253BF34000D72C90 /* Level54.swift */; };
+		B56EDAFF253BF34100D72C90 /* Level54.sks in Resources */ = {isa = PBXBuildFile; fileRef = B56EDAFD253BF34000D72C90 /* Level54.sks */; };
+		B56EDB06253C0E2D00D72C90 /* Level55.swift in Sources */ = {isa = PBXBuildFile; fileRef = B56EDB04253C0E2D00D72C90 /* Level55.swift */; };
+		B56EDB07253C0E2D00D72C90 /* Level55.sks in Resources */ = {isa = PBXBuildFile; fileRef = B56EDB05253C0E2D00D72C90 /* Level55.sks */; };
+		B56EDB10253C33AB00D72C90 /* Level56.swift in Sources */ = {isa = PBXBuildFile; fileRef = B56EDB0E253C33AA00D72C90 /* Level56.swift */; };
+		B56EDB11253C33AB00D72C90 /* Level56.sks in Resources */ = {isa = PBXBuildFile; fileRef = B56EDB0F253C33AA00D72C90 /* Level56.sks */; };
+		B56EDB19253C5D2000D72C90 /* Level57.swift in Sources */ = {isa = PBXBuildFile; fileRef = B56EDB17253C5D2000D72C90 /* Level57.swift */; };
+		B56EDB1A253C5D2000D72C90 /* Level57.sks in Resources */ = {isa = PBXBuildFile; fileRef = B56EDB18253C5D2000D72C90 /* Level57.sks */; };
+		B57485C725359444001D374E /* Level40.sks in Resources */ = {isa = PBXBuildFile; fileRef = B57485C525359444001D374E /* Level40.sks */; };
+		B57485C825359444001D374E /* Level40.swift in Sources */ = {isa = PBXBuildFile; fileRef = B57485C625359444001D374E /* Level40.swift */; };
+		B57485D22536A4DB001D374E /* Level41.swift in Sources */ = {isa = PBXBuildFile; fileRef = B57485D02536A4DA001D374E /* Level41.swift */; };
+		B57485D32536A4DB001D374E /* Level41.sks in Resources */ = {isa = PBXBuildFile; fileRef = B57485D12536A4DA001D374E /* Level41.sks */; };
+		B575039E2518CF080064D5F6 /* Level8.sks in Resources */ = {isa = PBXBuildFile; fileRef = B575039D2518CF080064D5F6 /* Level8.sks */; };
+		B57503B62518E0B00064D5F6 /* KillSkeleton.sks in Resources */ = {isa = PBXBuildFile; fileRef = B57503B42518E0B00064D5F6 /* KillSkeleton.sks */; };
+		B57503B72518E0B00064D5F6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B57503B52518E0B00064D5F6 /* Assets.xcassets */; };
+		B57A853D25131D5300876A12 /* Level5.swift in Sources */ = {isa = PBXBuildFile; fileRef = B57A853C25131D5300876A12 /* Level5.swift */; };
+		B57A853F25131D7200876A12 /* Level5.sks in Resources */ = {isa = PBXBuildFile; fileRef = B57A853E25131D7200876A12 /* Level5.sks */; };
+		B57BCCDE254D3448002D1599 /* MenuLevel61_90.swift in Sources */ = {isa = PBXBuildFile; fileRef = B57BCCDC254D3448002D1599 /* MenuLevel61_90.swift */; };
+		B57BCCDF254D3448002D1599 /* MenuLevel61_90.sks in Resources */ = {isa = PBXBuildFile; fileRef = B57BCCDD254D3448002D1599 /* MenuLevel61_90.sks */; };
+		B5803F31252F388B00ABB691 /* Level34.sks in Resources */ = {isa = PBXBuildFile; fileRef = B5803F2F252F388B00ABB691 /* Level34.sks */; };
+		B5803F32252F388B00ABB691 /* Level34.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5803F30252F388B00ABB691 /* Level34.swift */; };
+		B5803F39252F4FDA00ABB691 /* Level35.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5803F37252F4FDA00ABB691 /* Level35.swift */; };
+		B5803F3A252F4FDA00ABB691 /* Level35.sks in Resources */ = {isa = PBXBuildFile; fileRef = B5803F38252F4FDA00ABB691 /* Level35.sks */; };
+		B5803F41252F681700ABB691 /* Level36.sks in Resources */ = {isa = PBXBuildFile; fileRef = B5803F40252F681700ABB691 /* Level36.sks */; };
+		B5803F44252F684400ABB691 /* Level36.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5803F43252F684400ABB691 /* Level36.swift */; };
+		B585B4F92541816D0020C8A4 /* LevelDialogue59.sks in Resources */ = {isa = PBXBuildFile; fileRef = B585B4F72541816C0020C8A4 /* LevelDialogue59.sks */; };
+		B585B4FA2541816D0020C8A4 /* LevelDialogue59.swift in Sources */ = {isa = PBXBuildFile; fileRef = B585B4F82541816C0020C8A4 /* LevelDialogue59.swift */; };
+		B585B5012541D9470020C8A4 /* LevelDialogue60.swift in Sources */ = {isa = PBXBuildFile; fileRef = B585B4FF2541D9470020C8A4 /* LevelDialogue60.swift */; };
+		B585B5022541D9470020C8A4 /* LevelDialogue60.sks in Resources */ = {isa = PBXBuildFile; fileRef = B585B5002541D9470020C8A4 /* LevelDialogue60.sks */; };
+		B585B5102542B3220020C8A4 /* closeSound.wav in Resources */ = {isa = PBXBuildFile; fileRef = B585B50F2542B3220020C8A4 /* closeSound.wav */; };
+		B585B5132542C02D0020C8A4 /* arrowSound.wav in Resources */ = {isa = PBXBuildFile; fileRef = B585B5122542C02D0020C8A4 /* arrowSound.wav */; };
+		B585B5212542C6B20020C8A4 /* killSkeletonSound.wav in Resources */ = {isa = PBXBuildFile; fileRef = B585B5202542C6B20020C8A4 /* killSkeletonSound.wav */; };
+		B585B53C2542D7F10020C8A4 /* teleportSound.wav in Resources */ = {isa = PBXBuildFile; fileRef = B585B53B2542D7F10020C8A4 /* teleportSound.wav */; };
+		B585B5442542DEAA0020C8A4 /* walkSound.wav in Resources */ = {isa = PBXBuildFile; fileRef = B585B5432542DEAA0020C8A4 /* walkSound.wav */; };
+		B585B5472542E2370020C8A4 /* maleSound.wav in Resources */ = {isa = PBXBuildFile; fileRef = B585B5462542E2370020C8A4 /* maleSound.wav */; };
+		B585B54A2542EC6D0020C8A4 /* popSound.wav in Resources */ = {isa = PBXBuildFile; fileRef = B585B5492542EC6D0020C8A4 /* popSound.wav */; };
+		B585B553254305340020C8A4 /* backMusic.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B585B552254305340020C8A4 /* backMusic.mp3 */; };
+		B585B55625431BD10020C8A4 /* MusicPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B585B55525431BD10020C8A4 /* MusicPlayer.swift */; };
+		B585B55A25431F270020C8A4 /* jumpSound.wav in Resources */ = {isa = PBXBuildFile; fileRef = B585B55925431F270020C8A4 /* jumpSound.wav */; };
+		B585B55E2543202B0020C8A4 /* arrowKillSound.wav in Resources */ = {isa = PBXBuildFile; fileRef = B585B55D2543202B0020C8A4 /* arrowKillSound.wav */; };
+		B585B561254321990020C8A4 /* backMusicMenu.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B585B560254321990020C8A4 /* backMusicMenu.mp3 */; };
+		B585B564254322DE0020C8A4 /* backMusicGameArcher.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B585B563254322DD0020C8A4 /* backMusicGameArcher.mp3 */; };
+		B58B4DE724F8D47D005DC9B4 /* EnemyStateMachine.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58B4DE624F8D47D005DC9B4 /* EnemyStateMachine.swift */; };
+		B58BB120254417A700013873 /* SnowMainBackground.sks in Resources */ = {isa = PBXBuildFile; fileRef = B58BB11F254417A700013873 /* SnowMainBackground.sks */; };
+		B58C1227251C54BE00C066E3 /* Adine_Kirnberg.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B58C1226251C54BE00C066E3 /* Adine_Kirnberg.ttf */; };
+		B58C122A251C55A900C066E3 /* AnastasiaScript.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B58C1229251C55A900C066E3 /* AnastasiaScript.ttf */; };
+		B58C122D251C566C00C066E3 /* Antikvar_Shadow.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B58C122C251C566C00C066E3 /* Antikvar_Shadow.ttf */; };
+		B58C1231251C70F800C066E3 /* Portal.sks in Resources */ = {isa = PBXBuildFile; fileRef = B58C1230251C70F800C066E3 /* Portal.sks */; };
+		B58C1236251C85E800C066E3 /* RainLevel7.sks in Resources */ = {isa = PBXBuildFile; fileRef = B58C1235251C85E800C066E3 /* RainLevel7.sks */; };
+		B58C1239251C901200C066E3 /* RainLevel8.sks in Resources */ = {isa = PBXBuildFile; fileRef = B58C1238251C901200C066E3 /* RainLevel8.sks */; };
+		B58C123E251C955900C066E3 /* Level16.sks in Resources */ = {isa = PBXBuildFile; fileRef = B58C123C251C955900C066E3 /* Level16.sks */; };
+		B58C123F251C955900C066E3 /* Level16.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58C123D251C955900C066E3 /* Level16.swift */; };
+		B58C1246251CAC0500C066E3 /* Level17.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58C1244251CAC0500C066E3 /* Level17.swift */; };
+		B58C1247251CAC0500C066E3 /* Level17.sks in Resources */ = {isa = PBXBuildFile; fileRef = B58C1245251CAC0500C066E3 /* Level17.sks */; };
+		B58C124E251CD7FA00C066E3 /* Level18.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58C124C251CD7FA00C066E3 /* Level18.swift */; };
+		B58C124F251CD7FA00C066E3 /* Level18.sks in Resources */ = {isa = PBXBuildFile; fileRef = B58C124D251CD7FA00C066E3 /* Level18.sks */; };
+		B58C1256251E28D600C066E3 /* Level19.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58C1254251E28D600C066E3 /* Level19.swift */; };
+		B58C1257251E28D600C066E3 /* Level19.sks in Resources */ = {isa = PBXBuildFile; fileRef = B58C1255251E28D600C066E3 /* Level19.sks */; };
+		B58C125E251E3E0700C066E3 /* Level20.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58C125C251E3E0700C066E3 /* Level20.swift */; };
+		B58C125F251E3E0700C066E3 /* Level20.sks in Resources */ = {isa = PBXBuildFile; fileRef = B58C125D251E3E0700C066E3 /* Level20.sks */; };
+		B597AD652529E5E100C1BC37 /* Level32.sks in Resources */ = {isa = PBXBuildFile; fileRef = B597AD642529E5E100C1BC37 /* Level32.sks */; };
+		B5A17F2D251F903B00910AEC /* Level23.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A17F2B251F903B00910AEC /* Level23.swift */; };
+		B5A17F2E251F903B00910AEC /* Level23.sks in Resources */ = {isa = PBXBuildFile; fileRef = B5A17F2C251F903B00910AEC /* Level23.sks */; };
+		B5A17F35251FAF1B00910AEC /* Level24.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A17F33251FAF1B00910AEC /* Level24.swift */; };
+		B5A17F36251FAF1B00910AEC /* Level24.sks in Resources */ = {isa = PBXBuildFile; fileRef = B5A17F34251FAF1B00910AEC /* Level24.sks */; };
+		B5AB6CD0252205A70060B629 /* KillArcher.sks in Resources */ = {isa = PBXBuildFile; fileRef = B5AB6CCF252205A70060B629 /* KillArcher.sks */; };
+		B5AB6CD32522405D0060B629 /* MenuLevel1_30.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5AB6CD22522405D0060B629 /* MenuLevel1_30.swift */; };
+		B5AB6CD6252240720060B629 /* MenuLevel1_30.sks in Resources */ = {isa = PBXBuildFile; fileRef = B5AB6CD5252240720060B629 /* MenuLevel1_30.sks */; };
+		B5B2C98E251F286D00D2DE52 /* Level21.sks in Resources */ = {isa = PBXBuildFile; fileRef = B5B2C98C251F286D00D2DE52 /* Level21.sks */; };
+		B5B2C98F251F286D00D2DE52 /* Level21.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B2C98D251F286D00D2DE52 /* Level21.swift */; };
+		B5B2C997251F514400D2DE52 /* Level22.sks in Resources */ = {isa = PBXBuildFile; fileRef = B5B2C995251F514400D2DE52 /* Level22.sks */; };
+		B5B2C998251F514400D2DE52 /* Level22.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B2C996251F514400D2DE52 /* Level22.swift */; };
+		B5B5779E2519E74500AD5934 /* Level12.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B5779C2519E74400AD5934 /* Level12.swift */; };
+		B5B5779F2519E74500AD5934 /* Level12.sks in Resources */ = {isa = PBXBuildFile; fileRef = B5B5779D2519E74400AD5934 /* Level12.sks */; };
+		B5B577A32519F71D00AD5934 /* Level13.sks in Resources */ = {isa = PBXBuildFile; fileRef = B5B577A12519F71D00AD5934 /* Level13.sks */; };
+		B5B577A42519F71D00AD5934 /* Level13.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B577A22519F71D00AD5934 /* Level13.swift */; };
+		B5B577A8251A094800AD5934 /* Level14.sks in Resources */ = {isa = PBXBuildFile; fileRef = B5B577A6251A094800AD5934 /* Level14.sks */; };
+		B5B577A9251A094800AD5934 /* Level14.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B577A7251A094800AD5934 /* Level14.swift */; };
+		B5B577AD251A194900AD5934 /* Level15.sks in Resources */ = {isa = PBXBuildFile; fileRef = B5B577AB251A194800AD5934 /* Level15.sks */; };
+		B5B577AE251A194900AD5934 /* Level15.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B577AC251A194900AD5934 /* Level15.swift */; };
+		B5C2AC6C2521932D003253A1 /* Level30.sks in Resources */ = {isa = PBXBuildFile; fileRef = B5C2AC6A2521932D003253A1 /* Level30.sks */; };
+		B5C2AC6D2521932D003253A1 /* Level30.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C2AC6B2521932D003253A1 /* Level30.swift */; };
+		B5C2AC742521CC07003253A1 /* Level30GameOver.sks.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C2AC732521CC07003253A1 /* Level30GameOver.sks.swift */; };
+		B5C2AC812521CF71003253A1 /* Level30GameOver.sks in Resources */ = {isa = PBXBuildFile; fileRef = B5C2AC802521CF71003253A1 /* Level30GameOver.sks */; };
+		B5C2AC882521E323003253A1 /* MenuScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = B5C2AC872521E323003253A1 /* MenuScene.sks */; };
+		B5C2E56425206E66002C5439 /* Level25.sks in Resources */ = {isa = PBXBuildFile; fileRef = B5C2E56225206E66002C5439 /* Level25.sks */; };
+		B5C2E56525206E66002C5439 /* Level25.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C2E56325206E66002C5439 /* Level25.swift */; };
+		B5C6B70E2519B9F500AE8FDA /* Level9.sks in Resources */ = {isa = PBXBuildFile; fileRef = B5C6B70D2519B9F400AE8FDA /* Level9.sks */; };
+		B5D66EFF2520781B00FE57D0 /* Level26.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D66EFD2520781B00FE57D0 /* Level26.swift */; };
+		B5D66F002520781B00FE57D0 /* Level26.sks in Resources */ = {isa = PBXBuildFile; fileRef = B5D66EFE2520781B00FE57D0 /* Level26.sks */; };
+		B5D66F0525207B3600FE57D0 /* RainLevel25.sks in Resources */ = {isa = PBXBuildFile; fileRef = B5D66F0425207B3500FE57D0 /* RainLevel25.sks */; };
+		B5D66F0C2520867100FE57D0 /* RainLevel26.sks in Resources */ = {isa = PBXBuildFile; fileRef = B5D66F0B2520867100FE57D0 /* RainLevel26.sks */; };
+		B5D66F112520937000FE57D0 /* Level27.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D66F0F2520937000FE57D0 /* Level27.swift */; };
+		B5D66F122520937000FE57D0 /* Level27.sks in Resources */ = {isa = PBXBuildFile; fileRef = B5D66F102520937000FE57D0 /* Level27.sks */; };
+		B5D66F1A2520BD9500FE57D0 /* Level28.sks in Resources */ = {isa = PBXBuildFile; fileRef = B5D66F182520BD9400FE57D0 /* Level28.sks */; };
+		B5D66F1B2520BD9500FE57D0 /* Level28.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D66F192520BD9500FE57D0 /* Level28.swift */; };
+		B5D66F232520E12D00FE57D0 /* Level29.sks in Resources */ = {isa = PBXBuildFile; fileRef = B5D66F212520E12D00FE57D0 /* Level29.sks */; };
+		B5D66F242520E12D00FE57D0 /* Level29.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D66F222520E12D00FE57D0 /* Level29.swift */; };
+		B5D678BB2519C395007A72A7 /* Level10.sks in Resources */ = {isa = PBXBuildFile; fileRef = B5D678BA2519C395007A72A7 /* Level10.sks */; };
+		B5D678E52519CB43007A72A7 /* Puddle.sks in Resources */ = {isa = PBXBuildFile; fileRef = B5D678E42519CB43007A72A7 /* Puddle.sks */; };
+		B5D678F22519CE1E007A72A7 /* Level11.sks in Resources */ = {isa = PBXBuildFile; fileRef = B5D678F02519CE1E007A72A7 /* Level11.sks */; };
+		B5D678F32519CE1E007A72A7 /* Level11.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D678F12519CE1E007A72A7 /* Level11.swift */; };
+		B5F12BB725398E3600B98BC6 /* Level45.sks in Resources */ = {isa = PBXBuildFile; fileRef = B5F12BB625398E3600B98BC6 /* Level45.sks */; };
+		B5F12BBC2539A7F900B98BC6 /* Level46.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F12BBA2539A7F900B98BC6 /* Level46.swift */; };
+		B5F12BBD2539A7F900B98BC6 /* Level46.sks in Resources */ = {isa = PBXBuildFile; fileRef = B5F12BBB2539A7F900B98BC6 /* Level46.sks */; };
+		B5F12BD02539D0D500B98BC6 /* Level47.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F12BCE2539D0D400B98BC6 /* Level47.swift */; };
+		B5F12BD12539D0D500B98BC6 /* Level47.sks in Resources */ = {isa = PBXBuildFile; fileRef = B5F12BCF2539D0D400B98BC6 /* Level47.sks */; };
+		B5F87119254D6F0D008E6F7C /* coinsSound.wav in Resources */ = {isa = PBXBuildFile; fileRef = B5F87118254D6F0D008E6F7C /* coinsSound.wav */; };
+		B5FF8D2F2517A516007C9DEB /* Level6.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5FF8D2E2517A516007C9DEB /* Level6.swift */; };
+		B5FF8D322517A523007C9DEB /* Level7.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5FF8D312517A523007C9DEB /* Level7.swift */; };
+		B5FF8D352517A532007C9DEB /* Level8.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5FF8D342517A532007C9DEB /* Level8.swift */; };
+		B5FF8D382517A53E007C9DEB /* Level9.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5FF8D372517A53E007C9DEB /* Level9.swift */; };
+		B5FF8D3B2517A54A007C9DEB /* Level10.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5FF8D3A2517A54A007C9DEB /* Level10.swift */; };
+		B5FF8D572517A7F8007C9DEB /* Level6.sks in Resources */ = {isa = PBXBuildFile; fileRef = B5FF8D562517A7F8007C9DEB /* Level6.sks */; };
+		B5FF8D60251887AC007C9DEB /* Level7.sks in Resources */ = {isa = PBXBuildFile; fileRef = B5FF8D5F251887AC007C9DEB /* Level7.sks */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		AC2F657E233AEA390083AEE7 /* rewardSound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = rewardSound.wav; sourceTree = "<group>"; };
+		AC2F6580233AEA390083AEE7 /* ?.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "?.m4a"; sourceTree = "<group>"; };
+		AC2F6582233AEA390083AEE7 /* ?.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "?.wav"; sourceTree = "<group>"; };
+		AC2F658C233AEAAA0083AEE7 /* GameOver.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameOver.sks; sourceTree = "<group>"; };
+		AC2F658E233AEB210083AEE7 /* GameOver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameOver.swift; sourceTree = "<group>"; };
+		AC2F6590233AEC500083AEE7 /* Level1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Level1.swift; sourceTree = "<group>"; };
+		AC2F6592233B01380083AEE7 /* Level2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Level2.swift; sourceTree = "<group>"; };
+		AC2F6598233B076B0083AEE7 /* Sound.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sound.swift; sourceTree = "<group>"; };
+		AC68CD31233865A9002530AD /* Heroes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Heroes.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		AC68CD34233865A9002530AD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		AC68CD36233865A9002530AD /* Level1.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Level1.sks; sourceTree = "<group>"; };
+		AC68CD3A233865A9002530AD /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
+		AC68CD3F233865A9002530AD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		AC68CD44233865AA002530AD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		AC68CD46233865AA002530AD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ACAB994423398D4B00A079CC /* PlayerStateMachine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerStateMachine.swift; sourceTree = "<group>"; };
+		B519FD6E25355CCB00861982 /* Level39.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Level39.sks; sourceTree = "<group>"; };
+		B519FD6F25355CCB00861982 /* Level39.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Level39.swift; sourceTree = "<group>"; };
+		B51F8738253D42E100D13B3D /* Level58.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Level58.swift; sourceTree = "<group>"; };
+		B51F8739253D42E100D13B3D /* Level58.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Level58.sks; sourceTree = "<group>"; };
+		B51F8742253D66EE00D13B3D /* Level59.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Level59.sks; sourceTree = "<group>"; };
+		B51F8743253D66EE00D13B3D /* Level59.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Level59.swift; sourceTree = "<group>"; };
+		B52930922532F6F500044170 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B52E2C272539D649004909F1 /* Level48.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Level48.sks; sourceTree = "<group>"; };
+		B52E2C282539D649004909F1 /* Level48.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Level48.swift; sourceTree = "<group>"; };
+		B52E2C2E2539ED38004909F1 /* Level49.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Level49.swift; sourceTree = "<group>"; };
+		B52E2C2F2539ED38004909F1 /* Level49.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Level49.sks; sourceTree = "<group>"; };
+		B52E2C392539FB23004909F1 /* Level50.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Level50.sks; sourceTree = "<group>"; };
+		B52E2C3A2539FB23004909F1 /* Level50.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Level50.swift; sourceTree = "<group>"; };
+		B52E2C41253ABA74004909F1 /* Level51.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Level51.swift; sourceTree = "<group>"; };
+		B52E2C42253ABA74004909F1 /* Level51.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Level51.sks; sourceTree = "<group>"; };
+		B52E2C4A253AD06D004909F1 /* Level52.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Level52.sks; sourceTree = "<group>"; };
+		B52E2C4B253AD06D004909F1 /* Level52.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Level52.swift; sourceTree = "<group>"; };
+		B52E2C54253B3483004909F1 /* Level53.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Level53.sks; sourceTree = "<group>"; };
+		B52E2C55253B3483004909F1 /* Level53.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Level53.swift; sourceTree = "<group>"; };
+		B52FF7DC253F11B300D68EA6 /* LevelDialogue1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelDialogue1.swift; sourceTree = "<group>"; };
+		B52FF7DF253F11C900D68EA6 /* LevelDialogue1.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = LevelDialogue1.sks; sourceTree = "<group>"; };
+		B52FF7E3253F165200D68EA6 /* LevelDialogue15.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = LevelDialogue15.sks; sourceTree = "<group>"; };
+		B52FF7E4253F165200D68EA6 /* LevelDialogue9.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LevelDialogue9.swift; sourceTree = "<group>"; };
+		B52FF7E5253F165200D68EA6 /* LevelDialogue2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LevelDialogue2.swift; sourceTree = "<group>"; };
+		B52FF7E6253F165200D68EA6 /* LevelDialogue9.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = LevelDialogue9.sks; sourceTree = "<group>"; };
+		B52FF7E7253F165200D68EA6 /* LevelDialogue2.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = LevelDialogue2.sks; sourceTree = "<group>"; };
+		B52FF7E8253F165300D68EA6 /* LevelDialogue15.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LevelDialogue15.swift; sourceTree = "<group>"; };
+		B52FF7FE2540196A00D68EA6 /* LevelDialogue4.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LevelDialogue4.swift; sourceTree = "<group>"; };
+		B52FF7FF2540196A00D68EA6 /* LevelDialogue4.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = LevelDialogue4.sks; sourceTree = "<group>"; };
+		B52FF80725401A3400D68EA6 /* LevelDialogue7.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LevelDialogue7.swift; sourceTree = "<group>"; };
+		B52FF80825401A3400D68EA6 /* LevelDialogue7.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = LevelDialogue7.sks; sourceTree = "<group>"; };
+		B52FF81F25408B5200D68EA6 /* LevelDialogue18.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LevelDialogue18.swift; sourceTree = "<group>"; };
+		B52FF82025408B5200D68EA6 /* LevelDialogue18.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = LevelDialogue18.sks; sourceTree = "<group>"; };
+		B52FF82625408C0A00D68EA6 /* GameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		B52FF82A25408E9D00D68EA6 /* LevelDialogue20.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = LevelDialogue20.sks; sourceTree = "<group>"; };
+		B52FF82B25408E9D00D68EA6 /* LevelDialogue20.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LevelDialogue20.swift; sourceTree = "<group>"; };
+		B52FF8322540933B00D68EA6 /* LevelDialogue22.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = LevelDialogue22.sks; sourceTree = "<group>"; };
+		B52FF8332540933B00D68EA6 /* LevelDialogue22.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LevelDialogue22.swift; sourceTree = "<group>"; };
+		B52FF83B2540958F00D68EA6 /* LevelDialogue25.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LevelDialogue25.swift; sourceTree = "<group>"; };
+		B52FF83C2540958F00D68EA6 /* LevelDialogue25.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = LevelDialogue25.sks; sourceTree = "<group>"; };
+		B52FF8442540964600D68EA6 /* LevelDialogue27.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = LevelDialogue27.sks; sourceTree = "<group>"; };
+		B52FF8452540964600D68EA6 /* LevelDialogue27.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LevelDialogue27.swift; sourceTree = "<group>"; };
+		B52FF84D254138E900D68EA6 /* LevelDialogue30.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = LevelDialogue30.sks; sourceTree = "<group>"; };
+		B52FF84E254138E900D68EA6 /* LevelDialogue30.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LevelDialogue30.swift; sourceTree = "<group>"; };
+		B52FF85625413F1800D68EA6 /* LevelDialogue31.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = LevelDialogue31.sks; sourceTree = "<group>"; };
+		B52FF85725413F1800D68EA6 /* LevelDialogue31.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LevelDialogue31.swift; sourceTree = "<group>"; };
+		B52FF85B25413F1F00D68EA6 /* LevelDialogue32.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LevelDialogue32.swift; sourceTree = "<group>"; };
+		B52FF85C25413F1F00D68EA6 /* LevelDialogue32.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = LevelDialogue32.sks; sourceTree = "<group>"; };
+		B52FF8672541417300D68EA6 /* LevelDialogue34.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LevelDialogue34.swift; sourceTree = "<group>"; };
+		B52FF8682541417300D68EA6 /* LevelDialogue34.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = LevelDialogue34.sks; sourceTree = "<group>"; };
+		B52FF8702541428100D68EA6 /* LevelDialogue35.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LevelDialogue35.swift; sourceTree = "<group>"; };
+		B52FF8712541428100D68EA6 /* LevelDialogue35.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = LevelDialogue35.sks; sourceTree = "<group>"; };
+		B52FF87A254143E400D68EA6 /* LevelDialogue38.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = LevelDialogue38.sks; sourceTree = "<group>"; };
+		B52FF87B254143E400D68EA6 /* LevelDialogue38.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LevelDialogue38.swift; sourceTree = "<group>"; };
+		B52FF884254149E300D68EA6 /* LevelDialogue40.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = LevelDialogue40.sks; sourceTree = "<group>"; };
+		B52FF885254149E300D68EA6 /* LevelDialogue40.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LevelDialogue40.swift; sourceTree = "<group>"; };
+		B52FF88D25414AB800D68EA6 /* LevelDialogue45.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = LevelDialogue45.sks; sourceTree = "<group>"; };
+		B52FF88E25414AB800D68EA6 /* LevelDialogue45.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LevelDialogue45.swift; sourceTree = "<group>"; };
+		B52FF89525414C9F00D68EA6 /* LevelDialogue48.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = LevelDialogue48.sks; sourceTree = "<group>"; };
+		B52FF89625414C9F00D68EA6 /* LevelDialogue48.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LevelDialogue48.swift; sourceTree = "<group>"; };
+		B52FF89E25414D5B00D68EA6 /* LevelDialogue50.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = LevelDialogue50.sks; sourceTree = "<group>"; };
+		B52FF89F25414D5B00D68EA6 /* LevelDialogue50.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LevelDialogue50.swift; sourceTree = "<group>"; };
+		B52FF8A725414E0700D68EA6 /* LevelDialogue52.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = LevelDialogue52.sks; sourceTree = "<group>"; };
+		B52FF8A825414E0700D68EA6 /* LevelDialogue52.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LevelDialogue52.swift; sourceTree = "<group>"; };
+		B52FF8AF254150C300D68EA6 /* LevelDialogue55.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = LevelDialogue55.sks; sourceTree = "<group>"; };
+		B52FF8B0254150C300D68EA6 /* LevelDialogue55.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LevelDialogue55.swift; sourceTree = "<group>"; };
+		B538F61B25347F8C00879453 /* Level37.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Level37.swift; sourceTree = "<group>"; };
+		B538F61C25347F8C00879453 /* Level37.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Level37.sks; sourceTree = "<group>"; };
+		B538F6242534A34400879453 /* Level38.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Level38.swift; sourceTree = "<group>"; };
+		B538F62F2534A60F00879453 /* Level38.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Level38.sks; sourceTree = "<group>"; };
+		B53B6E1E251079D900B7CF4A /* MenuScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuScene.swift; sourceTree = "<group>"; };
+		B54A069B2534B93D006FBFBA /* PortalRed.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = PortalRed.sks; sourceTree = "<group>"; };
+		B54A069F2534C4B0006FBFBA /* FireTorch.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = FireTorch.sks; sourceTree = "<group>"; };
+		B553E5B325122175000B07E1 /* Level2.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Level2.sks; sourceTree = "<group>"; };
+		B553E5B525122A16000B07E1 /* Level3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Level3.swift; sourceTree = "<group>"; };
+		B553E5B725122A31000B07E1 /* Level3.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Level3.sks; sourceTree = "<group>"; };
+		B553E5B925127B18000B07E1 /* Level4.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Level4.swift; sourceTree = "<group>"; };
+		B553E5BB25127B27000B07E1 /* Level4.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Level4.sks; sourceTree = "<group>"; };
+		B55D92BE2529EDD4007D1D12 /* Level32.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Level32.swift; sourceTree = "<group>"; };
+		B55D9304252B0B7E007D1D12 /* Level31.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Level31.sks; sourceTree = "<group>"; };
+		B55D9305252B0B7F007D1D12 /* Level33.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Level33.sks; sourceTree = "<group>"; };
+		B55D9306252B0B7F007D1D12 /* Level33.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Level33.swift; sourceTree = "<group>"; };
+		B55D9307252B0B7F007D1D12 /* Level31.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Level31.swift; sourceTree = "<group>"; };
+		B55D9317252B0FE7007D1D12 /* KillWoodman.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = KillWoodman.sks; sourceTree = "<group>"; };
+		B55D931A252B26E0007D1D12 /* MenuLevel31_60.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuLevel31_60.swift; sourceTree = "<group>"; };
+		B55D931B252B26E0007D1D12 /* MenuLevel31_60.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = MenuLevel31_60.sks; sourceTree = "<group>"; };
+		B55D9320252B360C007D1D12 /* LevelBlue.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = LevelBlue.sks; sourceTree = "<group>"; };
+		B55F7EDE24F6528A00AEB9A3 /* SKButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SKButton.swift; sourceTree = "<group>"; };
+		B5623FBC25376E3100E89F26 /* Level42.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Level42.swift; sourceTree = "<group>"; };
+		B5623FBD25376E3100E89F26 /* Level42.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Level42.sks; sourceTree = "<group>"; };
+		B5623FC7253878AC00E89F26 /* Level43.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Level43.sks; sourceTree = "<group>"; };
+		B5623FC8253878AD00E89F26 /* Level43.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Level43.swift; sourceTree = "<group>"; };
+		B5623FD12538A5C800E89F26 /* Level44.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Level44.swift; sourceTree = "<group>"; };
+		B5623FD22538A5C800E89F26 /* Level44.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Level44.sks; sourceTree = "<group>"; };
+		B5623FD92539633200E89F26 /* Level45.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Level45.swift; sourceTree = "<group>"; };
+		B566E3E02526FC61002D7F76 /* Level.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Level.sks; sourceTree = "<group>"; };
+		B5670059254894240075206A /* goblinKillSound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = goblinKillSound.wav; sourceTree = "<group>"; };
+		B567005C2548960C0075206A /* maleWoodmanSound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = maleWoodmanSound.wav; sourceTree = "<group>"; };
+		B567E1AF253D9192009B0C4D /* Level60.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Level60.sks; sourceTree = "<group>"; };
+		B567E1B0253D9193009B0C4D /* Level60.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Level60.swift; sourceTree = "<group>"; };
+		B56EDAFC253BF34000D72C90 /* Level54.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Level54.swift; sourceTree = "<group>"; };
+		B56EDAFD253BF34000D72C90 /* Level54.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Level54.sks; sourceTree = "<group>"; };
+		B56EDB04253C0E2D00D72C90 /* Level55.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Level55.swift; sourceTree = "<group>"; };
+		B56EDB05253C0E2D00D72C90 /* Level55.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Level55.sks; sourceTree = "<group>"; };
+		B56EDB0E253C33AA00D72C90 /* Level56.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Level56.swift; sourceTree = "<group>"; };
+		B56EDB0F253C33AA00D72C90 /* Level56.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Level56.sks; sourceTree = "<group>"; };
+		B56EDB17253C5D2000D72C90 /* Level57.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Level57.swift; sourceTree = "<group>"; };
+		B56EDB18253C5D2000D72C90 /* Level57.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Level57.sks; sourceTree = "<group>"; };
+		B57485C525359444001D374E /* Level40.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Level40.sks; sourceTree = "<group>"; };
+		B57485C625359444001D374E /* Level40.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Level40.swift; sourceTree = "<group>"; };
+		B57485D02536A4DA001D374E /* Level41.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Level41.swift; sourceTree = "<group>"; };
+		B57485D12536A4DA001D374E /* Level41.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Level41.sks; sourceTree = "<group>"; };
+		B575039D2518CF080064D5F6 /* Level8.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Level8.sks; sourceTree = "<group>"; };
+		B57503B42518E0B00064D5F6 /* KillSkeleton.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = KillSkeleton.sks; sourceTree = "<group>"; };
+		B57503B52518E0B00064D5F6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B57A853C25131D5300876A12 /* Level5.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Level5.swift; sourceTree = "<group>"; };
+		B57A853E25131D7200876A12 /* Level5.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Level5.sks; sourceTree = "<group>"; };
+		B57BCCDC254D3448002D1599 /* MenuLevel61_90.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuLevel61_90.swift; sourceTree = "<group>"; };
+		B57BCCDD254D3448002D1599 /* MenuLevel61_90.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = MenuLevel61_90.sks; sourceTree = "<group>"; };
+		B5803F2F252F388B00ABB691 /* Level34.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Level34.sks; sourceTree = "<group>"; };
+		B5803F30252F388B00ABB691 /* Level34.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Level34.swift; sourceTree = "<group>"; };
+		B5803F37252F4FDA00ABB691 /* Level35.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Level35.swift; sourceTree = "<group>"; };
+		B5803F38252F4FDA00ABB691 /* Level35.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Level35.sks; sourceTree = "<group>"; };
+		B5803F40252F681700ABB691 /* Level36.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Level36.sks; sourceTree = "<group>"; };
+		B5803F43252F684400ABB691 /* Level36.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Level36.swift; sourceTree = "<group>"; };
+		B585B4F72541816C0020C8A4 /* LevelDialogue59.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = LevelDialogue59.sks; sourceTree = "<group>"; };
+		B585B4F82541816C0020C8A4 /* LevelDialogue59.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LevelDialogue59.swift; sourceTree = "<group>"; };
+		B585B4FF2541D9470020C8A4 /* LevelDialogue60.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LevelDialogue60.swift; sourceTree = "<group>"; };
+		B585B5002541D9470020C8A4 /* LevelDialogue60.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = LevelDialogue60.sks; sourceTree = "<group>"; };
+		B585B50F2542B3220020C8A4 /* closeSound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = closeSound.wav; sourceTree = "<group>"; };
+		B585B5122542C02D0020C8A4 /* arrowSound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = arrowSound.wav; sourceTree = "<group>"; };
+		B585B5202542C6B20020C8A4 /* killSkeletonSound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = killSkeletonSound.wav; sourceTree = "<group>"; };
+		B585B53B2542D7F10020C8A4 /* teleportSound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = teleportSound.wav; sourceTree = "<group>"; };
+		B585B5432542DEAA0020C8A4 /* walkSound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = walkSound.wav; sourceTree = "<group>"; };
+		B585B5462542E2370020C8A4 /* maleSound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = maleSound.wav; sourceTree = "<group>"; };
+		B585B5492542EC6D0020C8A4 /* popSound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = popSound.wav; sourceTree = "<group>"; };
+		B585B552254305340020C8A4 /* backMusic.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = backMusic.mp3; sourceTree = "<group>"; };
+		B585B55525431BD10020C8A4 /* MusicPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicPlayer.swift; sourceTree = "<group>"; };
+		B585B55925431F270020C8A4 /* jumpSound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = jumpSound.wav; sourceTree = "<group>"; };
+		B585B55D2543202B0020C8A4 /* arrowKillSound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = arrowKillSound.wav; sourceTree = "<group>"; };
+		B585B560254321990020C8A4 /* backMusicMenu.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = backMusicMenu.mp3; sourceTree = "<group>"; };
+		B585B563254322DD0020C8A4 /* backMusicGameArcher.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = backMusicGameArcher.mp3; sourceTree = "<group>"; };
+		B58B4DE624F8D47D005DC9B4 /* EnemyStateMachine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnemyStateMachine.swift; sourceTree = "<group>"; };
+		B58BB11F254417A700013873 /* SnowMainBackground.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = SnowMainBackground.sks; sourceTree = "<group>"; };
+		B58C1226251C54BE00C066E3 /* Adine_Kirnberg.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Adine_Kirnberg.ttf; sourceTree = "<group>"; };
+		B58C1229251C55A900C066E3 /* AnastasiaScript.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = AnastasiaScript.ttf; sourceTree = "<group>"; };
+		B58C122C251C566C00C066E3 /* Antikvar_Shadow.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Antikvar_Shadow.ttf; sourceTree = "<group>"; };
+		B58C1230251C70F800C066E3 /* Portal.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Portal.sks; sourceTree = "<group>"; };
+		B58C1235251C85E800C066E3 /* RainLevel7.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = RainLevel7.sks; sourceTree = "<group>"; };
+		B58C1238251C901200C066E3 /* RainLevel8.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = RainLevel8.sks; sourceTree = "<group>"; };
+		B58C123C251C955900C066E3 /* Level16.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Level16.sks; sourceTree = "<group>"; };
+		B58C123D251C955900C066E3 /* Level16.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Level16.swift; sourceTree = "<group>"; };
+		B58C1244251CAC0500C066E3 /* Level17.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Level17.swift; sourceTree = "<group>"; };
+		B58C1245251CAC0500C066E3 /* Level17.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Level17.sks; sourceTree = "<group>"; };
+		B58C124C251CD7FA00C066E3 /* Level18.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Level18.swift; sourceTree = "<group>"; };
+		B58C124D251CD7FA00C066E3 /* Level18.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Level18.sks; sourceTree = "<group>"; };
+		B58C1254251E28D600C066E3 /* Level19.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Level19.swift; sourceTree = "<group>"; };
+		B58C1255251E28D600C066E3 /* Level19.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Level19.sks; sourceTree = "<group>"; };
+		B58C125C251E3E0700C066E3 /* Level20.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Level20.swift; sourceTree = "<group>"; };
+		B58C125D251E3E0700C066E3 /* Level20.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Level20.sks; sourceTree = "<group>"; };
+		B597AD642529E5E100C1BC37 /* Level32.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Level32.sks; sourceTree = "<group>"; };
+		B5A17F2B251F903B00910AEC /* Level23.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Level23.swift; sourceTree = "<group>"; };
+		B5A17F2C251F903B00910AEC /* Level23.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Level23.sks; sourceTree = "<group>"; };
+		B5A17F33251FAF1B00910AEC /* Level24.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Level24.swift; sourceTree = "<group>"; };
+		B5A17F34251FAF1B00910AEC /* Level24.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Level24.sks; sourceTree = "<group>"; };
+		B5AB6CCF252205A70060B629 /* KillArcher.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = KillArcher.sks; sourceTree = "<group>"; };
+		B5AB6CD22522405D0060B629 /* MenuLevel1_30.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuLevel1_30.swift; sourceTree = "<group>"; };
+		B5AB6CD5252240720060B629 /* MenuLevel1_30.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = MenuLevel1_30.sks; sourceTree = "<group>"; };
+		B5B2C98C251F286D00D2DE52 /* Level21.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Level21.sks; sourceTree = "<group>"; };
+		B5B2C98D251F286D00D2DE52 /* Level21.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Level21.swift; sourceTree = "<group>"; };
+		B5B2C995251F514400D2DE52 /* Level22.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Level22.sks; sourceTree = "<group>"; };
+		B5B2C996251F514400D2DE52 /* Level22.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Level22.swift; sourceTree = "<group>"; };
+		B5B5779C2519E74400AD5934 /* Level12.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Level12.swift; sourceTree = "<group>"; };
+		B5B5779D2519E74400AD5934 /* Level12.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Level12.sks; sourceTree = "<group>"; };
+		B5B577A12519F71D00AD5934 /* Level13.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Level13.sks; sourceTree = "<group>"; };
+		B5B577A22519F71D00AD5934 /* Level13.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Level13.swift; sourceTree = "<group>"; };
+		B5B577A6251A094800AD5934 /* Level14.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Level14.sks; sourceTree = "<group>"; };
+		B5B577A7251A094800AD5934 /* Level14.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Level14.swift; sourceTree = "<group>"; };
+		B5B577AB251A194800AD5934 /* Level15.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Level15.sks; sourceTree = "<group>"; };
+		B5B577AC251A194900AD5934 /* Level15.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Level15.swift; sourceTree = "<group>"; };
+		B5C2AC6A2521932D003253A1 /* Level30.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Level30.sks; sourceTree = "<group>"; };
+		B5C2AC6B2521932D003253A1 /* Level30.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Level30.swift; sourceTree = "<group>"; };
+		B5C2AC732521CC07003253A1 /* Level30GameOver.sks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Level30GameOver.sks.swift; sourceTree = "<group>"; };
+		B5C2AC802521CF71003253A1 /* Level30GameOver.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Level30GameOver.sks; sourceTree = "<group>"; };
+		B5C2AC872521E323003253A1 /* MenuScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = MenuScene.sks; sourceTree = "<group>"; };
+		B5C2E56225206E66002C5439 /* Level25.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Level25.sks; sourceTree = "<group>"; };
+		B5C2E56325206E66002C5439 /* Level25.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Level25.swift; sourceTree = "<group>"; };
+		B5C6B70D2519B9F400AE8FDA /* Level9.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Level9.sks; sourceTree = "<group>"; };
+		B5D66EFD2520781B00FE57D0 /* Level26.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Level26.swift; sourceTree = "<group>"; };
+		B5D66EFE2520781B00FE57D0 /* Level26.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Level26.sks; sourceTree = "<group>"; };
+		B5D66F0425207B3500FE57D0 /* RainLevel25.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = RainLevel25.sks; sourceTree = "<group>"; };
+		B5D66F0B2520867100FE57D0 /* RainLevel26.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = RainLevel26.sks; sourceTree = "<group>"; };
+		B5D66F0F2520937000FE57D0 /* Level27.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Level27.swift; sourceTree = "<group>"; };
+		B5D66F102520937000FE57D0 /* Level27.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Level27.sks; sourceTree = "<group>"; };
+		B5D66F182520BD9400FE57D0 /* Level28.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Level28.sks; sourceTree = "<group>"; };
+		B5D66F192520BD9500FE57D0 /* Level28.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Level28.swift; sourceTree = "<group>"; };
+		B5D66F212520E12D00FE57D0 /* Level29.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Level29.sks; sourceTree = "<group>"; };
+		B5D66F222520E12D00FE57D0 /* Level29.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Level29.swift; sourceTree = "<group>"; };
+		B5D678BA2519C395007A72A7 /* Level10.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Level10.sks; sourceTree = "<group>"; };
+		B5D678E42519CB43007A72A7 /* Puddle.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Puddle.sks; sourceTree = "<group>"; };
+		B5D678F02519CE1E007A72A7 /* Level11.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Level11.sks; sourceTree = "<group>"; };
+		B5D678F12519CE1E007A72A7 /* Level11.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Level11.swift; sourceTree = "<group>"; };
+		B5F12BB625398E3600B98BC6 /* Level45.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Level45.sks; sourceTree = "<group>"; };
+		B5F12BBA2539A7F900B98BC6 /* Level46.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Level46.swift; sourceTree = "<group>"; };
+		B5F12BBB2539A7F900B98BC6 /* Level46.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Level46.sks; sourceTree = "<group>"; };
+		B5F12BCE2539D0D400B98BC6 /* Level47.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Level47.swift; sourceTree = "<group>"; };
+		B5F12BCF2539D0D400B98BC6 /* Level47.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Level47.sks; sourceTree = "<group>"; };
+		B5F87118254D6F0D008E6F7C /* coinsSound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = coinsSound.wav; sourceTree = "<group>"; };
+		B5FF8D2E2517A516007C9DEB /* Level6.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Level6.swift; sourceTree = "<group>"; };
+		B5FF8D312517A523007C9DEB /* Level7.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Level7.swift; sourceTree = "<group>"; };
+		B5FF8D342517A532007C9DEB /* Level8.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Level8.swift; sourceTree = "<group>"; };
+		B5FF8D372517A53E007C9DEB /* Level9.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Level9.swift; sourceTree = "<group>"; };
+		B5FF8D3A2517A54A007C9DEB /* Level10.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Level10.swift; sourceTree = "<group>"; };
+		B5FF8D562517A7F8007C9DEB /* Level6.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Level6.sks; sourceTree = "<group>"; };
+		B5FF8D5F251887AC007C9DEB /* Level7.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Level7.sks; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		AC68CD2E233865A9002530AD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		AC2F657D233AEA390083AEE7 /* Audio */ = {
+			isa = PBXGroup;
+			children = (
+				B585B5432542DEAA0020C8A4 /* walkSound.wav */,
+				B585B5122542C02D0020C8A4 /* arrowSound.wav */,
+				B585B55D2543202B0020C8A4 /* arrowKillSound.wav */,
+				B585B5462542E2370020C8A4 /* maleSound.wav */,
+				B567005C2548960C0075206A /* maleWoodmanSound.wav */,
+				B5670059254894240075206A /* goblinKillSound.wav */,
+				B585B560254321990020C8A4 /* backMusicMenu.mp3 */,
+				B585B563254322DD0020C8A4 /* backMusicGameArcher.mp3 */,
+				B585B5202542C6B20020C8A4 /* killSkeletonSound.wav */,
+				B585B53B2542D7F10020C8A4 /* teleportSound.wav */,
+				B585B552254305340020C8A4 /* backMusic.mp3 */,
+				B5F87118254D6F0D008E6F7C /* coinsSound.wav */,
+				B585B55925431F270020C8A4 /* jumpSound.wav */,
+				B585B5492542EC6D0020C8A4 /* popSound.wav */,
+				B585B50F2542B3220020C8A4 /* closeSound.wav */,
+				AC2F657E233AEA390083AEE7 /* rewardSound.wav */,
+				AC2F6582233AEA390083AEE7 /* ?.wav */,
+				AC2F6580233AEA390083AEE7 /* ?.m4a */,
+			);
+			path = Audio;
+			sourceTree = "<group>";
+		};
+		AC68CD28233865A9002530AD = {
+			isa = PBXGroup;
+			children = (
+				AC68CD33233865A9002530AD /* Heroes */,
+				AC68CD32233865A9002530AD /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		AC68CD32233865A9002530AD /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AC68CD31233865A9002530AD /* Heroes.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		AC68CD33233865A9002530AD /* Heroes */ = {
+			isa = PBXGroup;
+			children = (
+				B55D071E252363FE00CBC992 /* Main */,
+				B55D07202523640D00CBC992 /* Scene */,
+				B53B6E2525107A9200B7CF4A /* Resources */,
+				B52930922532F6F500044170 /* Assets.xcassets */,
+				B55F7EE124F6529E00AEB9A3 /* Helper */,
+				B55D071C252363D700CBC992 /* Storyboard */,
+			);
+			path = Heroes;
+			sourceTree = "<group>";
+		};
+		B514B6EC25132B65009D057F /* Level31 */ = {
+			isa = PBXGroup;
+			children = (
+				B55D9307252B0B7F007D1D12 /* Level31.swift */,
+				B55D9304252B0B7E007D1D12 /* Level31.sks */,
+				B52FF86325413F3C00D68EA6 /* Dialogie */,
+			);
+			path = Level31;
+			sourceTree = "<group>";
+		};
+		B519FD7425355D2100861982 /* Level39 */ = {
+			isa = PBXGroup;
+			children = (
+				B519FD6F25355CCB00861982 /* Level39.swift */,
+				B519FD6E25355CCB00861982 /* Level39.sks */,
+			);
+			path = Level39;
+			sourceTree = "<group>";
+		};
+		B51F873D253D42E700D13B3D /* Level58 */ = {
+			isa = PBXGroup;
+			children = (
+				B51F8738253D42E100D13B3D /* Level58.swift */,
+				B51F8739253D42E100D13B3D /* Level58.sks */,
+			);
+			path = Level58;
+			sourceTree = "<group>";
+		};
+		B51F8747253D670B00D13B3D /* Level59 */ = {
+			isa = PBXGroup;
+			children = (
+				B51F8743253D66EE00D13B3D /* Level59.swift */,
+				B51F8742253D66EE00D13B3D /* Level59.sks */,
+				B585B4FC254181700020C8A4 /* Dialogue */,
+			);
+			path = Level59;
+			sourceTree = "<group>";
+		};
+		B52E2C2C2539D64C004909F1 /* Level48 */ = {
+			isa = PBXGroup;
+			children = (
+				B52E2C282539D649004909F1 /* Level48.swift */,
+				B52E2C272539D649004909F1 /* Level48.sks */,
+				B52FF89A25414CA200D68EA6 /* Dialogue */,
+			);
+			path = Level48;
+			sourceTree = "<group>";
+		};
+		B52E2C342539ED84004909F1 /* Level49 */ = {
+			isa = PBXGroup;
+			children = (
+				B52E2C2E2539ED38004909F1 /* Level49.swift */,
+				B52E2C2F2539ED38004909F1 /* Level49.sks */,
+			);
+			path = Level49;
+			sourceTree = "<group>";
+		};
+		B52E2C3E2539FB28004909F1 /* Level50 */ = {
+			isa = PBXGroup;
+			children = (
+				B52E2C3A2539FB23004909F1 /* Level50.swift */,
+				B52E2C392539FB23004909F1 /* Level50.sks */,
+				B52FF8A325414D5F00D68EA6 /* Dialogue */,
+			);
+			path = Level50;
+			sourceTree = "<group>";
+		};
+		B52E2C46253ABA78004909F1 /* Level51 */ = {
+			isa = PBXGroup;
+			children = (
+				B52E2C41253ABA74004909F1 /* Level51.swift */,
+				B52E2C42253ABA74004909F1 /* Level51.sks */,
+			);
+			path = Level51;
+			sourceTree = "<group>";
+		};
+		B52E2C50253AD082004909F1 /* Level52 */ = {
+			isa = PBXGroup;
+			children = (
+				B52E2C4B253AD06D004909F1 /* Level52.swift */,
+				B52E2C4A253AD06D004909F1 /* Level52.sks */,
+				B52FF8AC25414E0A00D68EA6 /* Dialogue */,
+			);
+			path = Level52;
+			sourceTree = "<group>";
+		};
+		B52E2C59253B3490004909F1 /* Level53 */ = {
+			isa = PBXGroup;
+			children = (
+				B52E2C55253B3483004909F1 /* Level53.swift */,
+				B52E2C54253B3483004909F1 /* Level53.sks */,
+			);
+			path = Level53;
+			sourceTree = "<group>";
+		};
+		B52FF7F1253F167A00D68EA6 /* Dialogue */ = {
+			isa = PBXGroup;
+			children = (
+				B52FF7E8253F165300D68EA6 /* LevelDialogue15.swift */,
+				B52FF7E3253F165200D68EA6 /* LevelDialogue15.sks */,
+			);
+			path = Dialogue;
+			sourceTree = "<group>";
+		};
+		B52FF7F2253F168300D68EA6 /* Dialogue */ = {
+			isa = PBXGroup;
+			children = (
+				B52FF7DC253F11B300D68EA6 /* LevelDialogue1.swift */,
+				B52FF7DF253F11C900D68EA6 /* LevelDialogue1.sks */,
+			);
+			path = Dialogue;
+			sourceTree = "<group>";
+		};
+		B52FF7F6253F192400D68EA6 /* Dialogue */ = {
+			isa = PBXGroup;
+			children = (
+				B52FF7E5253F165200D68EA6 /* LevelDialogue2.swift */,
+				B52FF7E7253F165200D68EA6 /* LevelDialogue2.sks */,
+			);
+			path = Dialogue;
+			sourceTree = "<group>";
+		};
+		B52FF7F9254015F000D68EA6 /* Dialogue */ = {
+			isa = PBXGroup;
+			children = (
+				B52FF7E4253F165200D68EA6 /* LevelDialogue9.swift */,
+				B52FF7E6253F165200D68EA6 /* LevelDialogue9.sks */,
+			);
+			path = Dialogue;
+			sourceTree = "<group>";
+		};
+		B52FF8032540197000D68EA6 /* Dialogue */ = {
+			isa = PBXGroup;
+			children = (
+				B52FF7FE2540196A00D68EA6 /* LevelDialogue4.swift */,
+				B52FF7FF2540196A00D68EA6 /* LevelDialogue4.sks */,
+			);
+			path = Dialogue;
+			sourceTree = "<group>";
+		};
+		B52FF80C25401A3C00D68EA6 /* Dialogue */ = {
+			isa = PBXGroup;
+			children = (
+				B52FF80725401A3400D68EA6 /* LevelDialogue7.swift */,
+				B52FF80825401A3400D68EA6 /* LevelDialogue7.sks */,
+			);
+			path = Dialogue;
+			sourceTree = "<group>";
+		};
+		B52FF818254089FD00D68EA6 /* Dialogue */ = {
+			isa = PBXGroup;
+			children = (
+				B52FF81F25408B5200D68EA6 /* LevelDialogue18.swift */,
+				B52FF82025408B5200D68EA6 /* LevelDialogue18.sks */,
+			);
+			path = Dialogue;
+			sourceTree = "<group>";
+		};
+		B52FF82F25408EA600D68EA6 /* Dialogue */ = {
+			isa = PBXGroup;
+			children = (
+				B52FF82B25408E9D00D68EA6 /* LevelDialogue20.swift */,
+				B52FF82A25408E9D00D68EA6 /* LevelDialogue20.sks */,
+			);
+			path = Dialogue;
+			sourceTree = "<group>";
+		};
+		B52FF8372540934100D68EA6 /* Dialogue */ = {
+			isa = PBXGroup;
+			children = (
+				B52FF8332540933B00D68EA6 /* LevelDialogue22.swift */,
+				B52FF8322540933B00D68EA6 /* LevelDialogue22.sks */,
+			);
+			path = Dialogue;
+			sourceTree = "<group>";
+		};
+		B52FF8402540959700D68EA6 /* Dialogue */ = {
+			isa = PBXGroup;
+			children = (
+				B52FF83B2540958F00D68EA6 /* LevelDialogue25.swift */,
+				B52FF83C2540958F00D68EA6 /* LevelDialogue25.sks */,
+			);
+			path = Dialogue;
+			sourceTree = "<group>";
+		};
+		B52FF8492540964900D68EA6 /* Dialogue */ = {
+			isa = PBXGroup;
+			children = (
+				B52FF8452540964600D68EA6 /* LevelDialogue27.swift */,
+				B52FF8442540964600D68EA6 /* LevelDialogue27.sks */,
+			);
+			path = Dialogue;
+			sourceTree = "<group>";
+		};
+		B52FF852254138EF00D68EA6 /* Dialogue */ = {
+			isa = PBXGroup;
+			children = (
+				B52FF84E254138E900D68EA6 /* LevelDialogue30.swift */,
+				B52FF84D254138E900D68EA6 /* LevelDialogue30.sks */,
+			);
+			path = Dialogue;
+			sourceTree = "<group>";
+		};
+		B52FF86325413F3C00D68EA6 /* Dialogie */ = {
+			isa = PBXGroup;
+			children = (
+				B52FF85725413F1800D68EA6 /* LevelDialogue31.swift */,
+				B52FF85625413F1800D68EA6 /* LevelDialogue31.sks */,
+			);
+			path = Dialogie;
+			sourceTree = "<group>";
+		};
+		B52FF865254140A200D68EA6 /* Dialogue */ = {
+			isa = PBXGroup;
+			children = (
+				B52FF85B25413F1F00D68EA6 /* LevelDialogue32.swift */,
+				B52FF85C25413F1F00D68EA6 /* LevelDialogue32.sks */,
+			);
+			path = Dialogue;
+			sourceTree = "<group>";
+		};
+		B52FF86C2541417600D68EA6 /* Dialogue */ = {
+			isa = PBXGroup;
+			children = (
+				B52FF8672541417300D68EA6 /* LevelDialogue34.swift */,
+				B52FF8682541417300D68EA6 /* LevelDialogue34.sks */,
+			);
+			path = Dialogue;
+			sourceTree = "<group>";
+		};
+		B52FF8752541428600D68EA6 /* Dialogue */ = {
+			isa = PBXGroup;
+			children = (
+				B52FF8702541428100D68EA6 /* LevelDialogue35.swift */,
+				B52FF8712541428100D68EA6 /* LevelDialogue35.sks */,
+			);
+			path = Dialogue;
+			sourceTree = "<group>";
+		};
+		B52FF880254143F500D68EA6 /* Dialogue */ = {
+			isa = PBXGroup;
+			children = (
+				B52FF87B254143E400D68EA6 /* LevelDialogue38.swift */,
+				B52FF87A254143E400D68EA6 /* LevelDialogue38.sks */,
+			);
+			path = Dialogue;
+			sourceTree = "<group>";
+		};
+		B52FF889254149E800D68EA6 /* Dialogue */ = {
+			isa = PBXGroup;
+			children = (
+				B52FF885254149E300D68EA6 /* LevelDialogue40.swift */,
+				B52FF884254149E300D68EA6 /* LevelDialogue40.sks */,
+			);
+			path = Dialogue;
+			sourceTree = "<group>";
+		};
+		B52FF89225414ABC00D68EA6 /* Dialogue */ = {
+			isa = PBXGroup;
+			children = (
+				B52FF88E25414AB800D68EA6 /* LevelDialogue45.swift */,
+				B52FF88D25414AB800D68EA6 /* LevelDialogue45.sks */,
+			);
+			path = Dialogue;
+			sourceTree = "<group>";
+		};
+		B52FF89A25414CA200D68EA6 /* Dialogue */ = {
+			isa = PBXGroup;
+			children = (
+				B52FF89625414C9F00D68EA6 /* LevelDialogue48.swift */,
+				B52FF89525414C9F00D68EA6 /* LevelDialogue48.sks */,
+			);
+			path = Dialogue;
+			sourceTree = "<group>";
+		};
+		B52FF8A325414D5F00D68EA6 /* Dialogue */ = {
+			isa = PBXGroup;
+			children = (
+				B52FF89F25414D5B00D68EA6 /* LevelDialogue50.swift */,
+				B52FF89E25414D5B00D68EA6 /* LevelDialogue50.sks */,
+			);
+			path = Dialogue;
+			sourceTree = "<group>";
+		};
+		B52FF8AC25414E0A00D68EA6 /* Dialogue */ = {
+			isa = PBXGroup;
+			children = (
+				B52FF8A825414E0700D68EA6 /* LevelDialogue52.swift */,
+				B52FF8A725414E0700D68EA6 /* LevelDialogue52.sks */,
+			);
+			path = Dialogue;
+			sourceTree = "<group>";
+		};
+		B52FF8B4254150C700D68EA6 /* Dialogue */ = {
+			isa = PBXGroup;
+			children = (
+				B52FF8B0254150C300D68EA6 /* LevelDialogue55.swift */,
+				B52FF8AF254150C300D68EA6 /* LevelDialogue55.sks */,
+			);
+			path = Dialogue;
+			sourceTree = "<group>";
+		};
+		B538F62025347FA800879453 /* Level37 */ = {
+			isa = PBXGroup;
+			children = (
+				B538F61B25347F8C00879453 /* Level37.swift */,
+				B538F61C25347F8C00879453 /* Level37.sks */,
+			);
+			path = Level37;
+			sourceTree = "<group>";
+		};
+		B538F6292534A34B00879453 /* Level38 */ = {
+			isa = PBXGroup;
+			children = (
+				B538F6242534A34400879453 /* Level38.swift */,
+				B538F62F2534A60F00879453 /* Level38.sks */,
+				B52FF880254143F500D68EA6 /* Dialogue */,
+			);
+			path = Level38;
+			sourceTree = "<group>";
+		};
+		B53B6E20251079EE00B7CF4A /* LevelSceneArcher */ = {
+			isa = PBXGroup;
+			children = (
+				B553E5BD25127B2C000B07E1 /* Level1 */,
+				B553E5BE25127B38000B07E1 /* Level2 */,
+				B553E5BF25127B43000B07E1 /* Level3 */,
+				B553E5C025127B4B000B07E1 /* Level4 */,
+				B57A854025131D7500876A12 /* Level5 */,
+				B5FF8D4C2517A616007C9DEB /* Level6 */,
+				B5FF8D4E2517A620007C9DEB /* Level7 */,
+				B5FF8D502517A62A007C9DEB /* Level8 */,
+				B5FF8D522517A631007C9DEB /* Level9 */,
+				B5FF8D542517A639007C9DEB /* Level10 */,
+				B5D678E02519C832007A72A7 /* Level11 */,
+				B5D678DE2519C821007A72A7 /* Level12 */,
+				B5D678DD2519C819007A72A7 /* Level13 */,
+				B5D678DB2519C80D007A72A7 /* Level14 */,
+				B5D678E22519C83A007A72A7 /* Level15 */,
+				B58C1241251C956D00C066E3 /* Level16 */,
+				B58C1249251CAC1400C066E3 /* Level17 */,
+				B58C1251251CD80900C066E3 /* Level18 */,
+				B58C1259251E28E900C066E3 /* Level19 */,
+				B58C1261251E3E2F00C066E3 /* Level20 */,
+				B5B2C991251F28BB00D2DE52 /* Level21 */,
+				B5B2C99A251F517C00D2DE52 /* Level22 */,
+				B5A17F30251F907D00910AEC /* Level23 */,
+				B5A17F38251FAF1F00910AEC /* Level24 */,
+				B5C2E55C25205C05002C5439 /* Level25  */,
+				B5D66F0825207C0700FE57D0 /* Level26 */,
+				B5D66F152520939A00FE57D0 /* Level27 */,
+				B5D66F1E2520BDF400FE57D0 /* Level28 */,
+				B5D66F272520ED0300FE57D0 /* Level29 */,
+				B5C2AC7025219344003253A1 /* Level30 */,
+			);
+			path = LevelSceneArcher;
+			sourceTree = "<group>";
+		};
+		B53B6E2125107A3600B7CF4A /* MenuScene */ = {
+			isa = PBXGroup;
+			children = (
+				B53B6E1E251079D900B7CF4A /* MenuScene.swift */,
+				B5C2AC872521E323003253A1 /* MenuScene.sks */,
+				B5AB6CD8252240D00060B629 /* MenuLevel1_30 */,
+				B55D9324252C2E49007D1D12 /* MenuLevel31_60 */,
+				B57BCCE1254D344E002D1599 /* MenuLevel61_90 */,
+			);
+			path = MenuScene;
+			sourceTree = "<group>";
+		};
+		B53B6E2225107A4500B7CF4A /* GameOverScene */ = {
+			isa = PBXGroup;
+			children = (
+				AC2F658E233AEB210083AEE7 /* GameOver.swift */,
+				AC2F658C233AEAAA0083AEE7 /* GameOver.sks */,
+			);
+			path = GameOverScene;
+			sourceTree = "<group>";
+		};
+		B53B6E2325107A5900B7CF4A /* GameScene */ = {
+			isa = PBXGroup;
+			children = (
+				AC68CD3A233865A9002530AD /* GameScene.swift */,
+			);
+			path = GameScene;
+			sourceTree = "<group>";
+		};
+		B53B6E2425107A6E00B7CF4A /* StateMachine */ = {
+			isa = PBXGroup;
+			children = (
+				ACAB994423398D4B00A079CC /* PlayerStateMachine.swift */,
+				B58B4DE624F8D47D005DC9B4 /* EnemyStateMachine.swift */,
+			);
+			path = StateMachine;
+			sourceTree = "<group>";
+		};
+		B53B6E2525107A9200B7CF4A /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				B58C1225251C549B00C066E3 /* Font */,
+				AC2F657D233AEA390083AEE7 /* Audio */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		B553E5BD25127B2C000B07E1 /* Level1 */ = {
+			isa = PBXGroup;
+			children = (
+				AC2F6590233AEC500083AEE7 /* Level1.swift */,
+				AC68CD36233865A9002530AD /* Level1.sks */,
+				B52FF7F2253F168300D68EA6 /* Dialogue */,
+			);
+			path = Level1;
+			sourceTree = "<group>";
+		};
+		B553E5BE25127B38000B07E1 /* Level2 */ = {
+			isa = PBXGroup;
+			children = (
+				AC2F6592233B01380083AEE7 /* Level2.swift */,
+				B553E5B325122175000B07E1 /* Level2.sks */,
+				B52FF7F6253F192400D68EA6 /* Dialogue */,
+			);
+			path = Level2;
+			sourceTree = "<group>";
+		};
+		B553E5BF25127B43000B07E1 /* Level3 */ = {
+			isa = PBXGroup;
+			children = (
+				B553E5B525122A16000B07E1 /* Level3.swift */,
+				B553E5B725122A31000B07E1 /* Level3.sks */,
+			);
+			path = Level3;
+			sourceTree = "<group>";
+		};
+		B553E5C025127B4B000B07E1 /* Level4 */ = {
+			isa = PBXGroup;
+			children = (
+				B553E5B925127B18000B07E1 /* Level4.swift */,
+				B553E5BB25127B27000B07E1 /* Level4.sks */,
+				B52FF8032540197000D68EA6 /* Dialogue */,
+			);
+			path = Level4;
+			sourceTree = "<group>";
+		};
+		B55D071C252363D700CBC992 /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				AC68CD3E233865A9002530AD /* Main.storyboard */,
+				AC68CD43233865AA002530AD /* LaunchScreen.storyboard */,
+			);
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		B55D071E252363FE00CBC992 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				AC68CD34233865A9002530AD /* AppDelegate.swift */,
+				AC68CD46233865AA002530AD /* Info.plist */,
+				B52FF82625408C0A00D68EA6 /* GameViewController.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		B55D07202523640D00CBC992 /* Scene */ = {
+			isa = PBXGroup;
+			children = (
+				B53B6E2125107A3600B7CF4A /* MenuScene */,
+				B53B6E2325107A5900B7CF4A /* GameScene */,
+				B55D07222523644C00CBC992 /* LevelScene */,
+				B53B6E2225107A4500B7CF4A /* GameOverScene */,
+			);
+			path = Scene;
+			sourceTree = "<group>";
+		};
+		B55D07212523643B00CBC992 /* LevelSceneWoodman */ = {
+			isa = PBXGroup;
+			children = (
+				B514B6EC25132B65009D057F /* Level31 */,
+				B55D930F252B0C16007D1D12 /* Level32 */,
+				B5803F26252ED4BB00ABB691 /* Level33 */,
+				B5803F36252F4FC100ABB691 /* Level34 */,
+				B5803F3D252F506A00ABB691 /* Level35 */,
+				B5803F46252F684C00ABB691 /* Level36 */,
+				B538F62025347FA800879453 /* Level37 */,
+				B538F6292534A34B00879453 /* Level38 */,
+				B519FD7425355D2100861982 /* Level39 */,
+				B57485CB25359484001D374E /* Level40 */,
+				B57485D62536A536001D374E /* Level41 */,
+				B5623FC225376E7F00E89F26 /* Level42 */,
+				B5623FCC253878B100E89F26 /* Level43 */,
+				B5623FD62538A5D700E89F26 /* Level44 */,
+				B5623FDE2539633900E89F26 /* Level45 */,
+				B5F12BC02539A80500B98BC6 /* Level46 */,
+				B5F12BC92539C58000B98BC6 /* Level47 */,
+				B52E2C2C2539D64C004909F1 /* Level48 */,
+				B52E2C342539ED84004909F1 /* Level49 */,
+				B52E2C3E2539FB28004909F1 /* Level50 */,
+				B52E2C46253ABA78004909F1 /* Level51 */,
+				B52E2C50253AD082004909F1 /* Level52 */,
+				B52E2C59253B3490004909F1 /* Level53 */,
+				B56EDB01253BF34500D72C90 /* Level54 */,
+				B56EDB09253C0E3A00D72C90 /* Level55 */,
+				B56EDB13253C33AF00D72C90 /* Level56 */,
+				B56EDB1C253C5D2600D72C90 /* Level57 */,
+				B51F873D253D42E700D13B3D /* Level58 */,
+				B51F8747253D670B00D13B3D /* Level59 */,
+				B567E1B4253D9196009B0C4D /* Level60 */,
+			);
+			path = LevelSceneWoodman;
+			sourceTree = "<group>";
+		};
+		B55D07222523644C00CBC992 /* LevelScene */ = {
+			isa = PBXGroup;
+			children = (
+				B53B6E20251079EE00B7CF4A /* LevelSceneArcher */,
+				B55D07212523643B00CBC992 /* LevelSceneWoodman */,
+			);
+			path = LevelScene;
+			sourceTree = "<group>";
+		};
+		B55D930F252B0C16007D1D12 /* Level32 */ = {
+			isa = PBXGroup;
+			children = (
+				B55D92BE2529EDD4007D1D12 /* Level32.swift */,
+				B597AD642529E5E100C1BC37 /* Level32.sks */,
+				B52FF865254140A200D68EA6 /* Dialogue */,
+			);
+			path = Level32;
+			sourceTree = "<group>";
+		};
+		B55D9324252C2E49007D1D12 /* MenuLevel31_60 */ = {
+			isa = PBXGroup;
+			children = (
+				B55D931A252B26E0007D1D12 /* MenuLevel31_60.swift */,
+				B55D931B252B26E0007D1D12 /* MenuLevel31_60.sks */,
+			);
+			path = MenuLevel31_60;
+			sourceTree = "<group>";
+		};
+		B55F7EE124F6529E00AEB9A3 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				B57503AA2518DF9D0064D5F6 /* ParticleEmmiters */,
+				B53B6E2425107A6E00B7CF4A /* StateMachine */,
+				AC2F6598233B076B0083AEE7 /* Sound.swift */,
+				B55F7EDE24F6528A00AEB9A3 /* SKButton.swift */,
+				B585B55525431BD10020C8A4 /* MusicPlayer.swift */,
+			);
+			name = Helper;
+			sourceTree = "<group>";
+		};
+		B5623FC225376E7F00E89F26 /* Level42 */ = {
+			isa = PBXGroup;
+			children = (
+				B5623FBC25376E3100E89F26 /* Level42.swift */,
+				B5623FBD25376E3100E89F26 /* Level42.sks */,
+			);
+			path = Level42;
+			sourceTree = "<group>";
+		};
+		B5623FCC253878B100E89F26 /* Level43 */ = {
+			isa = PBXGroup;
+			children = (
+				B5623FC8253878AD00E89F26 /* Level43.swift */,
+				B5623FC7253878AC00E89F26 /* Level43.sks */,
+			);
+			path = Level43;
+			sourceTree = "<group>";
+		};
+		B5623FD62538A5D700E89F26 /* Level44 */ = {
+			isa = PBXGroup;
+			children = (
+				B5623FD12538A5C800E89F26 /* Level44.swift */,
+				B5623FD22538A5C800E89F26 /* Level44.sks */,
+			);
+			path = Level44;
+			sourceTree = "<group>";
+		};
+		B5623FDE2539633900E89F26 /* Level45 */ = {
+			isa = PBXGroup;
+			children = (
+				B5623FD92539633200E89F26 /* Level45.swift */,
+				B5F12BB625398E3600B98BC6 /* Level45.sks */,
+				B52FF89225414ABC00D68EA6 /* Dialogue */,
+			);
+			path = Level45;
+			sourceTree = "<group>";
+		};
+		B567E1B4253D9196009B0C4D /* Level60 */ = {
+			isa = PBXGroup;
+			children = (
+				B567E1B0253D9193009B0C4D /* Level60.swift */,
+				B567E1AF253D9192009B0C4D /* Level60.sks */,
+				B585B5042541D94B0020C8A4 /* Dialogue */,
+			);
+			path = Level60;
+			sourceTree = "<group>";
+		};
+		B56EDB01253BF34500D72C90 /* Level54 */ = {
+			isa = PBXGroup;
+			children = (
+				B56EDAFC253BF34000D72C90 /* Level54.swift */,
+				B56EDAFD253BF34000D72C90 /* Level54.sks */,
+			);
+			path = Level54;
+			sourceTree = "<group>";
+		};
+		B56EDB09253C0E3A00D72C90 /* Level55 */ = {
+			isa = PBXGroup;
+			children = (
+				B56EDB04253C0E2D00D72C90 /* Level55.swift */,
+				B56EDB05253C0E2D00D72C90 /* Level55.sks */,
+				B52FF8B4254150C700D68EA6 /* Dialogue */,
+			);
+			path = Level55;
+			sourceTree = "<group>";
+		};
+		B56EDB13253C33AF00D72C90 /* Level56 */ = {
+			isa = PBXGroup;
+			children = (
+				B56EDB0E253C33AA00D72C90 /* Level56.swift */,
+				B56EDB0F253C33AA00D72C90 /* Level56.sks */,
+			);
+			path = Level56;
+			sourceTree = "<group>";
+		};
+		B56EDB1C253C5D2600D72C90 /* Level57 */ = {
+			isa = PBXGroup;
+			children = (
+				B56EDB17253C5D2000D72C90 /* Level57.swift */,
+				B56EDB18253C5D2000D72C90 /* Level57.sks */,
+			);
+			path = Level57;
+			sourceTree = "<group>";
+		};
+		B57485CB25359484001D374E /* Level40 */ = {
+			isa = PBXGroup;
+			children = (
+				B57485C625359444001D374E /* Level40.swift */,
+				B57485C525359444001D374E /* Level40.sks */,
+				B52FF889254149E800D68EA6 /* Dialogue */,
+			);
+			path = Level40;
+			sourceTree = "<group>";
+		};
+		B57485D62536A536001D374E /* Level41 */ = {
+			isa = PBXGroup;
+			children = (
+				B57485D02536A4DA001D374E /* Level41.swift */,
+				B57485D12536A4DA001D374E /* Level41.sks */,
+			);
+			path = Level41;
+			sourceTree = "<group>";
+		};
+		B57503AA2518DF9D0064D5F6 /* ParticleEmmiters */ = {
+			isa = PBXGroup;
+			children = (
+				B57503B42518E0B00064D5F6 /* KillSkeleton.sks */,
+				B5AB6CCF252205A70060B629 /* KillArcher.sks */,
+				B55D9317252B0FE7007D1D12 /* KillWoodman.sks */,
+				B566E3E02526FC61002D7F76 /* Level.sks */,
+				B55D9320252B360C007D1D12 /* LevelBlue.sks */,
+				B54A069F2534C4B0006FBFBA /* FireTorch.sks */,
+				B58C1235251C85E800C066E3 /* RainLevel7.sks */,
+				B58C1238251C901200C066E3 /* RainLevel8.sks */,
+				B5D66F0425207B3500FE57D0 /* RainLevel25.sks */,
+				B5D66F0B2520867100FE57D0 /* RainLevel26.sks */,
+				B5D678E42519CB43007A72A7 /* Puddle.sks */,
+				B54A069B2534B93D006FBFBA /* PortalRed.sks */,
+				B58C1230251C70F800C066E3 /* Portal.sks */,
+				B58BB11F254417A700013873 /* SnowMainBackground.sks */,
+				B57503B52518E0B00064D5F6 /* Assets.xcassets */,
+			);
+			path = ParticleEmmiters;
+			sourceTree = "<group>";
+		};
+		B57A854025131D7500876A12 /* Level5 */ = {
+			isa = PBXGroup;
+			children = (
+				B57A853C25131D5300876A12 /* Level5.swift */,
+				B57A853E25131D7200876A12 /* Level5.sks */,
+			);
+			path = Level5;
+			sourceTree = "<group>";
+		};
+		B57BCCE1254D344E002D1599 /* MenuLevel61_90 */ = {
+			isa = PBXGroup;
+			children = (
+				B57BCCDC254D3448002D1599 /* MenuLevel61_90.swift */,
+				B57BCCDD254D3448002D1599 /* MenuLevel61_90.sks */,
+			);
+			path = MenuLevel61_90;
+			sourceTree = "<group>";
+		};
+		B5803F26252ED4BB00ABB691 /* Level33 */ = {
+			isa = PBXGroup;
+			children = (
+				B55D9306252B0B7F007D1D12 /* Level33.swift */,
+				B55D9305252B0B7F007D1D12 /* Level33.sks */,
+			);
+			path = Level33;
+			sourceTree = "<group>";
+		};
+		B5803F36252F4FC100ABB691 /* Level34 */ = {
+			isa = PBXGroup;
+			children = (
+				B5803F30252F388B00ABB691 /* Level34.swift */,
+				B5803F2F252F388B00ABB691 /* Level34.sks */,
+				B52FF86C2541417600D68EA6 /* Dialogue */,
+			);
+			path = Level34;
+			sourceTree = "<group>";
+		};
+		B5803F3D252F506A00ABB691 /* Level35 */ = {
+			isa = PBXGroup;
+			children = (
+				B5803F37252F4FDA00ABB691 /* Level35.swift */,
+				B5803F38252F4FDA00ABB691 /* Level35.sks */,
+				B52FF8752541428600D68EA6 /* Dialogue */,
+			);
+			path = Level35;
+			sourceTree = "<group>";
+		};
+		B5803F46252F684C00ABB691 /* Level36 */ = {
+			isa = PBXGroup;
+			children = (
+				B5803F43252F684400ABB691 /* Level36.swift */,
+				B5803F40252F681700ABB691 /* Level36.sks */,
+			);
+			path = Level36;
+			sourceTree = "<group>";
+		};
+		B585B4FC254181700020C8A4 /* Dialogue */ = {
+			isa = PBXGroup;
+			children = (
+				B585B4F82541816C0020C8A4 /* LevelDialogue59.swift */,
+				B585B4F72541816C0020C8A4 /* LevelDialogue59.sks */,
+			);
+			path = Dialogue;
+			sourceTree = "<group>";
+		};
+		B585B5042541D94B0020C8A4 /* Dialogue */ = {
+			isa = PBXGroup;
+			children = (
+				B585B4FF2541D9470020C8A4 /* LevelDialogue60.swift */,
+				B585B5002541D9470020C8A4 /* LevelDialogue60.sks */,
+			);
+			path = Dialogue;
+			sourceTree = "<group>";
+		};
+		B58C1225251C549B00C066E3 /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				B58C1226251C54BE00C066E3 /* Adine_Kirnberg.ttf */,
+				B58C1229251C55A900C066E3 /* AnastasiaScript.ttf */,
+				B58C122C251C566C00C066E3 /* Antikvar_Shadow.ttf */,
+			);
+			path = Font;
+			sourceTree = "<group>";
+		};
+		B58C1241251C956D00C066E3 /* Level16 */ = {
+			isa = PBXGroup;
+			children = (
+				B58C123D251C955900C066E3 /* Level16.swift */,
+				B58C123C251C955900C066E3 /* Level16.sks */,
+			);
+			path = Level16;
+			sourceTree = "<group>";
+		};
+		B58C1249251CAC1400C066E3 /* Level17 */ = {
+			isa = PBXGroup;
+			children = (
+				B58C1244251CAC0500C066E3 /* Level17.swift */,
+				B58C1245251CAC0500C066E3 /* Level17.sks */,
+			);
+			path = Level17;
+			sourceTree = "<group>";
+		};
+		B58C1251251CD80900C066E3 /* Level18 */ = {
+			isa = PBXGroup;
+			children = (
+				B58C124C251CD7FA00C066E3 /* Level18.swift */,
+				B58C124D251CD7FA00C066E3 /* Level18.sks */,
+				B52FF818254089FD00D68EA6 /* Dialogue */,
+			);
+			path = Level18;
+			sourceTree = "<group>";
+		};
+		B58C1259251E28E900C066E3 /* Level19 */ = {
+			isa = PBXGroup;
+			children = (
+				B58C1254251E28D600C066E3 /* Level19.swift */,
+				B58C1255251E28D600C066E3 /* Level19.sks */,
+			);
+			path = Level19;
+			sourceTree = "<group>";
+		};
+		B58C1261251E3E2F00C066E3 /* Level20 */ = {
+			isa = PBXGroup;
+			children = (
+				B58C125C251E3E0700C066E3 /* Level20.swift */,
+				B58C125D251E3E0700C066E3 /* Level20.sks */,
+				B52FF82F25408EA600D68EA6 /* Dialogue */,
+			);
+			path = Level20;
+			sourceTree = "<group>";
+		};
+		B5A17F30251F907D00910AEC /* Level23 */ = {
+			isa = PBXGroup;
+			children = (
+				B5A17F2B251F903B00910AEC /* Level23.swift */,
+				B5A17F2C251F903B00910AEC /* Level23.sks */,
+			);
+			path = Level23;
+			sourceTree = "<group>";
+		};
+		B5A17F38251FAF1F00910AEC /* Level24 */ = {
+			isa = PBXGroup;
+			children = (
+				B5A17F33251FAF1B00910AEC /* Level24.swift */,
+				B5A17F34251FAF1B00910AEC /* Level24.sks */,
+			);
+			path = Level24;
+			sourceTree = "<group>";
+		};
+		B5AB6CD8252240D00060B629 /* MenuLevel1_30 */ = {
+			isa = PBXGroup;
+			children = (
+				B5AB6CD22522405D0060B629 /* MenuLevel1_30.swift */,
+				B5AB6CD5252240720060B629 /* MenuLevel1_30.sks */,
+			);
+			path = MenuLevel1_30;
+			sourceTree = "<group>";
+		};
+		B5B2C991251F28BB00D2DE52 /* Level21 */ = {
+			isa = PBXGroup;
+			children = (
+				B5B2C98D251F286D00D2DE52 /* Level21.swift */,
+				B5B2C98C251F286D00D2DE52 /* Level21.sks */,
+			);
+			path = Level21;
+			sourceTree = "<group>";
+		};
+		B5B2C99A251F517C00D2DE52 /* Level22 */ = {
+			isa = PBXGroup;
+			children = (
+				B5B2C996251F514400D2DE52 /* Level22.swift */,
+				B5B2C995251F514400D2DE52 /* Level22.sks */,
+				B52FF8372540934100D68EA6 /* Dialogue */,
+			);
+			path = Level22;
+			sourceTree = "<group>";
+		};
+		B5C2AC7025219344003253A1 /* Level30 */ = {
+			isa = PBXGroup;
+			children = (
+				B5C2AC6B2521932D003253A1 /* Level30.swift */,
+				B5C2AC6A2521932D003253A1 /* Level30.sks */,
+				B52FF852254138EF00D68EA6 /* Dialogue */,
+				B5C2AC792521CE01003253A1 /* GameOver */,
+			);
+			path = Level30;
+			sourceTree = "<group>";
+		};
+		B5C2AC792521CE01003253A1 /* GameOver */ = {
+			isa = PBXGroup;
+			children = (
+				B5C2AC732521CC07003253A1 /* Level30GameOver.sks.swift */,
+				B5C2AC802521CF71003253A1 /* Level30GameOver.sks */,
+			);
+			path = GameOver;
+			sourceTree = "<group>";
+		};
+		B5C2E55C25205C05002C5439 /* Level25  */ = {
+			isa = PBXGroup;
+			children = (
+				B5C2E56325206E66002C5439 /* Level25.swift */,
+				B5C2E56225206E66002C5439 /* Level25.sks */,
+				B52FF8402540959700D68EA6 /* Dialogue */,
+			);
+			path = "Level25 ";
+			sourceTree = "<group>";
+		};
+		B5D66F0825207C0700FE57D0 /* Level26 */ = {
+			isa = PBXGroup;
+			children = (
+				B5D66EFD2520781B00FE57D0 /* Level26.swift */,
+				B5D66EFE2520781B00FE57D0 /* Level26.sks */,
+			);
+			path = Level26;
+			sourceTree = "<group>";
+		};
+		B5D66F152520939A00FE57D0 /* Level27 */ = {
+			isa = PBXGroup;
+			children = (
+				B5D66F0F2520937000FE57D0 /* Level27.swift */,
+				B5D66F102520937000FE57D0 /* Level27.sks */,
+				B52FF8492540964900D68EA6 /* Dialogue */,
+			);
+			path = Level27;
+			sourceTree = "<group>";
+		};
+		B5D66F1E2520BDF400FE57D0 /* Level28 */ = {
+			isa = PBXGroup;
+			children = (
+				B5D66F192520BD9500FE57D0 /* Level28.swift */,
+				B5D66F182520BD9400FE57D0 /* Level28.sks */,
+			);
+			path = Level28;
+			sourceTree = "<group>";
+		};
+		B5D66F272520ED0300FE57D0 /* Level29 */ = {
+			isa = PBXGroup;
+			children = (
+				B5D66F222520E12D00FE57D0 /* Level29.swift */,
+				B5D66F212520E12D00FE57D0 /* Level29.sks */,
+			);
+			path = Level29;
+			sourceTree = "<group>";
+		};
+		B5D678DB2519C80D007A72A7 /* Level14 */ = {
+			isa = PBXGroup;
+			children = (
+				B5B577A7251A094800AD5934 /* Level14.swift */,
+				B5B577A6251A094800AD5934 /* Level14.sks */,
+			);
+			path = Level14;
+			sourceTree = "<group>";
+		};
+		B5D678DD2519C819007A72A7 /* Level13 */ = {
+			isa = PBXGroup;
+			children = (
+				B5B577A22519F71D00AD5934 /* Level13.swift */,
+				B5B577A12519F71D00AD5934 /* Level13.sks */,
+			);
+			path = Level13;
+			sourceTree = "<group>";
+		};
+		B5D678DE2519C821007A72A7 /* Level12 */ = {
+			isa = PBXGroup;
+			children = (
+				B5B5779C2519E74400AD5934 /* Level12.swift */,
+				B5B5779D2519E74400AD5934 /* Level12.sks */,
+			);
+			path = Level12;
+			sourceTree = "<group>";
+		};
+		B5D678E02519C832007A72A7 /* Level11 */ = {
+			isa = PBXGroup;
+			children = (
+				B5D678F12519CE1E007A72A7 /* Level11.swift */,
+				B5D678F02519CE1E007A72A7 /* Level11.sks */,
+			);
+			path = Level11;
+			sourceTree = "<group>";
+		};
+		B5D678E22519C83A007A72A7 /* Level15 */ = {
+			isa = PBXGroup;
+			children = (
+				B5B577AC251A194900AD5934 /* Level15.swift */,
+				B5B577AB251A194800AD5934 /* Level15.sks */,
+				B52FF7F1253F167A00D68EA6 /* Dialogue */,
+			);
+			path = Level15;
+			sourceTree = "<group>";
+		};
+		B5F12BC02539A80500B98BC6 /* Level46 */ = {
+			isa = PBXGroup;
+			children = (
+				B5F12BBA2539A7F900B98BC6 /* Level46.swift */,
+				B5F12BBB2539A7F900B98BC6 /* Level46.sks */,
+			);
+			path = Level46;
+			sourceTree = "<group>";
+		};
+		B5F12BC92539C58000B98BC6 /* Level47 */ = {
+			isa = PBXGroup;
+			children = (
+				B5F12BCE2539D0D400B98BC6 /* Level47.swift */,
+				B5F12BCF2539D0D400B98BC6 /* Level47.sks */,
+			);
+			path = Level47;
+			sourceTree = "<group>";
+		};
+		B5FF8D4C2517A616007C9DEB /* Level6 */ = {
+			isa = PBXGroup;
+			children = (
+				B5FF8D2E2517A516007C9DEB /* Level6.swift */,
+				B5FF8D562517A7F8007C9DEB /* Level6.sks */,
+			);
+			path = Level6;
+			sourceTree = "<group>";
+		};
+		B5FF8D4E2517A620007C9DEB /* Level7 */ = {
+			isa = PBXGroup;
+			children = (
+				B5FF8D312517A523007C9DEB /* Level7.swift */,
+				B5FF8D5F251887AC007C9DEB /* Level7.sks */,
+				B52FF80C25401A3C00D68EA6 /* Dialogue */,
+			);
+			path = Level7;
+			sourceTree = "<group>";
+		};
+		B5FF8D502517A62A007C9DEB /* Level8 */ = {
+			isa = PBXGroup;
+			children = (
+				B5FF8D342517A532007C9DEB /* Level8.swift */,
+				B575039D2518CF080064D5F6 /* Level8.sks */,
+			);
+			path = Level8;
+			sourceTree = "<group>";
+		};
+		B5FF8D522517A631007C9DEB /* Level9 */ = {
+			isa = PBXGroup;
+			children = (
+				B5FF8D372517A53E007C9DEB /* Level9.swift */,
+				B5C6B70D2519B9F400AE8FDA /* Level9.sks */,
+				B52FF7F9254015F000D68EA6 /* Dialogue */,
+			);
+			path = Level9;
+			sourceTree = "<group>";
+		};
+		B5FF8D542517A639007C9DEB /* Level10 */ = {
+			isa = PBXGroup;
+			children = (
+				B5FF8D3A2517A54A007C9DEB /* Level10.swift */,
+				B5D678BA2519C395007A72A7 /* Level10.sks */,
+			);
+			path = Level10;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		AC68CD30233865A9002530AD /* Heroes */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AC68CD49233865AA002530AD /* Build configuration list for PBXNativeTarget "Heroes" */;
+			buildPhases = (
+				AC68CD2D233865A9002530AD /* Sources */,
+				AC68CD2E233865A9002530AD /* Frameworks */,
+				AC68CD2F233865A9002530AD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Heroes;
+			productName = "Elon's Adventure";
+			productReference = AC68CD31233865A9002530AD /* Heroes.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		AC68CD29233865A9002530AD /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1030;
+				LastUpgradeCheck = 1210;
+				ORGANIZATIONNAME = idevcode;
+				TargetAttributes = {
+					AC68CD30233865A9002530AD = {
+						CreatedOnToolsVersion = 10.3;
+					};
+				};
+			};
+			buildConfigurationList = AC68CD2C233865A9002530AD /* Build configuration list for PBXProject "Heroes" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = AC68CD28233865A9002530AD;
+			productRefGroup = AC68CD32233865A9002530AD /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				AC68CD30233865A9002530AD /* Heroes */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		AC68CD2F233865A9002530AD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B5AB6CD6252240720060B629 /* MenuLevel1_30.sks in Resources */,
+				B567005A254894240075206A /* goblinKillSound.wav in Resources */,
+				B5B2C98E251F286D00D2DE52 /* Level21.sks in Resources */,
+				AC2F6587233AEA3A0083AEE7 /* ?.m4a in Resources */,
+				B5B577A32519F71D00AD5934 /* Level13.sks in Resources */,
+				B52FF8012540196A00D68EA6 /* LevelDialogue4.sks in Resources */,
+				B52FF84F254138E900D68EA6 /* LevelDialogue30.sks in Resources */,
+				B538F6302534A60F00879453 /* Level38.sks in Resources */,
+				B52FF8B1254150C300D68EA6 /* LevelDialogue55.sks in Resources */,
+				B5A17F36251FAF1B00910AEC /* Level24.sks in Resources */,
+				B58C1227251C54BE00C066E3 /* Adine_Kirnberg.ttf in Resources */,
+				B52FF82225408B5200D68EA6 /* LevelDialogue18.sks in Resources */,
+				B52FF82C25408E9D00D68EA6 /* LevelDialogue20.sks in Resources */,
+				B567005D2548960C0075206A /* maleWoodmanSound.wav in Resources */,
+				AC68CD40233865A9002530AD /* Main.storyboard in Resources */,
+				B58C1239251C901200C066E3 /* RainLevel8.sks in Resources */,
+				B5D66F1A2520BD9500FE57D0 /* Level28.sks in Resources */,
+				AC2F6585233AEA3A0083AEE7 /* rewardSound.wav in Resources */,
+				B58C125F251E3E0700C066E3 /* Level20.sks in Resources */,
+				B52E2C4C253AD06D004909F1 /* Level52.sks in Resources */,
+				B5D66F002520781B00FE57D0 /* Level26.sks in Resources */,
+				B538F61E25347F8C00879453 /* Level37.sks in Resources */,
+				AC68CD37233865A9002530AD /* Level1.sks in Resources */,
+				B52E2C44253ABA74004909F1 /* Level51.sks in Resources */,
+				B5FF8D60251887AC007C9DEB /* Level7.sks in Resources */,
+				B57485D32536A4DB001D374E /* Level41.sks in Resources */,
+				B52E2C3B2539FB23004909F1 /* Level50.sks in Resources */,
+				B553E5BC25127B27000B07E1 /* Level4.sks in Resources */,
+				B5D66F0C2520867100FE57D0 /* RainLevel26.sks in Resources */,
+				B58C1236251C85E800C066E3 /* RainLevel7.sks in Resources */,
+				B52FF85E25413F1F00D68EA6 /* LevelDialogue32.sks in Resources */,
+				B58C124F251CD7FA00C066E3 /* Level18.sks in Resources */,
+				B5D678F22519CE1E007A72A7 /* Level11.sks in Resources */,
+				B57A853F25131D7200876A12 /* Level5.sks in Resources */,
+				B519FD7025355CCB00861982 /* Level39.sks in Resources */,
+				B5C2AC812521CF71003253A1 /* Level30GameOver.sks in Resources */,
+				B52E2C292539D649004909F1 /* Level48.sks in Resources */,
+				B553E5B425122175000B07E1 /* Level2.sks in Resources */,
+				B55D9321252B360C007D1D12 /* LevelBlue.sks in Resources */,
+				B585B4F92541816D0020C8A4 /* LevelDialogue59.sks in Resources */,
+				B585B561254321990020C8A4 /* backMusicMenu.mp3 in Resources */,
+				B5B2C997251F514400D2DE52 /* Level22.sks in Resources */,
+				AC68CD45233865AA002530AD /* LaunchScreen.storyboard in Resources */,
+				AC2F658D233AEAAB0083AEE7 /* GameOver.sks in Resources */,
+				B597AD652529E5E100C1BC37 /* Level32.sks in Resources */,
+				B52E2C312539ED38004909F1 /* Level49.sks in Resources */,
+				B553E5B825122A31000B07E1 /* Level3.sks in Resources */,
+				B5B577A8251A094800AD5934 /* Level14.sks in Resources */,
+				B52FF80A25401A3400D68EA6 /* LevelDialogue7.sks in Resources */,
+				B52FF88F25414AB800D68EA6 /* LevelDialogue45.sks in Resources */,
+				B5C2E56425206E66002C5439 /* Level25.sks in Resources */,
+				B52FF7EC253F165300D68EA6 /* LevelDialogue9.sks in Resources */,
+				B58C1231251C70F800C066E3 /* Portal.sks in Resources */,
+				B5D678E52519CB43007A72A7 /* Puddle.sks in Resources */,
+				B52FF7E9253F165300D68EA6 /* LevelDialogue15.sks in Resources */,
+				B585B53C2542D7F10020C8A4 /* teleportSound.wav in Resources */,
+				B5623FBF25376E3100E89F26 /* Level42.sks in Resources */,
+				B5F12BD12539D0D500B98BC6 /* Level47.sks in Resources */,
+				B52FF8A025414D5B00D68EA6 /* LevelDialogue50.sks in Resources */,
+				B58BB120254417A700013873 /* SnowMainBackground.sks in Resources */,
+				B585B5212542C6B20020C8A4 /* killSkeletonSound.wav in Resources */,
+				B585B55E2543202B0020C8A4 /* arrowKillSound.wav in Resources */,
+				B54A069C2534B93D006FBFBA /* PortalRed.sks in Resources */,
+				B575039E2518CF080064D5F6 /* Level8.sks in Resources */,
+				B57503B62518E0B00064D5F6 /* KillSkeleton.sks in Resources */,
+				B585B553254305340020C8A4 /* backMusic.mp3 in Resources */,
+				B56EDB1A253C5D2000D72C90 /* Level57.sks in Resources */,
+				B585B55A25431F270020C8A4 /* jumpSound.wav in Resources */,
+				AC2F6589233AEA3A0083AEE7 /* ?.wav in Resources */,
+				B566E3E12526FC61002D7F76 /* Level.sks in Resources */,
+				B58C1257251E28D600C066E3 /* Level19.sks in Resources */,
+				B585B54A2542EC6D0020C8A4 /* popSound.wav in Resources */,
+				B585B5472542E2370020C8A4 /* maleSound.wav in Resources */,
+				B55D931D252B26E0007D1D12 /* MenuLevel31_60.sks in Resources */,
+				B52FF8732541428100D68EA6 /* LevelDialogue35.sks in Resources */,
+				B5623FD42538A5C800E89F26 /* Level44.sks in Resources */,
+				B5803F3A252F4FDA00ABB691 /* Level35.sks in Resources */,
+				B52FF7ED253F165300D68EA6 /* LevelDialogue2.sks in Resources */,
+				B51F873B253D42E100D13B3D /* Level58.sks in Resources */,
+				B55D9308252B0B7F007D1D12 /* Level31.sks in Resources */,
+				B585B5132542C02D0020C8A4 /* arrowSound.wav in Resources */,
+				B57BCCDF254D3448002D1599 /* MenuLevel61_90.sks in Resources */,
+				B585B5442542DEAA0020C8A4 /* walkSound.wav in Resources */,
+				B57485C725359444001D374E /* Level40.sks in Resources */,
+				B54A06A02534C4B0006FBFBA /* FireTorch.sks in Resources */,
+				B52FF7E0253F11C900D68EA6 /* LevelDialogue1.sks in Resources */,
+				B5D66F0525207B3600FE57D0 /* RainLevel25.sks in Resources */,
+				B5F12BB725398E3600B98BC6 /* Level45.sks in Resources */,
+				B56EDAFF253BF34100D72C90 /* Level54.sks in Resources */,
+				B5AB6CD0252205A70060B629 /* KillArcher.sks in Resources */,
+				B5623FC9253878AD00E89F26 /* Level43.sks in Resources */,
+				B5F87119254D6F0D008E6F7C /* coinsSound.wav in Resources */,
+				B585B5022541D9470020C8A4 /* LevelDialogue60.sks in Resources */,
+				B5B577AD251A194900AD5934 /* Level15.sks in Resources */,
+				B52FF886254149E300D68EA6 /* LevelDialogue40.sks in Resources */,
+				B5803F31252F388B00ABB691 /* Level34.sks in Resources */,
+				B56EDB07253C0E2D00D72C90 /* Level55.sks in Resources */,
+				B58C1247251CAC0500C066E3 /* Level17.sks in Resources */,
+				B52930932532F6FD00044170 /* Assets.xcassets in Resources */,
+				B52E2C56253B3483004909F1 /* Level53.sks in Resources */,
+				B585B5102542B3220020C8A4 /* closeSound.wav in Resources */,
+				B5C2AC6C2521932D003253A1 /* Level30.sks in Resources */,
+				B585B564254322DE0020C8A4 /* backMusicGameArcher.mp3 in Resources */,
+				B52FF8A925414E0700D68EA6 /* LevelDialogue52.sks in Resources */,
+				B58C122A251C55A900C066E3 /* AnastasiaScript.ttf in Resources */,
+				B5D66F232520E12D00FE57D0 /* Level29.sks in Resources */,
+				B5C6B70E2519B9F500AE8FDA /* Level9.sks in Resources */,
+				B52FF8462540964600D68EA6 /* LevelDialogue27.sks in Resources */,
+				B52FF83E2540959000D68EA6 /* LevelDialogue25.sks in Resources */,
+				B52FF8342540933B00D68EA6 /* LevelDialogue22.sks in Resources */,
+				B55D9318252B0FE7007D1D12 /* KillWoodman.sks in Resources */,
+				B51F8744253D66EE00D13B3D /* Level59.sks in Resources */,
+				B5FF8D572517A7F8007C9DEB /* Level6.sks in Resources */,
+				B56EDB11253C33AB00D72C90 /* Level56.sks in Resources */,
+				B52FF87C254143E400D68EA6 /* LevelDialogue38.sks in Resources */,
+				B5A17F2E251F903B00910AEC /* Level23.sks in Resources */,
+				B52FF85825413F1900D68EA6 /* LevelDialogue31.sks in Resources */,
+				B5803F41252F681700ABB691 /* Level36.sks in Resources */,
+				B5B5779F2519E74500AD5934 /* Level12.sks in Resources */,
+				B55D9309252B0B7F007D1D12 /* Level33.sks in Resources */,
+				B57503B72518E0B00064D5F6 /* Assets.xcassets in Resources */,
+				B58C122D251C566C00C066E3 /* Antikvar_Shadow.ttf in Resources */,
+				B52FF89725414C9F00D68EA6 /* LevelDialogue48.sks in Resources */,
+				B5D66F122520937000FE57D0 /* Level27.sks in Resources */,
+				B5D678BB2519C395007A72A7 /* Level10.sks in Resources */,
+				B52FF86A2541417300D68EA6 /* LevelDialogue34.sks in Resources */,
+				B567E1B1253D9193009B0C4D /* Level60.sks in Resources */,
+				B5F12BBD2539A7F900B98BC6 /* Level46.sks in Resources */,
+				B58C123E251C955900C066E3 /* Level16.sks in Resources */,
+				B5C2AC882521E323003253A1 /* MenuScene.sks in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		AC68CD2D233865A9002530AD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B58B4DE724F8D47D005DC9B4 /* EnemyStateMachine.swift in Sources */,
+				B5D66F1B2520BD9500FE57D0 /* Level28.swift in Sources */,
+				B5803F32252F388B00ABB691 /* Level34.swift in Sources */,
+				B5623FDB2539633300E89F26 /* Level45.swift in Sources */,
+				B5D66F112520937000FE57D0 /* Level27.swift in Sources */,
+				B55D92BF2529EDD4007D1D12 /* Level32.swift in Sources */,
+				B52E2C4D253AD06D004909F1 /* Level52.swift in Sources */,
+				B5C2AC6D2521932D003253A1 /* Level30.swift in Sources */,
+				B52FF7DD253F11B300D68EA6 /* LevelDialogue1.swift in Sources */,
+				B52FF7EB253F165300D68EA6 /* LevelDialogue2.swift in Sources */,
+				B56EDAFE253BF34100D72C90 /* Level54.swift in Sources */,
+				B52FF850254138E900D68EA6 /* LevelDialogue30.swift in Sources */,
+				AC2F6591233AEC500083AEE7 /* Level1.swift in Sources */,
+				B5623FCA253878AD00E89F26 /* Level43.swift in Sources */,
+				B53B6E1F251079D900B7CF4A /* MenuScene.swift in Sources */,
+				B5B577AE251A194900AD5934 /* Level15.swift in Sources */,
+				B5623FBE25376E3100E89F26 /* Level42.swift in Sources */,
+				B52FF85925413F1900D68EA6 /* LevelDialogue31.swift in Sources */,
+				B56EDB06253C0E2D00D72C90 /* Level55.swift in Sources */,
+				B5803F44252F684400ABB691 /* Level36.swift in Sources */,
+				B52FF8A125414D5B00D68EA6 /* LevelDialogue50.swift in Sources */,
+				B5F12BBC2539A7F900B98BC6 /* Level46.swift in Sources */,
+				B52FF8002540196A00D68EA6 /* LevelDialogue4.swift in Sources */,
+				B5B2C998251F514400D2DE52 /* Level22.swift in Sources */,
+				B52FF8B2254150C300D68EA6 /* LevelDialogue55.swift in Sources */,
+				B56EDB10253C33AB00D72C90 /* Level56.swift in Sources */,
+				B52E2C57253B3483004909F1 /* Level53.swift in Sources */,
+				B585B4FA2541816D0020C8A4 /* LevelDialogue59.swift in Sources */,
+				B52FF89025414AB800D68EA6 /* LevelDialogue45.swift in Sources */,
+				B52FF7EA253F165300D68EA6 /* LevelDialogue9.swift in Sources */,
+				AC68CD3B233865A9002530AD /* GameScene.swift in Sources */,
+				B57BCCDE254D3448002D1599 /* MenuLevel61_90.swift in Sources */,
+				B52FF85D25413F1F00D68EA6 /* LevelDialogue32.swift in Sources */,
+				B585B55625431BD10020C8A4 /* MusicPlayer.swift in Sources */,
+				B519FD7125355CCB00861982 /* Level39.swift in Sources */,
+				B52FF82125408B5200D68EA6 /* LevelDialogue18.swift in Sources */,
+				B52FF82D25408E9D00D68EA6 /* LevelDialogue20.swift in Sources */,
+				B52FF80925401A3400D68EA6 /* LevelDialogue7.swift in Sources */,
+				B5AB6CD32522405D0060B629 /* MenuLevel1_30.swift in Sources */,
+				B5D66EFF2520781B00FE57D0 /* Level26.swift in Sources */,
+				B5D66F242520E12D00FE57D0 /* Level29.swift in Sources */,
+				B5A17F35251FAF1B00910AEC /* Level24.swift in Sources */,
+				B52FF8352540933B00D68EA6 /* LevelDialogue22.swift in Sources */,
+				B52FF7EE253F165300D68EA6 /* LevelDialogue15.swift in Sources */,
+				B5FF8D2F2517A516007C9DEB /* Level6.swift in Sources */,
+				B58C1246251CAC0500C066E3 /* Level17.swift in Sources */,
+				ACAB994523398D4B00A079CC /* PlayerStateMachine.swift in Sources */,
+				B5623FD32538A5C800E89F26 /* Level44.swift in Sources */,
+				B57A853D25131D5300876A12 /* Level5.swift in Sources */,
+				B585B5012541D9470020C8A4 /* LevelDialogue60.swift in Sources */,
+				B52E2C2A2539D649004909F1 /* Level48.swift in Sources */,
+				B52FF8472540964600D68EA6 /* LevelDialogue27.swift in Sources */,
+				B52FF82725408C0A00D68EA6 /* GameViewController.swift in Sources */,
+				B553E5B625122A16000B07E1 /* Level3.swift in Sources */,
+				B52E2C43253ABA74004909F1 /* Level51.swift in Sources */,
+				B56EDB19253C5D2000D72C90 /* Level57.swift in Sources */,
+				B51F873A253D42E100D13B3D /* Level58.swift in Sources */,
+				B52E2C3C2539FB23004909F1 /* Level50.swift in Sources */,
+				B52FF887254149E300D68EA6 /* LevelDialogue40.swift in Sources */,
+				B567E1B2253D9193009B0C4D /* Level60.swift in Sources */,
+				B538F6262534A34400879453 /* Level38.swift in Sources */,
+				B5F12BD02539D0D500B98BC6 /* Level47.swift in Sources */,
+				B538F61D25347F8C00879453 /* Level37.swift in Sources */,
+				B5FF8D352517A532007C9DEB /* Level8.swift in Sources */,
+				AC2F658F233AEB210083AEE7 /* GameOver.swift in Sources */,
+				B58C124E251CD7FA00C066E3 /* Level18.swift in Sources */,
+				AC2F6593233B01380083AEE7 /* Level2.swift in Sources */,
+				B553E5BA25127B18000B07E1 /* Level4.swift in Sources */,
+				B5B577A9251A094800AD5934 /* Level14.swift in Sources */,
+				B52FF8AA25414E0700D68EA6 /* LevelDialogue52.swift in Sources */,
+				B58C1256251E28D600C066E3 /* Level19.swift in Sources */,
+				B57485D22536A4DB001D374E /* Level41.swift in Sources */,
+				B52E2C302539ED38004909F1 /* Level49.swift in Sources */,
+				B51F8745253D66EE00D13B3D /* Level59.swift in Sources */,
+				B5A17F2D251F903B00910AEC /* Level23.swift in Sources */,
+				B5B5779E2519E74500AD5934 /* Level12.swift in Sources */,
+				B5D678F32519CE1E007A72A7 /* Level11.swift in Sources */,
+				B58C123F251C955900C066E3 /* Level16.swift in Sources */,
+				B5FF8D3B2517A54A007C9DEB /* Level10.swift in Sources */,
+				AC68CD35233865A9002530AD /* AppDelegate.swift in Sources */,
+				B52FF83D2540959000D68EA6 /* LevelDialogue25.swift in Sources */,
+				B5B2C98F251F286D00D2DE52 /* Level21.swift in Sources */,
+				B5FF8D322517A523007C9DEB /* Level7.swift in Sources */,
+				B5C2E56525206E66002C5439 /* Level25.swift in Sources */,
+				B5B577A42519F71D00AD5934 /* Level13.swift in Sources */,
+				B55F7EDF24F6528A00AEB9A3 /* SKButton.swift in Sources */,
+				B55D931C252B26E0007D1D12 /* MenuLevel31_60.swift in Sources */,
+				B52FF8692541417300D68EA6 /* LevelDialogue34.swift in Sources */,
+				B55D930A252B0B7F007D1D12 /* Level33.swift in Sources */,
+				AC2F6599233B076B0083AEE7 /* Sound.swift in Sources */,
+				B58C125E251E3E0700C066E3 /* Level20.swift in Sources */,
+				B5C2AC742521CC07003253A1 /* Level30GameOver.sks.swift in Sources */,
+				B55D930B252B0B7F007D1D12 /* Level31.swift in Sources */,
+				B5FF8D382517A53E007C9DEB /* Level9.swift in Sources */,
+				B5803F39252F4FDA00ABB691 /* Level35.swift in Sources */,
+				B52FF8722541428100D68EA6 /* LevelDialogue35.swift in Sources */,
+				B52FF87D254143E400D68EA6 /* LevelDialogue38.swift in Sources */,
+				B52FF89825414C9F00D68EA6 /* LevelDialogue48.swift in Sources */,
+				B57485C825359444001D374E /* Level40.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		AC68CD3E233865A9002530AD /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AC68CD3F233865A9002530AD /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		AC68CD43233865AA002530AD /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AC68CD44233865AA002530AD /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		AC68CD47233865AA002530AD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		AC68CD48233865AA002530AD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		AC68CD4A233865AA002530AD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 5;
+				DEVELOPMENT_TEAM = TPM5M6DSM5;
+				INFOPLIST_FILE = Heroes/Main/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.5;
+				PRODUCT_BUNDLE_IDENTIFIER = com.trioOfHeroes.game;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		AC68CD4B233865AA002530AD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 5;
+				DEVELOPMENT_TEAM = TPM5M6DSM5;
+				INFOPLIST_FILE = Heroes/Main/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.5;
+				PRODUCT_BUNDLE_IDENTIFIER = com.trioOfHeroes.game;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		AC68CD2C233865A9002530AD /* Build configuration list for PBXProject "Heroes" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AC68CD47233865AA002530AD /* Debug */,
+				AC68CD48233865AA002530AD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AC68CD49233865AA002530AD /* Build configuration list for PBXNativeTarget "Heroes" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AC68CD4A233865AA002530AD /* Debug */,
+				AC68CD4B233865AA002530AD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = AC68CD29233865A9002530AD /* Project object */;
+}
