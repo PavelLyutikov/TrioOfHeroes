@@ -28,8 +28,8 @@ ____
 
 ____
 
-<img src="https://github.com/PavelLyutikov/TrioOfHeroes/blob/master/screenshot/Simulator%20Screen%20Shot%20-%20iPhone%20Xs%20Max.png?raw=true" title="" alt="screenshot" height="200"><img src="https://github.com/PavelLyutikov/TrioOfHeroes/blob/master/screenshot/Group%204.png?raw=true" title="" alt="screenshot" height="200">
-<img src="https://github.com/PavelLyutikov/TrioOfHeroes/blob/master/screenshot/Group%201.png?raw=true" title="" alt="screenshot" height="200"><img src="https://github.com/PavelLyutikov/TrioOfHeroes/blob/master/screenshot/Group%202.png?raw=true" title="" alt="screenshot" height="200">
+<img src="https://github.com/PavelLyutikov/TrioOfHeroes/blob/master/screenshot/Simulator%20Screen%20Shot%20-%20iPhone%20Xs%20Max.png?raw=true" title="" alt="screenshot" height=""> <img src="https://github.com/PavelLyutikov/TrioOfHeroes/blob/master/screenshot/Group%204.png?raw=true" title="" alt="screenshot" height="">
+<img src="https://github.com/PavelLyutikov/TrioOfHeroes/blob/master/screenshot/Group%201.png?raw=true" title="" alt="screenshot" height=""> <img src="https://github.com/PavelLyutikov/TrioOfHeroes/blob/master/screenshot/Group%202.png?raw=true" title="" alt="screenshot" height="">
 
 ____
 
