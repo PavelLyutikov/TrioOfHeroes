@@ -4,7 +4,7 @@ this is another game - platformer written in Swift. I always try to do different
 
 ____
 
-<img src="https://github.com/PavelLyutikov/TrioOfHeroes/blob/master/screenshot/1024x768.jpg?raw=true" title="" alt="screenshot" height="250">       <img src="https://github.com/PavelLyutikov/TrioOfHeroes/blob/master/screenshot/Eng1.png?raw=true" title="" alt="screenshot" height="250">
+<img src="https://github.com/PavelLyutikov/TrioOfHeroes/blob/master/screenshot/1024x768.jpg?raw=true" title="" alt="screenshot" height="200"> <img src="https://github.com/PavelLyutikov/TrioOfHeroes/blob/master/screenshot/Eng1.png?raw=true" title="" alt="screenshot" height="200">
 
 ____
 
@@ -28,7 +28,8 @@ ____
 
 ____
 
-![screenshot](https://im.wampi.ru/2022/08/03/Group-165.png)
+<img src="https://github.com/PavelLyutikov/TrioOfHeroes/blob/master/screenshot/Simulator%20Screen%20Shot%20-%20iPhone%20Xs%20Max.png?raw=true" title="" alt="screenshot" height="200"> <img src="https://github.com/PavelLyutikov/TrioOfHeroes/blob/master/screenshot/Group%204.png?raw=true" title="" alt="screenshot" height="200">
+<img src="https://github.com/PavelLyutikov/TrioOfHeroes/blob/master/screenshot/Group%201.png?raw=true" title="" alt="screenshot" height="200"> <img src="https://github.com/PavelLyutikov/TrioOfHeroes/blob/master/screenshot/Group%202.png?raw=true" title="" alt="screenshot" height="200">
 
 ____
 
