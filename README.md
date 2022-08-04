@@ -4,8 +4,7 @@ this is another game - platformer written in Swift. I always try to do different
 
 ____
 
-![]()
-
+<img title="" src="https://github.com/PavelLyutikov/TrioOfHeroes/blob/master/screenshot/1024x768.jpg?raw=true" alt="screenshot" width="300" data-align="center">
 ____
 
 ### Functions
@@ -28,7 +27,9 @@ ____
 
 ____
 
-![screenshot](https://im.wampi.ru/2022/08/03/Group-165.png)
+<img src="https://github.com/PavelLyutikov/TrioOfHeroes/blob/master/screenshot/Simulator%20Screen%20Shot%20-%20iPhone%20Xs%20Max.png?raw=true" title="" alt="screenshot" height="150" data-align="center"> <img src="https://github.com/PavelLyutikov/TrioOfHeroes/blob/master/screenshot/Group%204.png?raw=true" title="" alt="screenshot" height="150" data-align="center">
+
+<img src="https://github.com/PavelLyutikov/TrioOfHeroes/blob/master/screenshot/Group%201.png?raw=true" title="" alt="screenshot" height="150" data-align="center"> <img src="https://github.com/PavelLyutikov/TrioOfHeroes/blob/master/screenshot/Group%202.png?raw=true" title="" alt="screenshot" height="150" data-align="center">
 
 ____
 
