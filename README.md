@@ -4,7 +4,7 @@ this is another game - platformer written in Swift. I always try to do different
 
 ____
 
-<img src="https://github.com/PavelLyutikov/TrioOfHeroes/blob/master/screenshot/1024x768.jpg?raw=true" title="" alt="screenshot" height="300">       <img src="https://github.com/PavelLyutikov/TrioOfHeroes/blob/master/screenshot/Eng1.png?raw=true" title="" alt="screenshot" height="300">
+<img src="https://github.com/PavelLyutikov/TrioOfHeroes/blob/master/screenshot/1024x768.jpg?raw=true" title="" alt="screenshot" height="250">       <img src="https://github.com/PavelLyutikov/TrioOfHeroes/blob/master/screenshot/Eng1.png?raw=true" title="" alt="screenshot" height="250">
 
 ____
 
