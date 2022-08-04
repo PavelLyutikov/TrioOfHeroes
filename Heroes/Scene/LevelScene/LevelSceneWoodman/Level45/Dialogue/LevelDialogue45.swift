@@ -10,6 +10,7 @@ import Foundation
 import SpriteKit
 import GameplayKit
 
+@available(iOS 11.0, *)
 class LevelDialogue45: SKScene {
 
     let dial = SKSpriteNode(imageNamed: "dialogue45")
@@ -83,13 +84,28 @@ class LevelDialogue45: SKScene {
             dial.zPosition = 3001
             addChild(dial)
             
+            var positionY: CGFloat!
+            switch Locale.current.languageCode {
+            case "ru":
+                positionY = -40
+            case "zh":
+                positionY = -40
+            case "zh-Hans":
+                positionY = -40
+            case "zh-Hant":
+                positionY = -40
+            case "ja":
+                positionY = -40
+            default:
+                positionY = -60
+            }
             
             label.text = NSLocalizedString("Где мой брат чудовище?!", comment: "45")
             label.fontColor = .black
             label.fontSize = 26
             label.numberOfLines = 6
             label.preferredMaxLayoutWidth = 400
-            label.position = CGPoint(x: 0, y: -40)
+            label.position = CGPoint(x: 0, y: positionY)
             label.zPosition = 3002
             addChild(label)
             
@@ -123,12 +139,22 @@ class LevelDialogue45: SKScene {
             dial3.zPosition = 3001
             addChild(dial3)
             
+            var positionY: CGFloat!
+            switch Locale.current.languageCode {
+            case "ru":
+                positionY = -80
+            case "es":
+                positionY = -80
+            default:
+                positionY = -60
+            }
+            
             label3.text = NSLocalizedString("Глупое создание. В виде облака вы мне больше нравитесь!!", comment: "45_3")
             label3.fontColor = .black
             label3.fontSize = 26
             label3.numberOfLines = 6
             label3.preferredMaxLayoutWidth = 350
-            label3.position = CGPoint(x: 0, y: -80)
+            label3.position = CGPoint(x: 0, y: positionY)
             label3.zPosition = 3002
             addChild(label3)
         }

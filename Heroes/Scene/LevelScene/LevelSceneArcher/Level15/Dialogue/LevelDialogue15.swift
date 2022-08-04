@@ -10,6 +10,7 @@ import Foundation
 import SpriteKit
 import GameplayKit
 
+@available(iOS 11.0, *)
 class LevelDialogue15: SKScene {
 
     let dial = SKSpriteNode(imageNamed: "dialogue15")
@@ -63,12 +64,20 @@ class LevelDialogue15: SKScene {
         dial.zPosition = 3001
         addChild(dial)
         
+        var positionY: CGFloat!
+        switch Locale.current.languageCode {
+        case "ja":
+            positionY = -70
+        default:
+            positionY = -90
+        }
+        
         label.text = NSLocalizedString("Кто ты такой, чтобы вставать на моем пути жалкий лучник?! Лучше уноси ноги - пока цел!", comment: "15")
         label.fontColor = .black
-        label.fontSize = 30
+        label.fontSize = 26
         label.numberOfLines = 6
-        label.preferredMaxLayoutWidth = 400
-        label.position = CGPoint(x: -10, y: -90)
+        label.preferredMaxLayoutWidth = 360
+        label.position = CGPoint(x: -10, y: positionY)
         label.zPosition = 3002
         addChild(label)
         

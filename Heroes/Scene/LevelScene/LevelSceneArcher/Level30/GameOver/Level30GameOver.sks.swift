@@ -9,6 +9,7 @@
 import UIKit
 import SpriteKit
 
+@available(iOS 11.0, *)
 class Level30GameOver: GameScene {
 
     let dial = SKSpriteNode(imageNamed: "dialogue30_3")
@@ -20,6 +21,11 @@ class Level30GameOver: GameScene {
     override func didMove(to view: SKView) {
         super.didMove(to: view)
         
+        if backgroundMusic == true {
+            playBackgroundMenuMusic(fileName: "backMusicMenu.mp3")
+            bossSound.stop()
+        }
+            
         spawnDialogue()
         closeButton()
     }
@@ -50,12 +56,34 @@ class Level30GameOver: GameScene {
         dial.zPosition = 3001
         addChild(dial)
         
-        label.text = NSLocalizedString("Ты будешь моей марионеткой, лучник!!", comment: "30_2")
+        var positionY: CGFloat!
+        var positionX: CGFloat!
+        var size: CGFloat!
+        switch Locale.current.languageCode {
+        case "ru":
+            positionY = -110
+            positionX = 20
+            size = 28
+        case "ja":
+            positionY = -115
+            positionX = 30
+            size = 24
+        case "de":
+            positionY = -115
+            positionX = 30
+            size = 28
+        default:
+            positionY = -90
+            positionX = 20
+            size = 28
+        }
+        
+        label.text = NSLocalizedString("Ты будешь моей марионеткой, лучник!!", comment: "30_gameOver")
         label.fontColor = .black
-        label.fontSize = 28
+        label.fontSize = size
         label.numberOfLines = 10
         label.preferredMaxLayoutWidth = 250
-        label.position = CGPoint(x: 20, y: -110)
+        label.position = CGPoint(x: positionX, y: positionY)
         label.zPosition = 3002
         addChild(label)
         

@@ -10,6 +10,7 @@ import Foundation
 import SpriteKit
 import GameplayKit
 
+@available(iOS 11.0, *)
 class LevelDialogue2: SKScene {
 
     let dial = SKSpriteNode(imageNamed: "dialogue2")
@@ -46,12 +47,22 @@ class LevelDialogue2: SKScene {
         dial.zPosition = 3001
         addChild(dial)
         
+        var positionY: CGFloat!
+        switch Locale.current.languageCode {
+        case "ru":
+            positionY = -80
+        case "ja":
+            positionY = -80
+        default:
+            positionY = -60
+        }
+        
         label.text = NSLocalizedString("Жители деревни действительно были правы. Но кто стоит за этим? Раньше я не наблюдал блуждающих скелетов самих по себе...", comment: "2")
         label.fontColor = .black
         label.fontSize = 28
         label.numberOfLines = 10
         label.preferredMaxLayoutWidth = 450
-        label.position = CGPoint(x: 60, y: -80)
+        label.position = CGPoint(x: 60, y: positionY)
         label.zPosition = 3002
         addChild(label)
         

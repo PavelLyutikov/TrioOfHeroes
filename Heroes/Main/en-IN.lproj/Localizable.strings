@@ -1,0 +1,143 @@
+/* уровень 10 */
+"уровень 10" = "level 10";
+
+/* уровень 5 */
+"уровень 5" = "level 5";
+
+/* открыт */
+"открыт" = "is Open";
+
+/* Победа! */
+"Победа!" = "Victory!";
+
+/* Упс... бонус закончился! */
+"Упс... бонус закончился!" = "Oops... the bonus is over!";
+
+/* 1 */
+"Приветствую тебя, странник просторов AppStore, предлагаю тебе погрузиться в нашу историю. Жители деревни жалуются на то, что в лесу завелась нечисть. Слабо верится, но проверить все же нужно! Ты в деле?" = "I welcome you, wanderer of the AppStore expanses, and invite you to dive into our history. Residents of the village complain that there are evil spirits in the forest. It's hard to believe, but you still need to check! Are you in?";
+
+/* 1_2 */
+"ээЭрРэРррэ" = "eeErReRrre";
+
+/* 2 */
+"Жители деревни действительно были правы. Но кто стоит за этим? Раньше я не наблюдал блуждающих скелетов самих по себе..." = "The villagers were indeed right. But who is behind this? I haven't seen wandering skeletons on their own before...";
+
+/* 4 */
+"Я заметил в груди скелетов какой-то камень, горящий ярко-зеленым цветом. Явно здесь не обошлось без магии. Похоже нас ждет длительное путешествие, мой друг!" = "I noticed a stone burning bright green in the chest of the skeletons. Clearly, there was some magic involved. It looks like a long journey ahead of us, my friend!";
+
+/* 7 */
+"Чем дальше в лес, тем больше костяшек!!" = "The further into the forest, the more walking bones!!";
+
+/* 9 */
+"Лучше бы вы так и оставались в земле костяшки!" = "Would be better if you remained in the earth!";
+
+/* 15 */
+"Кто ты такой, чтобы вставать на моем пути жалкий лучник?! Лучше уноси ноги - пока цел!" = "Who are you to stand in my way, you pathetic Archer?! Better get out of here while you're still alive!";
+
+/* 15_2 */
+"Да этот колдун настроен серьезно, жаль его! В следующую нашу встречу ты так просто не отделаешься!!" = "Yes, this sorcerer is serious, sorry for him! The next time we meet, you won't get off so easily!!";
+
+/* 18 */
+"У костяшек просто нет шансов, только нужно немного поднажать, дружище!" = "The skeletons just don't stand a chance, you just need to push a little harder, my friend!";
+
+/* 20 */
+"Лучник оказался еще той занозой, я его недооценил. Он должен служить мне." = "The Archer was very strong, I underestimated him. He must serve me.";
+
+/* 20_2 */
+"Посмотрим как ты справишься с ним!" = "Let's see how you handle it!";
+
+/* 22 */
+"Ты видел этот размер ноги?! Да он словно амбар." = "Did you see the size of his legs?! It's huge!";
+
+/* 25 */
+"Кажется погода портится. Я чувствую, что остался последний рывок, мы близки к концу пути.." = "The weather seems to be getting worse. I feel that there is not much left, we are close to the end of the road..";
+
+/* 27 */
+"Не думаю, что эти деревья сломал ветер, кажется мне, что это был великан, чьи следы мы нашли." = "I don't think the wind broke these trees, but I think it was the giant whose tracks we found.";
+
+/* 30 */
+"ГРБУХГРБАМ!!!" = "GRBBooomGRB!!!";
+
+/* 30_2 */
+"Вот мы и нашли его!" = "So we found it!";
+
+/* 30_gameOver */
+"Ты будешь моей марионеткой, лучник!!" = "You will be my puppet!!";
+
+/* 31_0 */
+"В тоже время - в другой части леса..." = "At the same time, in another part of the forest...";
+
+/* 31 */
+"Пора заканчивать на сегодня, солнце уже садится." = "It's time to finish for today, the sun is already setting.";
+
+/* 31_2 */
+"Брат, берегись!!!" = "Brother, look out!!!";
+
+/* 31_3 */
+"Какого черта?!?" = "What the hell?!?";
+
+/* 31_4 */
+"РррРредарРрр" = "RrrRrfoodrRrr";
+
+/* 31_5 */
+"Сегодня вы отведаете только мой топор!" = "Today you will only taste my axe!";
+
+/* 32 */
+"Я обязательно найду тебя брат, во чтобы-то мне это не стало..." = "I will definitely find you brother, nothing will stop me...";
+
+/* 34 */
+"Твой брат доставляет мне много хлопот, ты станешь приманкой чтобы заманить его в ловушку!" = "Your brother is giving me a lot of trouble, you will be the bait to lure him into a trap!";
+
+/* 35 */
+"Здравствуй дедушка. Что ты делаешь в такой глуши?" = "Hello, grandpa. What are you doing in the woods so far away?";
+
+/* 35_2 */
+"Для кого-то глуш, а для кого-то дом. Моя хижина здесь недалеко. Зайдешь в гости?" = "For someone the forest, and for someone the house. My cabin is not far from here. Are you coming to visit?";
+
+/* 35_3 */
+"Спасибо, но мне нужно спешить! Моего брата похитили." = "Thank you, but I need to hurry! My brother was kidnapped.";
+
+/* 35_4 */
+"Я видел как какого-то парня зеленые твари тащили за реку, что за лесом. Они обитают в пещерах, туда и утащили." = "I saw some guy being dragged by green things across the river, beyond the woods. They live in caves, and they took him there.";
+
+/* 35_5 */
+"Спасибо дедушка, поспешу в пещеры!!" = "Thank you grandpa, I'll hurry to the caves!!";
+
+/* 38 */
+"Это ведь сапог моего брата, значит мы на правильном пути!" = "This is my brother's boot, so we're on the right track!";
+
+/* 40 */
+"Так мы ничего не узнаем, нужно изловить одного живым." = "So we won't know anything, we need to catch one alive.";
+
+/* 45 */
+"Где мой брат чудовище?!" = "Where is my brother, the monster?!";
+
+/* 45_2 */
+"РрррРРрРр" = "RrrrRRrRr";
+
+/* 45_3 */
+"Глупое создание. От тебя нет никакой пользы!!" = "Stupid creature. You're no good at all!!";
+
+/* 48 */
+"Я вырублю всю вашу пещеру и каждого кто будет стоять на моем пути, если потребуется!" = "I will cut down entire cave and anyone who stands in my way if necessary!";
+
+/* 50 */
+"Чем дальше в пещеры, тем больше гоблинов! У меня плохое предчувствие.." = "The further into the caves, the more goblins! I have a bad feeling about this..";
+
+/* 52 */
+"Он прошел дальше, чем я предполагал, нам нужно подкрепление." = "He's gone further than I thought, we need backup.";
+
+/* 55 */
+"Мне нужен самый мощный кристалл этой пещеры!!" = "I need the most powerful crystal in this cave!!";
+
+/* 59 */
+"Брат, ты слишком слаб чтобы сражаться. Ты должен бежать к Ардану и рассказать ему все, лишь он может помочь нам! Беги брат, я справлюсь!!" = "Brother, you are too weak to fight. You must run to Ardan and tell him everything, only He can help us! Run brother, I can handle it!!";
+
+/* 60 */
+"Хороший экземпляр в мое войско." = "A good warrior for my army.";
+
+/* 60_2 */
+"Ни за что, я лучше умру!" = "No way, I'd rather die!";
+
+/* 60_3 */
+"Это запросто!" = "Whatever you say!";

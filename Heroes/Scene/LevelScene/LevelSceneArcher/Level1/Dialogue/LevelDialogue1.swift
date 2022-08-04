@@ -10,6 +10,7 @@ import Foundation
 import SpriteKit
 import GameplayKit
 
+@available(iOS 11.0, *)
 class LevelDialogue1: SKScene {
 
     let dial = SKSpriteNode(imageNamed: "dialogue1")
@@ -63,12 +64,32 @@ class LevelDialogue1: SKScene {
         dial.zPosition = 3001
         addChild(dial)
         
-        label.text = NSLocalizedString("Приветствую тебя, странник просторов AppStore, предлагаю тебе погрузиться в нашу историю. Жители деревни жалуются на то, что в лесу завелась нечесть. Слабо верится, но проверить все же нужно! Ты в деле?", comment: "1")
+        var positionY: CGFloat!
+        var size: CGFloat!
+        switch Locale.current.languageCode {
+        case "ru":
+            positionY = -120
+            size = 28
+        case "es":
+            positionY = -120
+            size = 28
+        case "ja":
+            positionY = -120
+            size = 22
+        case "de":
+            positionY = -120
+            size = 26
+        default:
+            positionY = -100
+            size = 28
+        }
+            
+        label.text = NSLocalizedString("Приветствую тебя, странник просторов AppStore, предлагаю тебе погрузиться в нашу историю. Жители деревни жалуются на то, что в лесу завелась нечисть. Слабо верится, но проверить все же нужно! Ты в деле?", comment: "1")
         label.fontColor = .black
-        label.fontSize = 28
+        label.fontSize = size
         label.numberOfLines = 10
         label.preferredMaxLayoutWidth = 450
-        label.position = CGPoint(x: 60, y: -120)
+        label.position = CGPoint(x: 60, y: positionY)
         label.zPosition = 3002
         addChild(label)
         
@@ -85,12 +106,20 @@ class LevelDialogue1: SKScene {
         dial2.zPosition = 3000
         addChild(dial2)
         
+        var positionY: CGFloat!
+        switch Locale.current.languageCode {
+        case "ru":
+            positionY = 0
+        default:
+            positionY = -20
+        }
+        
         label2.text = NSLocalizedString("ээЭрРэРррэ", comment: "1_2")
         label2.fontColor = .black
         label2.fontSize = 30
         label2.numberOfLines = 6
         label2.preferredMaxLayoutWidth = 400
-        label2.position = CGPoint(x: 60, y: 0)
+        label2.position = CGPoint(x: 60, y: positionY)
         label2.zPosition = 3001
         addChild(label2)
     }

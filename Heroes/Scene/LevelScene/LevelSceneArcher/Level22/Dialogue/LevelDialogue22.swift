@@ -10,6 +10,7 @@ import Foundation
 import SpriteKit
 import GameplayKit
 
+@available(iOS 11.0, *)
 class LevelDialogue22: SKScene {
 
     var close: SKButton!
@@ -47,12 +48,24 @@ class LevelDialogue22: SKScene {
         dial.zPosition = 3001
         addChild(dial)
         
+        var positionY: CGFloat!
+        switch Locale.current.languageCode {
+        case "ru":
+            positionY = 0
+        case "ja":
+            positionY = -10
+        case "de":
+            positionY = 0
+        default:
+            positionY = 20
+        }
+        
         label.text = NSLocalizedString("Ты видел этот размер ноги?! Да он словно амбар.", comment: "22")
         label.fontColor = .black
         label.fontSize = 28
         label.numberOfLines = 10
         label.preferredMaxLayoutWidth = 300
-        label.position = CGPoint(x: -20, y: 0)
+        label.position = CGPoint(x: -20, y: positionY)
         label.zPosition = 3002
         addChild(label)
         

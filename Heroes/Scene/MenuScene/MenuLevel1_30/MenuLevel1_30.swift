@@ -1,6 +1,6 @@
 //
 //  MenuLevel1_30.swift
-//  Elon's Adventure
+//  Trio Of Heroes
 //
 //  Created by mac on 28.09.2020.
 //  Copyright © 2020 idevcode. All rights reserved.
@@ -9,10 +9,11 @@
 import UIKit
 import SpriteKit
 
-    
+@available(iOS 11.0, *)
 class MenuLevel1_30: GameScene {
     
     let centreView = UIView()
+    var screenLoad: Bool = false
     
     override func didMove(to view: SKView) {
         
@@ -24,14 +25,31 @@ class MenuLevel1_30: GameScene {
             }
         }
         
+        if noMoreBonusJump == true {
+            spawnNotificationNoMoreBonus()
+            UserDefaults.standard.set(false, forKey: "noMoreBonusHeart")
+            UserDefaults.standard.set(false, forKey: "noMoreBonus2Heart")
+        } else {
+            if noMoreBonusHeart == true {
+                spawnNotificationNoMoreBonus()
+            }
+            if noMoreBonus2Heart == true {
+                spawnNotificationNoMoreBonus()
+            }
+        }
+        
         spawnBackground()
         closeButton()
         spawnLevelButton()
         
+        Timer.scheduledTimer(withTimeInterval: 1.0, repeats: false) { (timer) in
+            self.screenLoad = true
+        }
+        
         if winLevel30 == true {
-        swipe()
         spawnArrowUI()
         }
+        swipe()
     }
 //MARK: - Swipe
     func swipe() {
@@ -63,16 +81,313 @@ class MenuLevel1_30: GameScene {
     }
     
     func upRight() {
+        if winLevel30 == true && screenLoad == true {
+//            Timer.scheduledTimer(withTimeInterval: 0.2, repeats: false) { (timer) in
         let scene = MenuLevel31_60(fileNamed: "MenuLevel31_60")
         
         let transition = SKTransition.push(with: .left, duration: 1.0)
         scene!.scaleMode = .aspectFill
         self.view?.presentScene(scene!, transition: transition)
-        
-        self.centreView.removeFromSuperview()
+//            }
+        self.centreView.isHidden = true
+        }
     }
     func upLeft() {
         
+    }
+//MARK: - NoMoreBonusJump
+    func spawnNotificationNoMoreBonus() {
+        let backPanel = SKSpriteNode(imageNamed: "windowBackground")
+        backPanel.zPosition = 15
+        backPanel.position = CGPoint(x: self.frame.midX, y: self.frame.midY)
+        backPanel.xScale = 0.6
+        backPanel.yScale = 0.6
+        backPanel.alpha = 0
+        addChild(backPanel)
+        
+        let alphaTo = SKAction.fadeAlpha(to: 1, duration: 0.2)
+        let Increase = SKAction.scale(to: 0.8, duration: 0.2)
+        let group = SKAction.group([alphaTo, Increase])
+        backPanel.run(SKAction.sequence([group]))
+        
+        let backgroundPanel = SKSpriteNode(imageNamed: "dialogueBackgroundBlack")
+        backgroundPanel.zPosition = 14
+        backgroundPanel.position = CGPoint(x: self.frame.midX, y: self.frame.midY)
+        backgroundPanel.xScale = 15
+        backgroundPanel.yScale = 15
+        backgroundPanel.alpha = 0.1
+        backPanel.addChild(backgroundPanel)
+        
+        //Close
+        var closeButton: SKButton!
+        closeButton = SKButton(imageName: "cancelWhite", buttonAction: {
+            if self.sound == true {
+                self.run(Sound.pop.action)
+            }
+            
+            let appear = SKAction.scale(to: 0.9, duration: 0.2)
+            
+            let alphaTo = SKAction.fadeAlpha(to: 0, duration: 0.3)
+            let reduce = SKAction.scale(to: 0.6, duration: 0.3)
+            let group = SKAction.group([alphaTo, reduce])
+            let remove = SKAction.removeFromParent()
+            
+            backPanel.run(SKAction.sequence([appear, group, remove]))
+        })
+        closeButton.position = CGPoint(x: CGFloat(200), y: CGFloat(100))
+        closeButton.zPosition = 16
+        closeButton.setScale(0.5)
+        backPanel.addChild(closeButton)
+        
+        let labelNoMoreJump = SKLabelNode(fontNamed: "Antikvar Shadow")
+        labelNoMoreJump.position = CGPoint(x: CGFloat(0), y: CGFloat(20))
+        labelNoMoreJump.zPosition = 16
+        labelNoMoreJump.fontColor = .white
+        labelNoMoreJump.fontSize = 35
+        labelNoMoreJump.text = NSLocalizedString("Упс... бонус закончился!", comment: "Упс... бонус закончился!")
+        backPanel.addChild(labelNoMoreJump)
+        
+        //ButtonBonusJump
+        if noMoreBonusJump == true {
+            UserDefaults.standard.set(false, forKey: "noMoreBonusJump")
+        let buyAnotherBonusButton = SKButton(imageName: "bonusJumpButtonTable", buttonAction: {
+            
+            let totalCoinDefault = UserDefaults.standard
+            self.coinGame = totalCoinDefault.integer(forKey: "Totalcoin")
+            
+             if self.coinGame >= 1200 && self.bonusJumpScore <= 0 {
+                if self.sound == true {
+                    self.run(Sound.coins.action)
+                }
+                
+                self.spawnActionBuyJumpBonus()
+                
+                let totalCoinDefault = UserDefaults.standard
+                self.coinGame = totalCoinDefault.integer(forKey: "Totalcoin")
+                
+                self.coinGame -= 1200
+                totalCoinDefault.setValue(self.coinGame, forKey: "Totalcoin")
+                totalCoinDefault.synchronize()
+                
+                UserDefaults.standard.set(true, forKey: "bonusJump")
+                UserDefaults.standard.set(5, forKey: "bonusJumpScore")
+                self.bonusJumpScore = 5
+                
+                backPanel.removeFromParent()
+                
+            } else {
+                if self.sound == true {
+                    self.run(Sound.close.action)
+                }
+            }
+        })
+        buyAnotherBonusButton.position = CGPoint(x: CGFloat(0), y: CGFloat(-60))
+        buyAnotherBonusButton.setScale(0.4)
+        buyAnotherBonusButton.zPosition = 16
+        backPanel.addChild(buyAnotherBonusButton)
+        let scoreBonusJumpLabel = SKLabelNode(fontNamed: "Antikvar Shadow")
+         scoreBonusJumpLabel.position = CGPoint(x: CGFloat(-30), y: CGFloat(-140))
+         scoreBonusJumpLabel.text = "1200"
+         scoreBonusJumpLabel.zPosition = 17
+         scoreBonusJumpLabel.fontColor = .white
+         scoreBonusJumpLabel.fontSize = 60
+        buyAnotherBonusButton.addChild(scoreBonusJumpLabel)
+        let imageScoreBonusJumpLabel = SKSpriteNode(imageNamed: "coin/21")
+         imageScoreBonusJumpLabel.position = CGPoint(x: CGFloat(50), y: CGFloat(0))
+         imageScoreBonusJumpLabel.setScale(1.4)
+         imageScoreBonusJumpLabel.zPosition = 17
+        buyAnotherBonusButton.addChild(imageScoreBonusJumpLabel)
+        } else {
+        
+        //ButtonBonusHeart
+        if noMoreBonusHeart == true {
+            UserDefaults.standard.set(false, forKey: "noMoreBonusHeart")
+        let buyAnotherBonusButton = SKButton(imageName: "bonusButtonHeartTable", buttonAction: {
+            
+            let totalCoinDefault = UserDefaults.standard
+            self.coinGame = totalCoinDefault.integer(forKey: "Totalcoin")
+            
+             if self.coinGame >= 800 && self.bonusHeartScore <= 0 {
+                if self.sound == true {
+                    self.run(Sound.coins.action)
+                }
+                self.spawnActionBuyHeartBonus()
+                
+                let totalCoinDefault = UserDefaults.standard
+                self.coinGame = totalCoinDefault.integer(forKey: "Totalcoin")
+                
+                self.coinGame -= 800
+                totalCoinDefault.setValue(self.coinGame, forKey: "Totalcoin")
+                totalCoinDefault.synchronize()
+                
+                 UserDefaults.standard.set(true, forKey: "bonusHeart")
+                 UserDefaults.standard.set(5, forKey: "bonusHeartScore")
+                 self.bonusHeartScore = 5
+                
+                 if self.bonus2HeartScore >= 1 {
+                     UserDefaults.standard.set(false, forKey: "bonus2Heart")
+                     UserDefaults.standard.set(0, forKey: "bonus2HeartScore")
+                     self.bonus2HeartScore = 0
+                 }
+                backPanel.removeFromParent()
+            } else {
+                if self.sound == true {
+                    self.run(Sound.close.action)
+                }
+            }
+            
+        })
+        buyAnotherBonusButton.position = CGPoint(x: CGFloat(0), y: CGFloat(-60))
+        buyAnotherBonusButton.setScale(0.4)
+        buyAnotherBonusButton.zPosition = 16
+        backPanel.addChild(buyAnotherBonusButton)
+        let scoreBonus4HeartLabel = SKLabelNode(fontNamed: "Antikvar Shadow")
+         scoreBonus4HeartLabel.position = CGPoint(x: CGFloat(-30), y: CGFloat(-140))
+         scoreBonus4HeartLabel.text = "800"
+         scoreBonus4HeartLabel.zPosition = 17
+         scoreBonus4HeartLabel.fontColor = .white
+         scoreBonus4HeartLabel.fontSize = 60
+        buyAnotherBonusButton.addChild(scoreBonus4HeartLabel)
+        let imageScoreBonus4HeartLabel = SKSpriteNode(imageNamed: "coin/21")
+         imageScoreBonus4HeartLabel.position = CGPoint(x: CGFloat(50), y: CGFloat(0))
+         imageScoreBonus4HeartLabel.setScale(1.4)
+         imageScoreBonus4HeartLabel.zPosition = 17
+        buyAnotherBonusButton.addChild(imageScoreBonus4HeartLabel)
+        }
+        
+        //ButtonBonus2Heart
+        if noMoreBonus2Heart == true {
+            UserDefaults.standard.set(false, forKey: "noMoreBonus2Heart")
+        let buyAnotherBonusButton = SKButton(imageName: "bonusButton2HeartTable", buttonAction: {
+            
+            let totalCoinDefault = UserDefaults.standard
+            self.coinGame = totalCoinDefault.integer(forKey: "Totalcoin")
+            
+             if self.coinGame >= 1000 && self.bonus2HeartScore <= 0 {
+                if self.sound == true {
+                    self.run(Sound.coins.action)
+                }
+                
+                self.spawnActionBuy2HeartBonus()
+                
+                let totalCoinDefault = UserDefaults.standard
+                self.coinGame = totalCoinDefault.integer(forKey: "Totalcoin")
+                
+                self.coinGame -= 1000
+                totalCoinDefault.setValue(self.coinGame, forKey: "Totalcoin")
+                totalCoinDefault.synchronize()
+                
+                 UserDefaults.standard.set(true, forKey: "bonus2Heart")
+                 UserDefaults.standard.set(5, forKey: "bonus2HeartScore")
+                 self.bonus2HeartScore = 5
+             
+                 if self.bonusHeartScore >= 1 {
+                     UserDefaults.standard.set(false, forKey: "bonusHeart")
+                     UserDefaults.standard.set(0, forKey: "bonusHeartScore")
+                     self.bonusHeartScore = 0
+                 }
+                backPanel.removeFromParent()
+            } else {
+                if self.sound == true {
+                    self.run(Sound.close.action)
+                }
+            }
+            
+        })
+        buyAnotherBonusButton.position = CGPoint(x: CGFloat(0), y: CGFloat(-60))
+        buyAnotherBonusButton.setScale(0.4)
+        buyAnotherBonusButton.zPosition = 16
+        backPanel.addChild(buyAnotherBonusButton)
+        let scoreBonus5HeartLabel = SKLabelNode(fontNamed: "Antikvar Shadow")
+         scoreBonus5HeartLabel.position = CGPoint(x: CGFloat(-30), y: CGFloat(-140))
+         scoreBonus5HeartLabel.text = "1000"
+         scoreBonus5HeartLabel.zPosition = 17
+         scoreBonus5HeartLabel.fontColor = .white
+         scoreBonus5HeartLabel.fontSize = 60
+        buyAnotherBonusButton.addChild(scoreBonus5HeartLabel)
+        let imageScoreBonus5HeartLabel = SKSpriteNode(imageNamed: "coin/21")
+         imageScoreBonus5HeartLabel.position = CGPoint(x: CGFloat(50), y: CGFloat(0))
+         imageScoreBonus5HeartLabel.setScale(1.4)
+         imageScoreBonus5HeartLabel.zPosition = 17
+        buyAnotherBonusButton.addChild(imageScoreBonus5HeartLabel)
+            }
+        }
+    }
+//MARK: - ActionBuyBonus
+    func spawnActionBuyJumpBonus() {
+        
+        Timer.scheduledTimer(withTimeInterval: 0.5, repeats: false) { (timer) in
+            if self.sound == true {
+                self.run(Sound.bonus.action)
+            }
+        }
+        
+        let image = SKSpriteNode(imageNamed: "imageBonusJump")
+        image.position = CGPoint(x: self.frame.midX, y: self.frame.midY)
+        image.zPosition = 300
+        image.setScale(0.1)
+        addChild(image)
+        
+        let appear = SKAction.scale(to: 1.0, duration: 1.2)
+
+        let leftWiggle = SKAction.rotate(byAngle: 18.87, duration: 0.5)
+        
+        let group = SKAction.group([leftWiggle, appear])
+
+        let disappear = SKAction.scale(to: 0, duration: 0.5)
+        let removeFromParent = SKAction.removeFromParent()
+        let actions = [group, disappear, removeFromParent]
+        image.run(SKAction.sequence(actions))
+    }
+    func spawnActionBuyHeartBonus() {
+        
+        Timer.scheduledTimer(withTimeInterval: 0.5, repeats: false) { (timer) in
+            if self.sound == true {
+                self.run(Sound.bonus.action)
+            }
+        }
+        
+        let image = SKSpriteNode(imageNamed: "imageBonusHeart")
+        image.position = CGPoint(x: self.frame.midX, y: self.frame.midY)
+        image.zPosition = 300
+        image.setScale(0.1)
+        addChild(image)
+        
+        let appear = SKAction.scale(to: 1.0, duration: 1.2)
+
+        let leftWiggle = SKAction.rotate(byAngle: 18.86, duration: 0.5)
+        
+        let group = SKAction.group([leftWiggle, appear])
+
+        let disappear = SKAction.scale(to: 0, duration: 0.5)
+        let removeFromParent = SKAction.removeFromParent()
+        let actions = [group, disappear, removeFromParent]
+        image.run(SKAction.sequence(actions))
+    }
+    func spawnActionBuy2HeartBonus() {
+        
+        Timer.scheduledTimer(withTimeInterval: 0.5, repeats: false) { (timer) in
+            if self.sound == true {
+                self.run(Sound.bonus.action)
+            }
+        }
+        
+        let image = SKSpriteNode(imageNamed: "imageBonus2Heart")
+        image.position = CGPoint(x: self.frame.midX, y: self.frame.midY)
+        image.zPosition = 300
+        image.setScale(0.1)
+        addChild(image)
+        
+        let appear = SKAction.scale(to: 1.0, duration: 1.2)
+
+        let leftWiggle = SKAction.rotate(byAngle: 18.86, duration: 0.5)
+        
+        let group = SKAction.group([leftWiggle, appear])
+
+        let disappear = SKAction.scale(to: 0, duration: 0.5)
+        let removeFromParent = SKAction.removeFromParent()
+        let actions = [group, disappear, removeFromParent]
+        image.run(SKAction.sequence(actions))
     }
 //MARK: - Background
     func spawnBackground() {
@@ -112,7 +427,7 @@ class MenuLevel1_30: GameScene {
                 }
                 
                 let scene = MenuScene(fileNamed: "MenuScene")
-                let transation = SKTransition.fade(withDuration: 2.0)
+                let transation = SKTransition.fade(withDuration: 1.0)
                 
                 scene!.scaleMode = .aspectFill
                 self.view?.presentScene(scene!, transition: transation)
@@ -142,6 +457,13 @@ class MenuLevel1_30: GameScene {
             arrow.alpha = 0.5
             addChild(arrow)
         }
+//MARK: - Update
+    override func update(_ currentTime: TimeInterval) {
+        if levelNumber >= 1 && levelNumber <= 90 {
+//        centreView.removeFromSuperview()
+        centreView.isHidden = true
+        }
+    }
 //MARK: - ButtonLevel_Screen > 800
         func spawnLevelButton() {
             
@@ -157,22 +479,22 @@ class MenuLevel1_30: GameScene {
                         if !UserDefaults.standard.bool(forKey: "isFirstLaunchLevel1") {
                             
                             let scene = LevelDialogue1(fileNamed: "LevelDialogue1")
-                            let transation = SKTransition.fade(withDuration: 2.0)
+                            let transation = SKTransition.fade(withDuration: 1.0)
 
                             scene!.scaleMode = .aspectFill
                             self.view?.presentScene(scene!, transition: transation)
-                            self.centreView.removeFromSuperview()
+                            self.centreView.isHidden = true
                             
                            } else {
                             
                             UserDefaults.standard.set(1, forKey: "levelNumber")
                             
                             let scene = Level1(fileNamed: "Level1")
-                            let transation = SKTransition.fade(withDuration: 2.0)
+                            let transation = SKTransition.fade(withDuration: 1.0)
 
                             scene!.scaleMode = .aspectFill
                             self.view?.presentScene(scene!, transition: transation)
-                            self.centreView.removeFromSuperview()
+                            self.centreView.isHidden = true
                             
                            }
                         UserDefaults.standard.set(true, forKey: "isFirstLaunchLevel1")
@@ -193,7 +515,7 @@ class MenuLevel1_30: GameScene {
                         UserDefaults.standard.set(1, forKey: "levelNumber")
                         
                         let scene = Level1(fileNamed: "Level1")
-                        let transation = SKTransition.fade(withDuration: 2.0)
+                        let transation = SKTransition.fade(withDuration: 1.0)
 
                         scene!.scaleMode = .aspectFill
                         self.view?.presentScene(scene!, transition: transation)
@@ -223,7 +545,7 @@ class MenuLevel1_30: GameScene {
                     if !UserDefaults.standard.bool(forKey: "isFirstLaunchLevel2") {
                         
                         let scene = LevelDialogue2(fileNamed: "LevelDialogue2")
-                        let transation = SKTransition.fade(withDuration: 2.0)
+                        let transation = SKTransition.fade(withDuration: 1.0)
 
                         scene!.scaleMode = .aspectFill
                         self.view?.presentScene(scene!, transition: transation)
@@ -234,7 +556,7 @@ class MenuLevel1_30: GameScene {
                         UserDefaults.standard.set(2, forKey: "levelNumber")
                         
                         let scene = Level2(fileNamed: "Level2")
-                        let transation = SKTransition.fade(withDuration: 2.0)
+                        let transation = SKTransition.fade(withDuration: 1.0)
 
                         scene!.scaleMode = .aspectFill
                         self.view?.presentScene(scene!, transition: transation)
@@ -259,7 +581,7 @@ class MenuLevel1_30: GameScene {
                         UserDefaults.standard.set(2, forKey: "levelNumber")
                         
                         let scene = Level2(fileNamed: "Level2")
-                        let transation = SKTransition.fade(withDuration: 2.0)
+                        let transation = SKTransition.fade(withDuration: 1.0)
 
                         scene!.scaleMode = .aspectFill
                         self.view?.presentScene(scene!, transition: transation)
@@ -303,7 +625,7 @@ class MenuLevel1_30: GameScene {
                     UserDefaults.standard.set(3, forKey: "levelNumber")
                     
                     let scene = Level3(fileNamed: "Level3")
-                    let transation = SKTransition.fade(withDuration: 2.0)
+                    let transation = SKTransition.fade(withDuration: 1.0)
 
                     scene!.scaleMode = .aspectFill
                     self.view?.presentScene(scene!, transition: transation)
@@ -323,7 +645,7 @@ class MenuLevel1_30: GameScene {
                     UserDefaults.standard.set(3, forKey: "levelNumber")
                     
                     let scene = Level3(fileNamed: "Level3")
-                    let transation = SKTransition.fade(withDuration: 2.0)
+                    let transation = SKTransition.fade(withDuration: 1.0)
 
                     scene!.scaleMode = .aspectFill
                     self.view?.presentScene(scene!, transition: transation)
@@ -365,7 +687,7 @@ class MenuLevel1_30: GameScene {
                     if !UserDefaults.standard.bool(forKey: "isFirstLaunchLevel4") {
                         
                         let scene = LevelDialogue4(fileNamed: "LevelDialogue4")
-                        let transation = SKTransition.fade(withDuration: 2.0)
+                        let transation = SKTransition.fade(withDuration: 1.0)
 
                         scene!.scaleMode = .aspectFill
                         self.view?.presentScene(scene!, transition: transation)
@@ -376,7 +698,7 @@ class MenuLevel1_30: GameScene {
                         UserDefaults.standard.set(4, forKey: "levelNumber")
                         
                         let scene = Level4(fileNamed: "Level4")
-                        let transation = SKTransition.fade(withDuration: 2.0)
+                        let transation = SKTransition.fade(withDuration: 1.0)
 
                         scene!.scaleMode = .aspectFill
                         self.view?.presentScene(scene!, transition: transation)
@@ -400,7 +722,7 @@ class MenuLevel1_30: GameScene {
                         UserDefaults.standard.set(4, forKey: "levelNumber")
                         
                         let scene = Level4(fileNamed: "Level4")
-                        let transation = SKTransition.fade(withDuration: 2.0)
+                        let transation = SKTransition.fade(withDuration: 1.0)
 
                         scene!.scaleMode = .aspectFill
                         self.view?.presentScene(scene!, transition: transation)
@@ -443,7 +765,7 @@ class MenuLevel1_30: GameScene {
                     UserDefaults.standard.set(5, forKey: "levelNumber")
                     
                     let scene = Level5(fileNamed: "Level5")
-                    let transation = SKTransition.fade(withDuration: 2.0)
+                    let transation = SKTransition.fade(withDuration: 1.0)
 
                     scene!.scaleMode = .aspectFill
                     self.view?.presentScene(scene!, transition: transation)
@@ -463,7 +785,7 @@ class MenuLevel1_30: GameScene {
                         UserDefaults.standard.set(5, forKey: "levelNumber")
                         
                         let scene = Level5(fileNamed: "Level5")
-                        let transation = SKTransition.fade(withDuration: 2.0)
+                        let transation = SKTransition.fade(withDuration: 1.0)
 
                         scene!.scaleMode = .aspectFill
                         self.view?.presentScene(scene!, transition: transation)
@@ -506,7 +828,7 @@ class MenuLevel1_30: GameScene {
                     UserDefaults.standard.set(6, forKey: "levelNumber")
                     
                     let scene = Level6(fileNamed: "Level6")
-                    let transation = SKTransition.fade(withDuration: 2.0)
+                    let transation = SKTransition.fade(withDuration: 1.0)
 
                     scene!.scaleMode = .aspectFill
                     self.view?.presentScene(scene!, transition: transation)
@@ -526,7 +848,7 @@ class MenuLevel1_30: GameScene {
                         UserDefaults.standard.set(6, forKey: "levelNumber")
                         
                         let scene = Level6(fileNamed: "Level6")
-                        let transation = SKTransition.fade(withDuration: 2.0)
+                        let transation = SKTransition.fade(withDuration: 1.0)
 
                         scene!.scaleMode = .aspectFill
                         self.view?.presentScene(scene!, transition: transation)
@@ -569,7 +891,7 @@ class MenuLevel1_30: GameScene {
                     if !UserDefaults.standard.bool(forKey: "isFirstLaunchLevel7") {
                         
                         let scene = LevelDialogue7(fileNamed: "LevelDialogue7")
-                        let transation = SKTransition.fade(withDuration: 2.0)
+                        let transation = SKTransition.fade(withDuration: 1.0)
 
                         scene!.scaleMode = .aspectFill
                         self.view?.presentScene(scene!, transition: transation)
@@ -580,7 +902,7 @@ class MenuLevel1_30: GameScene {
                         UserDefaults.standard.set(7, forKey: "levelNumber")
                         
                         let scene = Level7(fileNamed: "Level7")
-                        let transation = SKTransition.fade(withDuration: 2.0)
+                        let transation = SKTransition.fade(withDuration: 1.0)
 
                         scene!.scaleMode = .aspectFill
                         self.view?.presentScene(scene!, transition: transation)
@@ -605,7 +927,7 @@ class MenuLevel1_30: GameScene {
                         UserDefaults.standard.set(7, forKey: "levelNumber")
                         
                         let scene = Level7(fileNamed: "Level7")
-                        let transation = SKTransition.fade(withDuration: 2.0)
+                        let transation = SKTransition.fade(withDuration: 1.0)
 
                         scene!.scaleMode = .aspectFill
                         self.view?.presentScene(scene!, transition: transation)
@@ -647,7 +969,7 @@ class MenuLevel1_30: GameScene {
                     UserDefaults.standard.set(8, forKey: "levelNumber")
                     
                     let scene = Level8(fileNamed: "Level8")
-                    let transation = SKTransition.fade(withDuration: 2.0)
+                    let transation = SKTransition.fade(withDuration: 1.0)
 
                     scene!.scaleMode = .aspectFill
                     self.view?.presentScene(scene!, transition: transation)
@@ -667,7 +989,7 @@ class MenuLevel1_30: GameScene {
                         UserDefaults.standard.set(8, forKey: "levelNumber")
                         
                         let scene = Level8(fileNamed: "Level8")
-                        let transation = SKTransition.fade(withDuration: 2.0)
+                        let transation = SKTransition.fade(withDuration: 1.0)
 
                         scene!.scaleMode = .aspectFill
                         self.view?.presentScene(scene!, transition: transation)
@@ -709,7 +1031,7 @@ class MenuLevel1_30: GameScene {
                     if !UserDefaults.standard.bool(forKey: "isFirstLaunchLevel9") {
                         
                         let scene = LevelDialogue9(fileNamed: "LevelDialogue9")
-                        let transation = SKTransition.fade(withDuration: 2.0)
+                        let transation = SKTransition.fade(withDuration: 1.0)
 
                         scene!.scaleMode = .aspectFill
                         self.view?.presentScene(scene!, transition: transation)
@@ -720,7 +1042,7 @@ class MenuLevel1_30: GameScene {
                         UserDefaults.standard.set(9, forKey: "levelNumber")
                         
                         let scene = Level9(fileNamed: "Level9")
-                        let transation = SKTransition.fade(withDuration: 2.0)
+                        let transation = SKTransition.fade(withDuration: 1.0)
 
                         scene!.scaleMode = .aspectFill
                         self.view?.presentScene(scene!, transition: transation)
@@ -744,7 +1066,7 @@ class MenuLevel1_30: GameScene {
                         UserDefaults.standard.set(9, forKey: "levelNumber")
                         
                         let scene = Level9(fileNamed: "Level9")
-                        let transation = SKTransition.fade(withDuration: 2.0)
+                        let transation = SKTransition.fade(withDuration: 1.0)
 
                         scene!.scaleMode = .aspectFill
                         self.view?.presentScene(scene!, transition: transation)
@@ -786,7 +1108,7 @@ class MenuLevel1_30: GameScene {
                     UserDefaults.standard.set(10, forKey: "levelNumber")
                     
                     let scene = Level10(fileNamed: "Level10")
-                    let transation = SKTransition.fade(withDuration: 2.0)
+                    let transation = SKTransition.fade(withDuration: 1.0)
 
                     scene!.scaleMode = .aspectFill
                     self.view?.presentScene(scene!, transition: transation)
@@ -806,7 +1128,7 @@ class MenuLevel1_30: GameScene {
                         UserDefaults.standard.set(10, forKey: "levelNumber")
                         
                         let scene = Level10(fileNamed: "Level10")
-                        let transation = SKTransition.fade(withDuration: 2.0)
+                        let transation = SKTransition.fade(withDuration: 1.0)
 
                         scene!.scaleMode = .aspectFill
                         self.view?.presentScene(scene!, transition: transation)
@@ -849,7 +1171,7 @@ class MenuLevel1_30: GameScene {
                     UserDefaults.standard.set(11, forKey: "levelNumber")
                     
                     let scene = Level11(fileNamed: "Level11")
-                    let transation = SKTransition.fade(withDuration: 2.0)
+                    let transation = SKTransition.fade(withDuration: 1.0)
 
                     scene!.scaleMode = .aspectFill
                     self.view?.presentScene(scene!, transition: transation)
@@ -869,7 +1191,7 @@ class MenuLevel1_30: GameScene {
                         UserDefaults.standard.set(11, forKey: "levelNumber")
                         
                         let scene = Level11(fileNamed: "Level11")
-                        let transation = SKTransition.fade(withDuration: 2.0)
+                        let transation = SKTransition.fade(withDuration: 1.0)
 
                         scene!.scaleMode = .aspectFill
                         self.view?.presentScene(scene!, transition: transation)
@@ -910,7 +1232,7 @@ class MenuLevel1_30: GameScene {
                     UserDefaults.standard.set(12, forKey: "levelNumber")
                     
                     let scene = Level12(fileNamed: "Level12")
-                    let transation = SKTransition.fade(withDuration: 2.0)
+                    let transation = SKTransition.fade(withDuration: 1.0)
 
                     scene!.scaleMode = .aspectFill
                     self.view?.presentScene(scene!, transition: transation)
@@ -930,7 +1252,7 @@ class MenuLevel1_30: GameScene {
                         UserDefaults.standard.set(12, forKey: "levelNumber")
                         
                         let scene = Level12(fileNamed: "Level12")
-                        let transation = SKTransition.fade(withDuration: 2.0)
+                        let transation = SKTransition.fade(withDuration: 1.0)
 
                         scene!.scaleMode = .aspectFill
                         self.view?.presentScene(scene!, transition: transation)
@@ -971,7 +1293,7 @@ class MenuLevel1_30: GameScene {
                     UserDefaults.standard.set(13, forKey: "levelNumber")
                     
                     let scene = Level13(fileNamed: "Level13")
-                    let transation = SKTransition.fade(withDuration: 2.0)
+                    let transation = SKTransition.fade(withDuration: 1.0)
 
                     scene!.scaleMode = .aspectFill
                     self.view?.presentScene(scene!, transition: transation)
@@ -981,7 +1303,7 @@ class MenuLevel1_30: GameScene {
                 level13.position = CGPoint(x: self.frame.midX - 150, y: self.frame.midY - 15)
                 level13.zPosition = 11
                 addChild(level13)
-                } else if winLevel13 == false {
+                } else if winLevel13 == true {
                     let level13 = SKButton(imageName: "buttonLevelWin/13", buttonAction: {
                         
                         if self.sound == true {
@@ -991,7 +1313,7 @@ class MenuLevel1_30: GameScene {
                         UserDefaults.standard.set(13, forKey: "levelNumber")
                         
                         let scene = Level13(fileNamed: "Level13")
-                        let transation = SKTransition.fade(withDuration: 2.0)
+                        let transation = SKTransition.fade(withDuration: 1.0)
 
                         scene!.scaleMode = .aspectFill
                         self.view?.presentScene(scene!, transition: transation)
@@ -1032,7 +1354,7 @@ class MenuLevel1_30: GameScene {
                     UserDefaults.standard.set(14, forKey: "levelNumber")
                     
                     let scene = Level14(fileNamed: "Level14")
-                    let transation = SKTransition.fade(withDuration: 2.0)
+                    let transation = SKTransition.fade(withDuration: 1.0)
 
                     scene!.scaleMode = .aspectFill
                     self.view?.presentScene(scene!, transition: transation)
@@ -1052,7 +1374,7 @@ class MenuLevel1_30: GameScene {
                         UserDefaults.standard.set(14, forKey: "levelNumber")
                         
                         let scene = Level14(fileNamed: "Level14")
-                        let transation = SKTransition.fade(withDuration: 2.0)
+                        let transation = SKTransition.fade(withDuration: 1.0)
 
                         scene!.scaleMode = .aspectFill
                         self.view?.presentScene(scene!, transition: transation)
@@ -1093,7 +1415,7 @@ class MenuLevel1_30: GameScene {
                     if !UserDefaults.standard.bool(forKey: "isFirstLaunchLevel15") {
                         
                         let scene = LevelDialogue15(fileNamed: "LevelDialogue15")
-                        let transation = SKTransition.fade(withDuration: 2.0)
+                        let transation = SKTransition.fade(withDuration: 1.0)
 
                         scene!.scaleMode = .aspectFill
                         self.view?.presentScene(scene!, transition: transation)
@@ -1104,7 +1426,7 @@ class MenuLevel1_30: GameScene {
                         UserDefaults.standard.set(15, forKey: "levelNumber")
                         
                         let scene = Level15(fileNamed: "Level15")
-                        let transation = SKTransition.fade(withDuration: 2.0)
+                        let transation = SKTransition.fade(withDuration: 1.0)
 
                         scene!.scaleMode = .aspectFill
                         self.view?.presentScene(scene!, transition: transation)
@@ -1129,7 +1451,7 @@ class MenuLevel1_30: GameScene {
                         UserDefaults.standard.set(15, forKey: "levelNumber")
                         
                         let scene = Level15(fileNamed: "Level15")
-                        let transation = SKTransition.fade(withDuration: 2.0)
+                        let transation = SKTransition.fade(withDuration: 1.0)
 
                         scene!.scaleMode = .aspectFill
                         self.view?.presentScene(scene!, transition: transation)
@@ -1170,7 +1492,7 @@ class MenuLevel1_30: GameScene {
                     UserDefaults.standard.set(16, forKey: "levelNumber")
                     
                     let scene = Level16(fileNamed: "Level16")
-                    let transation = SKTransition.fade(withDuration: 2.0)
+                    let transation = SKTransition.fade(withDuration: 1.0)
 
                     scene!.scaleMode = .aspectFill
                     self.view?.presentScene(scene!, transition: transation)
@@ -1190,7 +1512,7 @@ class MenuLevel1_30: GameScene {
                         UserDefaults.standard.set(16, forKey: "levelNumber")
                         
                         let scene = Level16(fileNamed: "Level16")
-                        let transation = SKTransition.fade(withDuration: 2.0)
+                        let transation = SKTransition.fade(withDuration: 1.0)
 
                         scene!.scaleMode = .aspectFill
                         self.view?.presentScene(scene!, transition: transation)
@@ -1231,7 +1553,7 @@ class MenuLevel1_30: GameScene {
                     UserDefaults.standard.set(17, forKey: "levelNumber")
                     
                     let scene = Level17(fileNamed: "Level17")
-                    let transation = SKTransition.fade(withDuration: 2.0)
+                    let transation = SKTransition.fade(withDuration: 1.0)
 
                     scene!.scaleMode = .aspectFill
                     self.view?.presentScene(scene!, transition: transation)
@@ -1251,7 +1573,7 @@ class MenuLevel1_30: GameScene {
                         UserDefaults.standard.set(17, forKey: "levelNumber")
                         
                         let scene = Level17(fileNamed: "Level17")
-                        let transation = SKTransition.fade(withDuration: 2.0)
+                        let transation = SKTransition.fade(withDuration: 1.0)
 
                         scene!.scaleMode = .aspectFill
                         self.view?.presentScene(scene!, transition: transation)
@@ -1292,7 +1614,7 @@ class MenuLevel1_30: GameScene {
                     if !UserDefaults.standard.bool(forKey: "isFirstLaunchLevel18") {
                         
                         let scene = LevelDialogue18(fileNamed: "LevelDialogue18")
-                        let transation = SKTransition.fade(withDuration: 2.0)
+                        let transation = SKTransition.fade(withDuration: 1.0)
 
                         scene!.scaleMode = .aspectFill
                         self.view?.presentScene(scene!, transition: transation)
@@ -1303,7 +1625,7 @@ class MenuLevel1_30: GameScene {
                         UserDefaults.standard.set(18, forKey: "levelNumber")
                         
                         let scene = Level18(fileNamed: "Level18")
-                        let transation = SKTransition.fade(withDuration: 2.0)
+                        let transation = SKTransition.fade(withDuration: 1.0)
 
                         scene!.scaleMode = .aspectFill
                         self.view?.presentScene(scene!, transition: transation)
@@ -1327,7 +1649,7 @@ class MenuLevel1_30: GameScene {
                         UserDefaults.standard.set(18, forKey: "levelNumber")
                         
                         let scene = Level18(fileNamed: "Level18")
-                        let transation = SKTransition.fade(withDuration: 2.0)
+                        let transation = SKTransition.fade(withDuration: 1.0)
 
                         scene!.scaleMode = .aspectFill
                         self.view?.presentScene(scene!, transition: transation)
@@ -1368,7 +1690,7 @@ class MenuLevel1_30: GameScene {
                     UserDefaults.standard.set(19, forKey: "levelNumber")
                     
                     let scene = Level19(fileNamed: "Level19")
-                    let transation = SKTransition.fade(withDuration: 2.0)
+                    let transation = SKTransition.fade(withDuration: 1.0)
 
                     scene!.scaleMode = .aspectFill
                     self.view?.presentScene(scene!, transition: transation)
@@ -1388,7 +1710,7 @@ class MenuLevel1_30: GameScene {
                         UserDefaults.standard.set(19, forKey: "levelNumber")
                         
                         let scene = Level19(fileNamed: "Level19")
-                        let transation = SKTransition.fade(withDuration: 2.0)
+                        let transation = SKTransition.fade(withDuration: 1.0)
 
                         scene!.scaleMode = .aspectFill
                         self.view?.presentScene(scene!, transition: transation)
@@ -1429,7 +1751,7 @@ class MenuLevel1_30: GameScene {
                         }
                         
                         let scene = LevelDialogue20(fileNamed: "LevelDialogue20")
-                        let transation = SKTransition.fade(withDuration: 2.0)
+                        let transation = SKTransition.fade(withDuration: 1.0)
 
                         scene!.scaleMode = .aspectFill
                         self.view?.presentScene(scene!, transition: transation)
@@ -1440,7 +1762,7 @@ class MenuLevel1_30: GameScene {
                         UserDefaults.standard.set(20, forKey: "levelNumber")
                         
                         let scene = Level20(fileNamed: "Level20")
-                        let transation = SKTransition.fade(withDuration: 2.0)
+                        let transation = SKTransition.fade(withDuration: 1.0)
 
                         scene!.scaleMode = .aspectFill
                         self.view?.presentScene(scene!, transition: transation)
@@ -1466,7 +1788,7 @@ class MenuLevel1_30: GameScene {
                         UserDefaults.standard.set(20, forKey: "levelNumber")
                         
                         let scene = Level20(fileNamed: "Level20")
-                        let transation = SKTransition.fade(withDuration: 2.0)
+                        let transation = SKTransition.fade(withDuration: 1.0)
 
                         scene!.scaleMode = .aspectFill
                         self.view?.presentScene(scene!, transition: transation)
@@ -1508,7 +1830,7 @@ class MenuLevel1_30: GameScene {
                     UserDefaults.standard.set(21, forKey: "levelNumber")
                     
                     let scene = Level21(fileNamed: "Level21")
-                    let transation = SKTransition.fade(withDuration: 2.0)
+                    let transation = SKTransition.fade(withDuration: 1.0)
 
                     scene!.scaleMode = .aspectFill
                     self.view?.presentScene(scene!, transition: transation)
@@ -1528,7 +1850,7 @@ class MenuLevel1_30: GameScene {
                         UserDefaults.standard.set(21, forKey: "levelNumber")
                         
                         let scene = Level21(fileNamed: "Level21")
-                        let transation = SKTransition.fade(withDuration: 2.0)
+                        let transation = SKTransition.fade(withDuration: 1.0)
 
                         scene!.scaleMode = .aspectFill
                         self.view?.presentScene(scene!, transition: transation)
@@ -1569,7 +1891,7 @@ class MenuLevel1_30: GameScene {
                     if !UserDefaults.standard.bool(forKey: "isFirstLaunchLevel22") {
                         
                         let scene = LevelDialogue22(fileNamed: "LevelDialogue22")
-                        let transation = SKTransition.fade(withDuration: 2.0)
+                        let transation = SKTransition.fade(withDuration: 1.0)
 
                         scene!.scaleMode = .aspectFill
                         self.view?.presentScene(scene!, transition: transation)
@@ -1580,7 +1902,7 @@ class MenuLevel1_30: GameScene {
                         UserDefaults.standard.set(22, forKey: "levelNumber")
                         
                         let scene = Level22(fileNamed: "Level22")
-                        let transation = SKTransition.fade(withDuration: 2.0)
+                        let transation = SKTransition.fade(withDuration: 1.0)
 
                         scene!.scaleMode = .aspectFill
                         self.view?.presentScene(scene!, transition: transation)
@@ -1605,7 +1927,7 @@ class MenuLevel1_30: GameScene {
                         UserDefaults.standard.set(22, forKey: "levelNumber")
                         
                         let scene = Level22(fileNamed: "Level22")
-                        let transation = SKTransition.fade(withDuration: 2.0)
+                        let transation = SKTransition.fade(withDuration: 1.0)
 
                         scene!.scaleMode = .aspectFill
                         self.view?.presentScene(scene!, transition: transation)
@@ -1646,7 +1968,7 @@ class MenuLevel1_30: GameScene {
                     UserDefaults.standard.set(23, forKey: "levelNumber")
                     
                     let scene = Level23(fileNamed: "Level23")
-                    let transation = SKTransition.fade(withDuration: 2.0)
+                    let transation = SKTransition.fade(withDuration: 1.0)
 
                     scene!.scaleMode = .aspectFill
                     self.view?.presentScene(scene!, transition: transation)
@@ -1666,7 +1988,7 @@ class MenuLevel1_30: GameScene {
                         UserDefaults.standard.set(23, forKey: "levelNumber")
                         
                         let scene = Level23(fileNamed: "Level23")
-                        let transation = SKTransition.fade(withDuration: 2.0)
+                        let transation = SKTransition.fade(withDuration: 1.0)
 
                         scene!.scaleMode = .aspectFill
                         self.view?.presentScene(scene!, transition: transation)
@@ -1707,7 +2029,7 @@ class MenuLevel1_30: GameScene {
                     UserDefaults.standard.set(24, forKey: "levelNumber")
                     
                     let scene = Level24(fileNamed: "Level24")
-                    let transation = SKTransition.fade(withDuration: 2.0)
+                    let transation = SKTransition.fade(withDuration: 1.0)
 
                     scene!.scaleMode = .aspectFill
                     self.view?.presentScene(scene!, transition: transation)
@@ -1727,7 +2049,7 @@ class MenuLevel1_30: GameScene {
                         UserDefaults.standard.set(24, forKey: "levelNumber")
                         
                         let scene = Level24(fileNamed: "Level24")
-                        let transation = SKTransition.fade(withDuration: 2.0)
+                        let transation = SKTransition.fade(withDuration: 1.0)
 
                         scene!.scaleMode = .aspectFill
                         self.view?.presentScene(scene!, transition: transation)
@@ -1768,7 +2090,7 @@ class MenuLevel1_30: GameScene {
                     if !UserDefaults.standard.bool(forKey: "isFirstLaunchLevel25") {
                         
                         let scene = LevelDialogue25(fileNamed: "LevelDialogue25")
-                        let transation = SKTransition.fade(withDuration: 2.0)
+                        let transation = SKTransition.fade(withDuration: 1.0)
 
                         scene!.scaleMode = .aspectFill
                         self.view?.presentScene(scene!, transition: transation)
@@ -1779,7 +2101,7 @@ class MenuLevel1_30: GameScene {
                         UserDefaults.standard.set(25, forKey: "levelNumber")
                         
                         let scene = Level25(fileNamed: "Level25")
-                        let transation = SKTransition.fade(withDuration: 2.0)
+                        let transation = SKTransition.fade(withDuration: 1.0)
 
                         scene!.scaleMode = .aspectFill
                         self.view?.presentScene(scene!, transition: transation)
@@ -1803,7 +2125,7 @@ class MenuLevel1_30: GameScene {
                         UserDefaults.standard.set(25, forKey: "levelNumber")
                         
                         let scene = Level25(fileNamed: "Level25")
-                        let transation = SKTransition.fade(withDuration: 2.0)
+                        let transation = SKTransition.fade(withDuration: 1.0)
 
                         scene!.scaleMode = .aspectFill
                         self.view?.presentScene(scene!, transition: transation)
@@ -1844,7 +2166,7 @@ class MenuLevel1_30: GameScene {
                     UserDefaults.standard.set(26, forKey: "levelNumber")
                     
                     let scene = Level26(fileNamed: "Level26")
-                    let transation = SKTransition.fade(withDuration: 2.0)
+                    let transation = SKTransition.fade(withDuration: 1.0)
 
                     scene!.scaleMode = .aspectFill
                     self.view?.presentScene(scene!, transition: transation)
@@ -1864,7 +2186,7 @@ class MenuLevel1_30: GameScene {
                         UserDefaults.standard.set(26, forKey: "levelNumber")
                         
                         let scene = Level26(fileNamed: "Level26")
-                        let transation = SKTransition.fade(withDuration: 2.0)
+                        let transation = SKTransition.fade(withDuration: 1.0)
 
                         scene!.scaleMode = .aspectFill
                         self.view?.presentScene(scene!, transition: transation)
@@ -1905,7 +2227,7 @@ class MenuLevel1_30: GameScene {
                     if !UserDefaults.standard.bool(forKey: "isFirstLaunchLevel27") {
                         
                         let scene = LevelDialogue27(fileNamed: "LevelDialogue27")
-                        let transation = SKTransition.fade(withDuration: 2.0)
+                        let transation = SKTransition.fade(withDuration: 1.0)
 
                         scene!.scaleMode = .aspectFill
                         self.view?.presentScene(scene!, transition: transation)
@@ -1916,7 +2238,7 @@ class MenuLevel1_30: GameScene {
                         UserDefaults.standard.set(27, forKey: "levelNumber")
                         
                         let scene = Level27(fileNamed: "Level27")
-                        let transation = SKTransition.fade(withDuration: 2.0)
+                        let transation = SKTransition.fade(withDuration: 1.0)
 
                         scene!.scaleMode = .aspectFill
                         self.view?.presentScene(scene!, transition: transation)
@@ -1939,7 +2261,7 @@ class MenuLevel1_30: GameScene {
                         UserDefaults.standard.set(27, forKey: "levelNumber")
                         
                         let scene = Level27(fileNamed: "Level27")
-                        let transation = SKTransition.fade(withDuration: 2.0)
+                        let transation = SKTransition.fade(withDuration: 1.0)
 
                         scene!.scaleMode = .aspectFill
                         self.view?.presentScene(scene!, transition: transation)
@@ -1980,7 +2302,7 @@ class MenuLevel1_30: GameScene {
                         UserDefaults.standard.set(28, forKey: "levelNumber")
                         
                         let scene = Level28(fileNamed: "Level28")
-                        let transation = SKTransition.fade(withDuration: 2.0)
+                        let transation = SKTransition.fade(withDuration: 1.0)
 
                         scene!.scaleMode = .aspectFill
                         self.view?.presentScene(scene!, transition: transation)
@@ -2000,7 +2322,7 @@ class MenuLevel1_30: GameScene {
                         UserDefaults.standard.set(28, forKey: "levelNumber")
                         
                         let scene = Level28(fileNamed: "Level28")
-                        let transation = SKTransition.fade(withDuration: 2.0)
+                        let transation = SKTransition.fade(withDuration: 1.0)
 
                         scene!.scaleMode = .aspectFill
                         self.view?.presentScene(scene!, transition: transation)
@@ -2042,7 +2364,7 @@ class MenuLevel1_30: GameScene {
                         UserDefaults.standard.set(29, forKey: "levelNumber")
                         
                         let scene = Level29(fileNamed: "Level29")
-                        let transation = SKTransition.fade(withDuration: 2.0)
+                        let transation = SKTransition.fade(withDuration: 1.0)
 
                         scene!.scaleMode = .aspectFill
                         self.view?.presentScene(scene!, transition: transation)
@@ -2062,7 +2384,7 @@ class MenuLevel1_30: GameScene {
                         UserDefaults.standard.set(29, forKey: "levelNumber")
                         
                         let scene = Level29(fileNamed: "Level29")
-                        let transation = SKTransition.fade(withDuration: 2.0)
+                        let transation = SKTransition.fade(withDuration: 1.0)
 
                         scene!.scaleMode = .aspectFill
                         self.view?.presentScene(scene!, transition: transation)
@@ -2103,7 +2425,7 @@ class MenuLevel1_30: GameScene {
                         if !UserDefaults.standard.bool(forKey: "isFirstLaunchLevel30") {
                             
                             let scene = LevelDialogue30(fileNamed: "LevelDialogue30")
-                            let transation = SKTransition.fade(withDuration: 2.0)
+                            let transation = SKTransition.fade(withDuration: 1.0)
 
                             scene!.scaleMode = .aspectFill
                             self.view?.presentScene(scene!, transition: transation)
@@ -2114,7 +2436,7 @@ class MenuLevel1_30: GameScene {
                             UserDefaults.standard.set(30, forKey: "levelNumber")
                             
                             let scene = Level30(fileNamed: "Level30")
-                            let transation = SKTransition.fade(withDuration: 2.0)
+                            let transation = SKTransition.fade(withDuration: 1.0)
 
                             scene!.scaleMode = .aspectFill
                             self.view?.presentScene(scene!, transition: transation)
@@ -2138,7 +2460,7 @@ class MenuLevel1_30: GameScene {
                         UserDefaults.standard.set(30, forKey: "levelNumber")
                         
                         let scene = Level30(fileNamed: "Level30")
-                        let transation = SKTransition.fade(withDuration: 2.0)
+                        let transation = SKTransition.fade(withDuration: 1.0)
 
                         scene!.scaleMode = .aspectFill
                         self.view?.presentScene(scene!, transition: transation)
@@ -2181,22 +2503,22 @@ class MenuLevel1_30: GameScene {
                 if !UserDefaults.standard.bool(forKey: "isFirstLaunchLevel1") {
                     
                     let scene = LevelDialogue1(fileNamed: "LevelDialogue1")
-                    let transation = SKTransition.fade(withDuration: 2.0)
+                    let transation = SKTransition.fade(withDuration: 1.0)
 
                     scene!.scaleMode = .aspectFill
                     self.view?.presentScene(scene!, transition: transation)
-                    self.centreView.removeFromSuperview()
+                    self.centreView.isHidden = true
                     
                    } else {
                     
                     UserDefaults.standard.set(1, forKey: "levelNumber")
                     
                     let scene = Level1(fileNamed: "Level1")
-                    let transation = SKTransition.fade(withDuration: 2.0)
+                    let transation = SKTransition.fade(withDuration: 1.0)
 
                     scene!.scaleMode = .aspectFill
                     self.view?.presentScene(scene!, transition: transation)
-                    self.centreView.removeFromSuperview()
+                    self.centreView.isHidden = true
                     
                    }
                 UserDefaults.standard.set(true, forKey: "isFirstLaunchLevel1")
@@ -2216,7 +2538,7 @@ class MenuLevel1_30: GameScene {
                     UserDefaults.standard.set(1, forKey: "levelNumber")
                     
                     let scene = Level1(fileNamed: "Level1")
-                    let transation = SKTransition.fade(withDuration: 2.0)
+                    let transation = SKTransition.fade(withDuration: 1.0)
 
                     scene!.scaleMode = .aspectFill
                     self.view?.presentScene(scene!, transition: transation)
@@ -2246,7 +2568,7 @@ class MenuLevel1_30: GameScene {
                     if !UserDefaults.standard.bool(forKey: "isFirstLaunchLevel2") {
                         
                         let scene = LevelDialogue2(fileNamed: "LevelDialogue2")
-                        let transation = SKTransition.fade(withDuration: 2.0)
+                        let transation = SKTransition.fade(withDuration: 1.0)
 
                         scene!.scaleMode = .aspectFill
                         self.view?.presentScene(scene!, transition: transation)
@@ -2257,7 +2579,7 @@ class MenuLevel1_30: GameScene {
                         UserDefaults.standard.set(2, forKey: "levelNumber")
                         
                         let scene = Level2(fileNamed: "Level2")
-                        let transation = SKTransition.fade(withDuration: 2.0)
+                        let transation = SKTransition.fade(withDuration: 1.0)
 
                         scene!.scaleMode = .aspectFill
                         self.view?.presentScene(scene!, transition: transation)
@@ -2280,7 +2602,7 @@ class MenuLevel1_30: GameScene {
                         UserDefaults.standard.set(2, forKey: "levelNumber")
                         
                         let scene = Level2(fileNamed: "Level2")
-                        let transation = SKTransition.fade(withDuration: 2.0)
+                        let transation = SKTransition.fade(withDuration: 1.0)
 
                         scene!.scaleMode = .aspectFill
                         self.view?.presentScene(scene!, transition: transation)
@@ -2320,7 +2642,7 @@ class MenuLevel1_30: GameScene {
                 UserDefaults.standard.set(3, forKey: "levelNumber")
                 
                 let scene = Level3(fileNamed: "Level3")
-                let transation = SKTransition.fade(withDuration: 2.0)
+                let transation = SKTransition.fade(withDuration: 1.0)
 
                 scene!.scaleMode = .aspectFill
                 self.view?.presentScene(scene!, transition: transation)
@@ -2340,7 +2662,7 @@ class MenuLevel1_30: GameScene {
                         UserDefaults.standard.set(3, forKey: "levelNumber")
                         
                         let scene = Level3(fileNamed: "Level3")
-                        let transation = SKTransition.fade(withDuration: 2.0)
+                        let transation = SKTransition.fade(withDuration: 1.0)
 
                         scene!.scaleMode = .aspectFill
                         self.view?.presentScene(scene!, transition: transation)
@@ -2381,7 +2703,7 @@ class MenuLevel1_30: GameScene {
                 if !UserDefaults.standard.bool(forKey: "isFirstLaunchLevel4") {
                     
                     let scene = LevelDialogue4(fileNamed: "LevelDialogue4")
-                    let transation = SKTransition.fade(withDuration: 2.0)
+                    let transation = SKTransition.fade(withDuration: 1.0)
 
                     scene!.scaleMode = .aspectFill
                     self.view?.presentScene(scene!, transition: transation)
@@ -2392,7 +2714,7 @@ class MenuLevel1_30: GameScene {
                     UserDefaults.standard.set(4, forKey: "levelNumber")
                     
                     let scene = Level4(fileNamed: "Level4")
-                    let transation = SKTransition.fade(withDuration: 2.0)
+                    let transation = SKTransition.fade(withDuration: 1.0)
 
                     scene!.scaleMode = .aspectFill
                     self.view?.presentScene(scene!, transition: transation)
@@ -2416,7 +2738,7 @@ class MenuLevel1_30: GameScene {
                         UserDefaults.standard.set(4, forKey: "levelNumber")
                         
                         let scene = Level4(fileNamed: "Level4")
-                        let transation = SKTransition.fade(withDuration: 2.0)
+                        let transation = SKTransition.fade(withDuration: 1.0)
 
                         scene!.scaleMode = .aspectFill
                         self.view?.presentScene(scene!, transition: transation)
@@ -2456,7 +2778,7 @@ class MenuLevel1_30: GameScene {
                 UserDefaults.standard.set(5, forKey: "levelNumber")
                 
                 let scene = Level5(fileNamed: "Level5")
-                let transation = SKTransition.fade(withDuration: 2.0)
+                let transation = SKTransition.fade(withDuration: 1.0)
 
                 scene!.scaleMode = .aspectFill
                 self.view?.presentScene(scene!, transition: transation)
@@ -2476,7 +2798,7 @@ class MenuLevel1_30: GameScene {
                         UserDefaults.standard.set(5, forKey: "levelNumber")
                         
                         let scene = Level5(fileNamed: "Level5")
-                        let transation = SKTransition.fade(withDuration: 2.0)
+                        let transation = SKTransition.fade(withDuration: 1.0)
 
                         scene!.scaleMode = .aspectFill
                         self.view?.presentScene(scene!, transition: transation)
@@ -2516,7 +2838,7 @@ class MenuLevel1_30: GameScene {
                 UserDefaults.standard.set(6, forKey: "levelNumber")
                 
                 let scene = Level6(fileNamed: "Level6")
-                let transation = SKTransition.fade(withDuration: 2.0)
+                let transation = SKTransition.fade(withDuration: 1.0)
 
                 scene!.scaleMode = .aspectFill
                 self.view?.presentScene(scene!, transition: transation)
@@ -2536,7 +2858,7 @@ class MenuLevel1_30: GameScene {
                         UserDefaults.standard.set(6, forKey: "levelNumber")
                         
                         let scene = Level6(fileNamed: "Level6")
-                        let transation = SKTransition.fade(withDuration: 2.0)
+                        let transation = SKTransition.fade(withDuration: 1.0)
 
                         scene!.scaleMode = .aspectFill
                         self.view?.presentScene(scene!, transition: transation)
@@ -2576,7 +2898,7 @@ class MenuLevel1_30: GameScene {
                 if !UserDefaults.standard.bool(forKey: "isFirstLaunchLevel7") {
                     
                     let scene = LevelDialogue7(fileNamed: "LevelDialogue7")
-                    let transation = SKTransition.fade(withDuration: 2.0)
+                    let transation = SKTransition.fade(withDuration: 1.0)
 
                     scene!.scaleMode = .aspectFill
                     self.view?.presentScene(scene!, transition: transation)
@@ -2587,7 +2909,7 @@ class MenuLevel1_30: GameScene {
                     UserDefaults.standard.set(7, forKey: "levelNumber")
                     
                     let scene = Level7(fileNamed: "Level7")
-                    let transation = SKTransition.fade(withDuration: 2.0)
+                    let transation = SKTransition.fade(withDuration: 1.0)
 
                     scene!.scaleMode = .aspectFill
                     self.view?.presentScene(scene!, transition: transation)
@@ -2611,7 +2933,7 @@ class MenuLevel1_30: GameScene {
                         UserDefaults.standard.set(7, forKey: "levelNumber")
                         
                         let scene = Level7(fileNamed: "Level7")
-                        let transation = SKTransition.fade(withDuration: 2.0)
+                        let transation = SKTransition.fade(withDuration: 1.0)
 
                         scene!.scaleMode = .aspectFill
                         self.view?.presentScene(scene!, transition: transation)
@@ -2651,7 +2973,7 @@ class MenuLevel1_30: GameScene {
                 UserDefaults.standard.set(8, forKey: "levelNumber")
                 
                 let scene = Level8(fileNamed: "Level8")
-                let transation = SKTransition.fade(withDuration: 2.0)
+                let transation = SKTransition.fade(withDuration: 1.0)
 
                 scene!.scaleMode = .aspectFill
                 self.view?.presentScene(scene!, transition: transation)
@@ -2671,7 +2993,7 @@ class MenuLevel1_30: GameScene {
                         UserDefaults.standard.set(8, forKey: "levelNumber")
                         
                         let scene = Level8(fileNamed: "Level8")
-                        let transation = SKTransition.fade(withDuration: 2.0)
+                        let transation = SKTransition.fade(withDuration: 1.0)
 
                         scene!.scaleMode = .aspectFill
                         self.view?.presentScene(scene!, transition: transation)
@@ -2711,7 +3033,7 @@ class MenuLevel1_30: GameScene {
                 if !UserDefaults.standard.bool(forKey: "isFirstLaunchLevel9") {
                     
                     let scene = LevelDialogue9(fileNamed: "LevelDialogue9")
-                    let transation = SKTransition.fade(withDuration: 2.0)
+                    let transation = SKTransition.fade(withDuration: 1.0)
 
                     scene!.scaleMode = .aspectFill
                     self.view?.presentScene(scene!, transition: transation)
@@ -2722,7 +3044,7 @@ class MenuLevel1_30: GameScene {
                     UserDefaults.standard.set(9, forKey: "levelNumber")
                     
                     let scene = Level9(fileNamed: "Level9")
-                    let transation = SKTransition.fade(withDuration: 2.0)
+                    let transation = SKTransition.fade(withDuration: 1.0)
 
                     scene!.scaleMode = .aspectFill
                     self.view?.presentScene(scene!, transition: transation)
@@ -2746,7 +3068,7 @@ class MenuLevel1_30: GameScene {
                         UserDefaults.standard.set(9, forKey: "levelNumber")
                         
                         let scene = Level9(fileNamed: "Level9")
-                        let transation = SKTransition.fade(withDuration: 2.0)
+                        let transation = SKTransition.fade(withDuration: 1.0)
 
                         scene!.scaleMode = .aspectFill
                         self.view?.presentScene(scene!, transition: transation)
@@ -2786,7 +3108,7 @@ class MenuLevel1_30: GameScene {
                 UserDefaults.standard.set(10, forKey: "levelNumber")
                 
                 let scene = Level10(fileNamed: "Level10")
-                let transation = SKTransition.fade(withDuration: 2.0)
+                let transation = SKTransition.fade(withDuration: 1.0)
 
                 scene!.scaleMode = .aspectFill
                 self.view?.presentScene(scene!, transition: transation)
@@ -2806,7 +3128,7 @@ class MenuLevel1_30: GameScene {
                         UserDefaults.standard.set(10, forKey: "levelNumber")
                         
                         let scene = Level10(fileNamed: "Level10")
-                        let transation = SKTransition.fade(withDuration: 2.0)
+                        let transation = SKTransition.fade(withDuration: 1.0)
 
                         scene!.scaleMode = .aspectFill
                         self.view?.presentScene(scene!, transition: transation)
@@ -2846,7 +3168,7 @@ class MenuLevel1_30: GameScene {
                 UserDefaults.standard.set(11, forKey: "levelNumber")
                 
                 let scene = Level11(fileNamed: "Level11")
-                let transation = SKTransition.fade(withDuration: 2.0)
+                let transation = SKTransition.fade(withDuration: 1.0)
 
                 scene!.scaleMode = .aspectFill
                 self.view?.presentScene(scene!, transition: transation)
@@ -2866,7 +3188,7 @@ class MenuLevel1_30: GameScene {
                         UserDefaults.standard.set(11, forKey: "levelNumber")
                         
                         let scene = Level11(fileNamed: "Level11")
-                        let transation = SKTransition.fade(withDuration: 2.0)
+                        let transation = SKTransition.fade(withDuration: 1.0)
 
                         scene!.scaleMode = .aspectFill
                         self.view?.presentScene(scene!, transition: transation)
@@ -2906,7 +3228,7 @@ class MenuLevel1_30: GameScene {
                 UserDefaults.standard.set(12, forKey: "levelNumber")
                 
                 let scene = Level12(fileNamed: "Level12")
-                let transation = SKTransition.fade(withDuration: 2.0)
+                let transation = SKTransition.fade(withDuration: 1.0)
 
                 scene!.scaleMode = .aspectFill
                 self.view?.presentScene(scene!, transition: transation)
@@ -2926,7 +3248,7 @@ class MenuLevel1_30: GameScene {
                         UserDefaults.standard.set(12, forKey: "levelNumber")
                         
                         let scene = Level12(fileNamed: "Level12")
-                        let transation = SKTransition.fade(withDuration: 2.0)
+                        let transation = SKTransition.fade(withDuration: 1.0)
 
                         scene!.scaleMode = .aspectFill
                         self.view?.presentScene(scene!, transition: transation)
@@ -2966,7 +3288,7 @@ class MenuLevel1_30: GameScene {
                 UserDefaults.standard.set(13, forKey: "levelNumber")
                 
                 let scene = Level13(fileNamed: "Level13")
-                let transation = SKTransition.fade(withDuration: 2.0)
+                let transation = SKTransition.fade(withDuration: 1.0)
 
                 scene!.scaleMode = .aspectFill
                 self.view?.presentScene(scene!, transition: transation)
@@ -2986,7 +3308,7 @@ class MenuLevel1_30: GameScene {
                         UserDefaults.standard.set(13, forKey: "levelNumber")
                         
                         let scene = Level13(fileNamed: "Level13")
-                        let transation = SKTransition.fade(withDuration: 2.0)
+                        let transation = SKTransition.fade(withDuration: 1.0)
 
                         scene!.scaleMode = .aspectFill
                         self.view?.presentScene(scene!, transition: transation)
@@ -3026,7 +3348,7 @@ class MenuLevel1_30: GameScene {
                 UserDefaults.standard.set(14, forKey: "levelNumber")
                 
                 let scene = Level14(fileNamed: "Level14")
-                let transation = SKTransition.fade(withDuration: 2.0)
+                let transation = SKTransition.fade(withDuration: 1.0)
 
                 scene!.scaleMode = .aspectFill
                 self.view?.presentScene(scene!, transition: transation)
@@ -3046,7 +3368,7 @@ class MenuLevel1_30: GameScene {
                         UserDefaults.standard.set(14, forKey: "levelNumber")
                         
                         let scene = Level14(fileNamed: "Level14")
-                        let transation = SKTransition.fade(withDuration: 2.0)
+                        let transation = SKTransition.fade(withDuration: 1.0)
 
                         scene!.scaleMode = .aspectFill
                         self.view?.presentScene(scene!, transition: transation)
@@ -3086,7 +3408,7 @@ class MenuLevel1_30: GameScene {
                 if !UserDefaults.standard.bool(forKey: "isFirstLaunchLevel15") {
                     
                     let scene = LevelDialogue15(fileNamed: "LevelDialogue15")
-                    let transation = SKTransition.fade(withDuration: 2.0)
+                    let transation = SKTransition.fade(withDuration: 1.0)
 
                     scene!.scaleMode = .aspectFill
                     self.view?.presentScene(scene!, transition: transation)
@@ -3097,7 +3419,7 @@ class MenuLevel1_30: GameScene {
                     UserDefaults.standard.set(15, forKey: "levelNumber")
                     
                     let scene = Level15(fileNamed: "Level15")
-                    let transation = SKTransition.fade(withDuration: 2.0)
+                    let transation = SKTransition.fade(withDuration: 1.0)
 
                     scene!.scaleMode = .aspectFill
                     self.view?.presentScene(scene!, transition: transation)
@@ -3121,7 +3443,7 @@ class MenuLevel1_30: GameScene {
                         UserDefaults.standard.set(15, forKey: "levelNumber")
                         
                         let scene = Level15(fileNamed: "Level15")
-                        let transation = SKTransition.fade(withDuration: 2.0)
+                        let transation = SKTransition.fade(withDuration: 1.0)
 
                         scene!.scaleMode = .aspectFill
                         self.view?.presentScene(scene!, transition: transation)
@@ -3161,7 +3483,7 @@ class MenuLevel1_30: GameScene {
                 UserDefaults.standard.set(16, forKey: "levelNumber")
                 
                 let scene = Level16(fileNamed: "Level16")
-                let transation = SKTransition.fade(withDuration: 2.0)
+                let transation = SKTransition.fade(withDuration: 1.0)
 
                 scene!.scaleMode = .aspectFill
                 self.view?.presentScene(scene!, transition: transation)
@@ -3181,7 +3503,7 @@ class MenuLevel1_30: GameScene {
                         UserDefaults.standard.set(16, forKey: "levelNumber")
                         
                         let scene = Level16(fileNamed: "Level16")
-                        let transation = SKTransition.fade(withDuration: 2.0)
+                        let transation = SKTransition.fade(withDuration: 1.0)
 
                         scene!.scaleMode = .aspectFill
                         self.view?.presentScene(scene!, transition: transation)
@@ -3221,7 +3543,7 @@ class MenuLevel1_30: GameScene {
                 UserDefaults.standard.set(17, forKey: "levelNumber")
                 
                 let scene = Level17(fileNamed: "Level17")
-                let transation = SKTransition.fade(withDuration: 2.0)
+                let transation = SKTransition.fade(withDuration: 1.0)
 
                 scene!.scaleMode = .aspectFill
                 self.view?.presentScene(scene!, transition: transation)
@@ -3241,7 +3563,7 @@ class MenuLevel1_30: GameScene {
                         UserDefaults.standard.set(17, forKey: "levelNumber")
                         
                         let scene = Level17(fileNamed: "Level17")
-                        let transation = SKTransition.fade(withDuration: 2.0)
+                        let transation = SKTransition.fade(withDuration: 1.0)
 
                         scene!.scaleMode = .aspectFill
                         self.view?.presentScene(scene!, transition: transation)
@@ -3281,7 +3603,7 @@ class MenuLevel1_30: GameScene {
                 if !UserDefaults.standard.bool(forKey: "isFirstLaunchLevel18") {
                     
                     let scene = LevelDialogue18(fileNamed: "LevelDialogue18")
-                    let transation = SKTransition.fade(withDuration: 2.0)
+                    let transation = SKTransition.fade(withDuration: 1.0)
 
                     scene!.scaleMode = .aspectFill
                     self.view?.presentScene(scene!, transition: transation)
@@ -3292,7 +3614,7 @@ class MenuLevel1_30: GameScene {
                     UserDefaults.standard.set(18, forKey: "levelNumber")
                     
                     let scene = Level18(fileNamed: "Level18")
-                    let transation = SKTransition.fade(withDuration: 2.0)
+                    let transation = SKTransition.fade(withDuration: 1.0)
 
                     scene!.scaleMode = .aspectFill
                     self.view?.presentScene(scene!, transition: transation)
@@ -3316,7 +3638,7 @@ class MenuLevel1_30: GameScene {
                         UserDefaults.standard.set(18, forKey: "levelNumber")
                         
                         let scene = Level18(fileNamed: "Level18")
-                        let transation = SKTransition.fade(withDuration: 2.0)
+                        let transation = SKTransition.fade(withDuration: 1.0)
 
                         scene!.scaleMode = .aspectFill
                         self.view?.presentScene(scene!, transition: transation)
@@ -3356,7 +3678,7 @@ class MenuLevel1_30: GameScene {
                 UserDefaults.standard.set(19, forKey: "levelNumber")
                 
                 let scene = Level19(fileNamed: "Level19")
-                let transation = SKTransition.fade(withDuration: 2.0)
+                let transation = SKTransition.fade(withDuration: 1.0)
 
                 scene!.scaleMode = .aspectFill
                 self.view?.presentScene(scene!, transition: transation)
@@ -3376,7 +3698,7 @@ class MenuLevel1_30: GameScene {
                         UserDefaults.standard.set(19, forKey: "levelNumber")
                         
                         let scene = Level19(fileNamed: "Level19")
-                        let transation = SKTransition.fade(withDuration: 2.0)
+                        let transation = SKTransition.fade(withDuration: 1.0)
 
                         scene!.scaleMode = .aspectFill
                         self.view?.presentScene(scene!, transition: transation)
@@ -3416,7 +3738,7 @@ class MenuLevel1_30: GameScene {
                 if !UserDefaults.standard.bool(forKey: "isFirstLaunchLevel20") {
                     
                     let scene = LevelDialogue20(fileNamed: "LevelDialogue20")
-                    let transation = SKTransition.fade(withDuration: 2.0)
+                    let transation = SKTransition.fade(withDuration: 1.0)
 
                     scene!.scaleMode = .aspectFill
                     self.view?.presentScene(scene!, transition: transation)
@@ -3427,7 +3749,7 @@ class MenuLevel1_30: GameScene {
                     UserDefaults.standard.set(20, forKey: "levelNumber")
                     
                     let scene = Level20(fileNamed: "Level20")
-                    let transation = SKTransition.fade(withDuration: 2.0)
+                    let transation = SKTransition.fade(withDuration: 1.0)
 
                     scene!.scaleMode = .aspectFill
                     self.view?.presentScene(scene!, transition: transation)
@@ -3452,7 +3774,7 @@ class MenuLevel1_30: GameScene {
                             UserDefaults.standard.set(20, forKey: "levelNumber")
                             
                             let scene = Level20(fileNamed: "Level20")
-                            let transation = SKTransition.fade(withDuration: 2.0)
+                            let transation = SKTransition.fade(withDuration: 1.0)
 
                             scene!.scaleMode = .aspectFill
                             self.view?.presentScene(scene!, transition: transation)
@@ -3493,7 +3815,7 @@ class MenuLevel1_30: GameScene {
                 UserDefaults.standard.set(21, forKey: "levelNumber")
                 
                 let scene = Level21(fileNamed: "Level21")
-                let transation = SKTransition.fade(withDuration: 2.0)
+                let transation = SKTransition.fade(withDuration: 1.0)
 
                 scene!.scaleMode = .aspectFill
                 self.view?.presentScene(scene!, transition: transation)
@@ -3513,7 +3835,7 @@ class MenuLevel1_30: GameScene {
                         UserDefaults.standard.set(21, forKey: "levelNumber")
                         
                         let scene = Level21(fileNamed: "Level21")
-                        let transation = SKTransition.fade(withDuration: 2.0)
+                        let transation = SKTransition.fade(withDuration: 1.0)
 
                         scene!.scaleMode = .aspectFill
                         self.view?.presentScene(scene!, transition: transation)
@@ -3553,7 +3875,7 @@ class MenuLevel1_30: GameScene {
                     if !UserDefaults.standard.bool(forKey: "isFirstLaunchLevel22") {
                         
                         let scene = LevelDialogue22(fileNamed: "LevelDialogue22")
-                        let transation = SKTransition.fade(withDuration: 2.0)
+                        let transation = SKTransition.fade(withDuration: 1.0)
 
                         scene!.scaleMode = .aspectFill
                         self.view?.presentScene(scene!, transition: transation)
@@ -3564,7 +3886,7 @@ class MenuLevel1_30: GameScene {
                         UserDefaults.standard.set(22, forKey: "levelNumber")
                         
                         let scene = Level22(fileNamed: "Level22")
-                        let transation = SKTransition.fade(withDuration: 2.0)
+                        let transation = SKTransition.fade(withDuration: 1.0)
 
                         scene!.scaleMode = .aspectFill
                         self.view?.presentScene(scene!, transition: transation)
@@ -3588,7 +3910,7 @@ class MenuLevel1_30: GameScene {
                     UserDefaults.standard.set(22, forKey: "levelNumber")
                     
                     let scene = Level22(fileNamed: "Level22")
-                    let transation = SKTransition.fade(withDuration: 2.0)
+                    let transation = SKTransition.fade(withDuration: 1.0)
 
                     scene!.scaleMode = .aspectFill
                     self.view?.presentScene(scene!, transition: transation)
@@ -3628,7 +3950,7 @@ class MenuLevel1_30: GameScene {
                 UserDefaults.standard.set(23, forKey: "levelNumber")
                 
                 let scene = Level23(fileNamed: "Level23")
-                let transation = SKTransition.fade(withDuration: 2.0)
+                let transation = SKTransition.fade(withDuration: 1.0)
 
                 scene!.scaleMode = .aspectFill
                 self.view?.presentScene(scene!, transition: transation)
@@ -3648,7 +3970,7 @@ class MenuLevel1_30: GameScene {
                     UserDefaults.standard.set(23, forKey: "levelNumber")
                     
                     let scene = Level23(fileNamed: "Level23")
-                    let transation = SKTransition.fade(withDuration: 2.0)
+                    let transation = SKTransition.fade(withDuration: 1.0)
 
                     scene!.scaleMode = .aspectFill
                     self.view?.presentScene(scene!, transition: transation)
@@ -3688,7 +4010,7 @@ class MenuLevel1_30: GameScene {
                 UserDefaults.standard.set(24, forKey: "levelNumber")
                 
                 let scene = Level24(fileNamed: "Level24")
-                let transation = SKTransition.fade(withDuration: 2.0)
+                let transation = SKTransition.fade(withDuration: 1.0)
 
                 scene!.scaleMode = .aspectFill
                 self.view?.presentScene(scene!, transition: transation)
@@ -3708,7 +4030,7 @@ class MenuLevel1_30: GameScene {
                     UserDefaults.standard.set(24, forKey: "levelNumber")
                     
                     let scene = Level24(fileNamed: "Level24")
-                    let transation = SKTransition.fade(withDuration: 2.0)
+                    let transation = SKTransition.fade(withDuration: 1.0)
 
                     scene!.scaleMode = .aspectFill
                     self.view?.presentScene(scene!, transition: transation)
@@ -3748,7 +4070,7 @@ class MenuLevel1_30: GameScene {
                 if !UserDefaults.standard.bool(forKey: "isFirstLaunchLevel25") {
                     
                     let scene = LevelDialogue25(fileNamed: "LevelDialogue25")
-                    let transation = SKTransition.fade(withDuration: 2.0)
+                    let transation = SKTransition.fade(withDuration: 1.0)
 
                     scene!.scaleMode = .aspectFill
                     self.view?.presentScene(scene!, transition: transation)
@@ -3759,7 +4081,7 @@ class MenuLevel1_30: GameScene {
                     UserDefaults.standard.set(25, forKey: "levelNumber")
                     
                     let scene = Level25(fileNamed: "Level25")
-                    let transation = SKTransition.fade(withDuration: 2.0)
+                    let transation = SKTransition.fade(withDuration: 1.0)
 
                     scene!.scaleMode = .aspectFill
                     self.view?.presentScene(scene!, transition: transation)
@@ -3783,7 +4105,7 @@ class MenuLevel1_30: GameScene {
                     UserDefaults.standard.set(25, forKey: "levelNumber")
                     
                     let scene = Level25(fileNamed: "Level25")
-                    let transation = SKTransition.fade(withDuration: 2.0)
+                    let transation = SKTransition.fade(withDuration: 1.0)
 
                     scene!.scaleMode = .aspectFill
                     self.view?.presentScene(scene!, transition: transation)
@@ -3823,7 +4145,7 @@ class MenuLevel1_30: GameScene {
                 UserDefaults.standard.set(26, forKey: "levelNumber")
                 
                 let scene = Level26(fileNamed: "Level26")
-                let transation = SKTransition.fade(withDuration: 2.0)
+                let transation = SKTransition.fade(withDuration: 1.0)
 
                 scene!.scaleMode = .aspectFill
                 self.view?.presentScene(scene!, transition: transation)
@@ -3843,7 +4165,7 @@ class MenuLevel1_30: GameScene {
                     UserDefaults.standard.set(26, forKey: "levelNumber")
                     
                     let scene = Level26(fileNamed: "Level26")
-                    let transation = SKTransition.fade(withDuration: 2.0)
+                    let transation = SKTransition.fade(withDuration: 1.0)
 
                     scene!.scaleMode = .aspectFill
                     self.view?.presentScene(scene!, transition: transation)
@@ -3883,7 +4205,7 @@ class MenuLevel1_30: GameScene {
                 if !UserDefaults.standard.bool(forKey: "isFirstLaunchLevel27") {
                     
                     let scene = LevelDialogue27(fileNamed: "LevelDialogue27")
-                    let transation = SKTransition.fade(withDuration: 2.0)
+                    let transation = SKTransition.fade(withDuration: 1.0)
 
                     scene!.scaleMode = .aspectFill
                     self.view?.presentScene(scene!, transition: transation)
@@ -3894,7 +4216,7 @@ class MenuLevel1_30: GameScene {
                     UserDefaults.standard.set(27, forKey: "levelNumber")
                     
                     let scene = Level27(fileNamed: "Level27")
-                    let transation = SKTransition.fade(withDuration: 2.0)
+                    let transation = SKTransition.fade(withDuration: 1.0)
 
                     scene!.scaleMode = .aspectFill
                     self.view?.presentScene(scene!, transition: transation)
@@ -3918,7 +4240,7 @@ class MenuLevel1_30: GameScene {
                     UserDefaults.standard.set(27, forKey: "levelNumber")
                     
                     let scene = Level27(fileNamed: "Level27")
-                    let transation = SKTransition.fade(withDuration: 2.0)
+                    let transation = SKTransition.fade(withDuration: 1.0)
 
                     scene!.scaleMode = .aspectFill
                     self.view?.presentScene(scene!, transition: transation)
@@ -3958,7 +4280,7 @@ class MenuLevel1_30: GameScene {
                 UserDefaults.standard.set(28, forKey: "levelNumber")
                 
                 let scene = Level28(fileNamed: "Level28")
-                let transation = SKTransition.fade(withDuration: 2.0)
+                let transation = SKTransition.fade(withDuration: 1.0)
 
                 scene!.scaleMode = .aspectFill
                 self.view?.presentScene(scene!, transition: transation)
@@ -3978,7 +4300,7 @@ class MenuLevel1_30: GameScene {
                         UserDefaults.standard.set(28, forKey: "levelNumber")
                         
                         let scene = Level28(fileNamed: "Level28")
-                        let transation = SKTransition.fade(withDuration: 2.0)
+                        let transation = SKTransition.fade(withDuration: 1.0)
 
                         scene!.scaleMode = .aspectFill
                         self.view?.presentScene(scene!, transition: transation)
@@ -4018,7 +4340,7 @@ class MenuLevel1_30: GameScene {
                 UserDefaults.standard.set(29, forKey: "levelNumber")
                 
                 let scene = Level29(fileNamed: "Level29")
-                let transation = SKTransition.fade(withDuration: 2.0)
+                let transation = SKTransition.fade(withDuration: 1.0)
 
                 scene!.scaleMode = .aspectFill
                 self.view?.presentScene(scene!, transition: transation)
@@ -4038,7 +4360,7 @@ class MenuLevel1_30: GameScene {
                     UserDefaults.standard.set(29, forKey: "levelNumber")
                     
                     let scene = Level29(fileNamed: "Level29")
-                    let transation = SKTransition.fade(withDuration: 2.0)
+                    let transation = SKTransition.fade(withDuration: 1.0)
 
                     scene!.scaleMode = .aspectFill
                     self.view?.presentScene(scene!, transition: transation)
@@ -4078,7 +4400,7 @@ class MenuLevel1_30: GameScene {
                     if !UserDefaults.standard.bool(forKey: "isFirstLaunchLevel30") {
                         
                         let scene = LevelDialogue30(fileNamed: "LevelDialogue30")
-                        let transation = SKTransition.fade(withDuration: 2.0)
+                        let transation = SKTransition.fade(withDuration: 1.0)
 
                         scene!.scaleMode = .aspectFill
                         self.view?.presentScene(scene!, transition: transation)
@@ -4089,7 +4411,7 @@ class MenuLevel1_30: GameScene {
                         UserDefaults.standard.set(30, forKey: "levelNumber")
                         
                         let scene = Level30(fileNamed: "Level30")
-                        let transation = SKTransition.fade(withDuration: 2.0)
+                        let transation = SKTransition.fade(withDuration: 1.0)
 
                         scene!.scaleMode = .aspectFill
                         self.view?.presentScene(scene!, transition: transation)
@@ -4113,7 +4435,7 @@ class MenuLevel1_30: GameScene {
                     UserDefaults.standard.set(30, forKey: "levelNumber")
                     
                     let scene = Level30(fileNamed: "Level30")
-                    let transation = SKTransition.fade(withDuration: 2.0)
+                    let transation = SKTransition.fade(withDuration: 1.0)
 
                     scene!.scaleMode = .aspectFill
                     self.view?.presentScene(scene!, transition: transation)

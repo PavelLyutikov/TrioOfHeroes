@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>389827193936-qpt6ipff01gd8upedsn0trj2kl90r48f.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.389827193936-qpt6ipff01gd8upedsn0trj2kl90r48f</string>
+	<key>API_KEY</key>
+	<string>AIzaSyCz829D7MTasWF6XjZdNx0019gC_zbtL08</string>
+	<key>GCM_SENDER_ID</key>
+	<string>389827193936</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.trioOfHeroes.game</string>
+	<key>PROJECT_ID</key>
+	<string>trio-of-heroes</string>
+	<key>STORAGE_BUCKET</key>
+	<string>trio-of-heroes.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:389827193936:ios:0efad687dae39da2da7555</string>
+	<key>DATABASE_URL</key>
+	<string>https://trio-of-heroes.firebaseio.com</string>
+</dict>
+</plist>

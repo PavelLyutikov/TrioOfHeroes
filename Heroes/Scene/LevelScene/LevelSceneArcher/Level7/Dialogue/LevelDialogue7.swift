@@ -10,6 +10,7 @@ import Foundation
 import SpriteKit
 import GameplayKit
 
+@available(iOS 11.0, *)
 class LevelDialogue7: SKScene {
 
     var close: SKButton!
@@ -47,12 +48,20 @@ class LevelDialogue7: SKScene {
         dial.zPosition = 3001
         addChild(dial)
         
+        var positionY: CGFloat!
+        switch Locale.current.languageCode {
+        case "ru":
+            positionY = -45
+        default:
+            positionY = -35
+        }
+        
         label.text = NSLocalizedString("Чем дальше в лес, тем больше костяшек!!", comment: "7")
         label.fontColor = .black
         label.fontSize = 28
         label.numberOfLines = 10
         label.preferredMaxLayoutWidth = 350
-        label.position = CGPoint(x: 60, y: -45)
+        label.position = CGPoint(x: 60, y: positionY)
         label.zPosition = 3002
         addChild(label)
         

@@ -10,6 +10,7 @@ import Foundation
 import SpriteKit
 import GameplayKit
 
+@available(iOS 11.0, *)
 class LevelDialogue20: SKScene {
 
     let dial = SKSpriteNode(imageNamed: "dialogue20")
@@ -63,12 +64,22 @@ class LevelDialogue20: SKScene {
         dial.zPosition = 3001
         addChild(dial)
         
+        var positionY: CGFloat!
+        switch Locale.current.languageCode {
+        case "ja":
+            positionY = -60
+        case "de":
+            positionY = -60
+        default:
+            positionY = -50
+        }
+        
         label.text = NSLocalizedString("Лучник оказался еще той занозой, я его недооценил. Он должен служить мне.", comment: "20")
         label.fontColor = .black
         label.fontSize = 28
         label.numberOfLines = 10
         label.preferredMaxLayoutWidth = 400
-        label.position = CGPoint(x: -80, y: -50)
+        label.position = CGPoint(x: -80, y: positionY)
         label.zPosition = 3002
         addChild(label)
         
@@ -85,12 +96,20 @@ class LevelDialogue20: SKScene {
         dial2.zPosition = 3001
         addChild(dial2)
         
+        var positionY: CGFloat!
+        switch Locale.current.languageCode {
+        case "ja":
+            positionY = -115
+        default:
+            positionY = -110
+        }
+        
         label2.text = NSLocalizedString("Посмотрим как ты справишься с ним!", comment: "20_2")
         label2.fontColor = .black
         label2.fontSize = 28
         label2.numberOfLines = 10
         label2.preferredMaxLayoutWidth = 250
-        label2.position = CGPoint(x: 30, y: -110)
+        label2.position = CGPoint(x: 30, y: positionY)
         label2.zPosition = 3002
         addChild(label2)
     }

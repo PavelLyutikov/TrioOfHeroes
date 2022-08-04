@@ -10,6 +10,7 @@ import Foundation
 import SpriteKit
 import GameplayKit
 
+@available(iOS 11.0, *)
 class LevelDialogue48: SKScene {
 
     var close: SKButton!
@@ -47,12 +48,20 @@ class LevelDialogue48: SKScene {
         dial.zPosition = 3001
         addChild(dial)
         
+        var positionY: CGFloat!
+        switch Locale.current.languageCode {
+        case "ru":
+            positionY = -60
+        default:
+            positionY = -50
+        }
+        
         label.text = NSLocalizedString("Я вырублю всю вашу пещеру и каждого кто будет стоять на моем пути, если потребуется!", comment: "48")
         label.fontColor = .black
         label.fontSize = 30
         label.numberOfLines = 10
         label.preferredMaxLayoutWidth = 400
-        label.position = CGPoint(x: 80, y: -60)
+        label.position = CGPoint(x: 80, y: positionY)
         label.zPosition = 3002
         addChild(label)
         

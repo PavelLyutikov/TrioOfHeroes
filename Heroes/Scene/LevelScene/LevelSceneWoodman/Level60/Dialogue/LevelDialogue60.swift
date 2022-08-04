@@ -10,6 +10,7 @@ import Foundation
 import SpriteKit
 import GameplayKit
 
+@available(iOS 11.0, *)
 class LevelDialogue60: SKScene {
 
     let dial = SKSpriteNode(imageNamed: "dialogue60")
@@ -23,8 +24,15 @@ class LevelDialogue60: SKScene {
     var close3: SKButton!
     let background = SKSpriteNode(imageNamed: "caveBackgroundDialogue")
     
+    var backgroundMusic = UserDefaults.standard.bool(forKey: "backgroundMusic")
+    
     override func didMove(to view: SKView) {
         super.didMove(to: view)
+        
+        if backgroundMusic == true {
+            playBackgroundMenuMusic(fileName: "backMusicMenu.mp3")
+            bossSound.stop()
+        }
         
             spawnDialogue()
             closeButton()
@@ -62,8 +70,8 @@ class LevelDialogue60: SKScene {
                 
                 UserDefaults.standard.set(0, forKey: "levelNumber")
                 
-                let scene = MenuLevel31_60(fileNamed: "MenuLevel31_60")
-                let transition = SKTransition.fade(withDuration: 2)
+                let scene = MenuLevel61_90(fileNamed: "MenuLevel61_90")
+                let transition = SKTransition.fade(withDuration: 1.0)
                 scene?.scaleMode = .aspectFill
                 self.view?.presentScene(scene!, transition: transition)
                 
@@ -80,13 +88,22 @@ class LevelDialogue60: SKScene {
             dial.zPosition = 3001
             addChild(dial)
             
+            var positionY: CGFloat!
+            switch Locale.current.languageCode {
+            case "ru":
+                positionY = -60
+            case "es":
+                positionY = -70
+            default:
+                positionY = -40
+            }
             
             label.text = NSLocalizedString("Хороший экземпляр в мое войско.", comment: "60")
             label.fontColor = .black
             label.fontSize = 26
             label.numberOfLines = 6
             label.preferredMaxLayoutWidth = 400
-            label.position = CGPoint(x: -20, y: -60)
+            label.position = CGPoint(x: -20, y: positionY)
             label.zPosition = 3002
             addChild(label)
             
@@ -101,13 +118,20 @@ class LevelDialogue60: SKScene {
             dial2.zPosition = 3001
             addChild(dial2)
             
+            var positionY: CGFloat!
+            switch Locale.current.languageCode {
+            case "es":
+                positionY = -60
+            default:
+                positionY = -40
+            }
             
             label2.text = NSLocalizedString("Ни за что, я лучше умру!", comment: "60_2")
             label2.fontColor = .black
             label2.fontSize = 26
             label2.numberOfLines = 6
             label2.preferredMaxLayoutWidth = 400
-            label2.position = CGPoint(x: -20, y: -40)
+            label2.position = CGPoint(x: -20, y: positionY)
             label2.zPosition = 3002
             addChild(label2)
         }

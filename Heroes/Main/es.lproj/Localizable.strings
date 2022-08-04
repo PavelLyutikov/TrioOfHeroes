@@ -1,0 +1,144 @@
+/* уровень 10 */
+"уровень 10" = "nivel 10";
+
+/* уровень 5 */
+"уровень 5" = "nivel 5";
+
+/* открыт */
+"открыт" = "abierto";
+
+/* Победа! */
+"Победа!" = "Victoria!";
+
+/* Упс... бонус закончился! */
+"Упс... бонус закончился!" = "Vaya... bono ha terminado!";
+
+/* 1 */
+"Приветствую тебя, странник просторов AppStore, предлагаю тебе погрузиться в нашу историю. Жители деревни жалуются на то, что в лесу завелась нечисть. Слабо верится, но проверить все же нужно! Ты в деле?" = "Saludos, viajero de la AppStore, te invito a sumergirte en nuestra historia. Los aldeanos se quejan de que los monstruos vagan por el bosque. No puedo creerlo, ¡pero tienes que comprobarlo! ¿Estás dentro?";
+
+/* 1_2 */
+"ээЭрРэРррэ" = "eeErReRrre";
+
+/* 2 */
+"Жители деревни действительно были правы. Но кто стоит за этим? Раньше я не наблюдал блуждающих скелетов самих по себе..." = "Los aldeanos realmente tenían razón. ¿Pero quién está detrás de esto? Antes no había observado esqueletos errantes por mi cuenta...";
+
+/* 4 */
+"Я заметил в груди скелетов какой-то камень, горящий ярко-зеленым цветом. Явно здесь не обошлось без магии. Похоже нас ждет длительное путешествие, мой друг!" = "Noté en la Caja torácica de los esqueletos una especie de roca que ardía de color verde brillante. Obviamente, aquí no sin magia. Parece que nos espera un largo viaje, amigo mío.";
+
+/* 7 */
+"Чем дальше в лес, тем больше костяшек!!" = "Cuanto más lejos en el bosque, más esqueletos!!";
+
+/* 9 */
+"Лучше бы вы так и оставались в земле костяшки!" = "¡Ojalá se quedaran así en la tierra!";
+
+/* 15 */
+"Кто ты такой, чтобы вставать на моем пути жалкий лучник?! Лучше уноси ноги - пока цел!" = "¿Quién eres tú para interponerme en mi camino, patético arquero?! ¡Mejor vete mientras estás vivo!";
+
+/* 15_2 */
+"Да этот колдун настроен серьезно, жаль его! В следующую нашу встречу ты так просто не отделаешься!!" = "Sí, este hechicero está decidido, lo siento por él! ¡La próxima vez no te irás tan fácilmente!!";
+
+/* 18 */
+"У костяшек просто нет шансов, только нужно немного поднажать, дружище!" = "¡Los esqueletos simplemente no tienen oportunidad, solo tienes que presionarlos más fuerte, amigo!";
+
+/* 20 */
+"Лучник оказался еще той занозой, я его недооценил. Он должен служить мне." = "El arquero era más fuerte de lo que pensaba, lo subestimé. El arquero debe servirme.";
+
+/* 20_2 */
+"Посмотрим как ты справишься с ним!" = "¡Veamos cómo lo maneja el arquero!";
+
+/* 22 */
+"Ты видел этот размер ноги?! Да он словно амбар." = "¿Viste ese Tamaño de pierna?! Es enorme.";
+
+/* 25 */
+"Кажется погода портится. Я чувствую, что остался последний рывок, мы близки к концу пути.." = "Parece que el clima se está deteriorando. Siento que queda el último tirón, estamos cerca del final del camino..";
+
+/* 27 */
+"Не думаю, что эти деревья сломал ветер, кажется мне, что это был великан, чьи следы мы нашли." = "No creo que estos árboles rompieron el viento, me parece que fue un gigante cuyas huellas encontramos.";
+
+/* 30 */
+"ГРБУХГРБАМ!!!" = "grBOOMgrBOOM!!!";
+
+/* 30_2 */
+"Вот мы и нашли его!" = "¡Creo que hemos encontrado al gigante!";
+
+/* 30_gameOver */
+"Ты будешь моей марионеткой, лучник!!" = "¡Serás mi marioneta, arquero!!";
+
+/* 31_0 */
+"В тоже время - в другой части леса..." = "Al mismo tiempo, en otra parte del bosque...";
+
+/* 31 */
+"Пора заканчивать на сегодня, солнце уже садится." = "Es hora de terminar por hoy, el sol ya se está poniendo.";
+
+/* 31_2 */
+"Брат, берегись!!!" = "¡Hermano, cuidado!!!";
+
+/* 31_3 */
+"Какого черта?!?" = "¿Qué demonios?!?";
+
+/* 31_4 */
+"РррРредарРрр" = "RrrRrcomidarRrr";
+
+/* 31_5 */
+"Сегодня вы отведаете только мой топор!" = "¡Hoy solo saborearán mi hacha!";
+
+/* 32 */
+"Я обязательно найду тебя брат, во чтобы-то мне это не стало..." = "Definitivamente te encontraré hermano y nada me detendrá...";
+
+/* 34 */
+"Твой брат доставляет мне много хлопот, ты станешь приманкой чтобы заманить его в ловушку!" = "¡Tu hermano me está causando muchos problemas, te convertirás en un cebo para atraparlo!";
+
+/* 35 */
+"Здравствуй дедушка. Что ты делаешь в такой глуши?" = "Hola abuelo. ¿Qué haces en medio de la nada?";
+
+/* 35_2 */
+"Для кого-то глуш, а для кого-то дом. Моя хижина здесь недалеко. Зайдешь в гости?" = "Esta es mi casa. Mi cabaña no está lejos. ¿Quieres venir a visitarme?";
+
+/* 35_3 */
+"Спасибо, но мне нужно спешить! Моего брата похитили." = "¡Gracias, pero tengo que apurarme! Mi hermano fue secuestrado.";
+
+/* 35_4 */
+"Я видел как какого-то парня зеленые твари тащили за реку, что за лесом. Они обитают в пещерах, туда и утащили." = "Vi cómo las criaturas verdes arrastraban al chico por el río que está detrás del bosque. Viven en cuevas, allí lo arrastraron.";
+
+/* 35_5 */
+"Спасибо дедушка, поспешу в пещеры!!" = "Gracias abuelo, me apresuraré a las cuevas!!";
+
+/* 38 */
+"Это ведь сапог моего брата, значит мы на правильном пути!" = "Es la bota de mi hermano, así que estamos en el camino correcto.";
+
+/* 40 */
+"Так мы ничего не узнаем, нужно изловить одного живым." = "Así que no sabemos nada, tenemos que atrapar a uno vivo.";
+
+/* 45 */
+"Где мой брат чудовище?!" = "¿Dónde está mi hermano, el monstruo?";
+
+/* 45_2 */
+"РрррРРрРр" = "RrrrRRrRr";
+
+/* 45_3 */
+"Глупое создание. От тебя нет никакой пользы!!" = "Una criatura tonta. ¡No hay ningún beneficio de TI!!";
+
+/* 48 */
+"Я вырублю всю вашу пещеру и каждого кто будет стоять на моем пути, если потребуется!" = "¡Cortaré toda la cueva y a todos los que se interpongan en mi camino si es necesario!";
+
+/* 50 */
+"Чем дальше в пещеры, тем больше гоблинов! У меня плохое предчувствие.." = "Cuanto más lejos en las cuevas, más duendes! Tengo un mal presentimiento..";
+
+/* 52 */
+"Он прошел дальше, чем я предполагал, нам нужно подкрепление." = "Ha ido más allá de lo que pensaba, necesitamos refuerzos.";
+
+/* 55 */
+"Мне нужен самый мощный кристалл этой пещеры!!" = "¡Necesito el Cristal más poderoso de esta cueva!!";
+
+/* 59 */
+"Брат, ты слишком слаб чтобы сражаться. Ты должен бежать к Ардану и рассказать ему все, лишь он может помочь нам! Беги брат, я справлюсь!!" = "Hermano, eres demasiado débil para luchar. Tienes que correr hacia Ardan y decirle todo, sólo él puede ayudarnos! ¡Corre hermano, puedo manejarlos!!";
+
+/* 60 */
+"Хороший экземпляр в мое войско." = "Un buen ejemplar para mi ejército.";
+
+/* 60_2 */
+"Ни за что, я лучше умру!" = "¡De ninguna manera, prefiero morir!";
+
+/* 60_3 */
+"Это запросто!" = "Es fácil de arreglar!";
+

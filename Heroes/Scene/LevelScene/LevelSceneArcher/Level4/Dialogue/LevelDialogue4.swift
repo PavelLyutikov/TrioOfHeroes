@@ -10,6 +10,7 @@ import Foundation
 import SpriteKit
 import GameplayKit
 
+@available(iOS 11.0, *)
 class LevelDialogue4: SKScene {
 
     var close: SKButton!
@@ -47,12 +48,34 @@ class LevelDialogue4: SKScene {
         dial.zPosition = 3001
         addChild(dial)
         
-        label.text = NSLocalizedString("Я заметил в их груди какой-то камень, горящий ярко-зеленым цветом. Явно здесь не обошлось без магии. Похоже нас ждет длительное путешествие, мой друг!", comment: "4")
+        var sizeX: CGFloat!
+        var size: CGFloat!
+        var positionY: CGFloat!
+        switch Locale.current.languageCode {
+        case "ru":
+            positionY = -90
+            sizeX = 450
+            size = 28
+        case "es":
+            positionY = -90
+            sizeX = 450
+            size = 28
+        case "ja":
+            positionY = -70
+            sizeX = 450
+            size = 22
+        default:
+            positionY = -90
+            sizeX = 400
+            size = 28
+        }
+        
+        label.text = NSLocalizedString("Я заметил в груди скелетов какой-то камень, горящий ярко-зеленым цветом. Явно здесь не обошлось без магии. Похоже нас ждет длительное путешествие, мой друг!", comment: "4")
         label.fontColor = .black
-        label.fontSize = 28
+        label.fontSize = size
         label.numberOfLines = 10
-        label.preferredMaxLayoutWidth = 450
-        label.position = CGPoint(x: 60, y: -90)
+        label.preferredMaxLayoutWidth = sizeX
+        label.position = CGPoint(x: 60, y: positionY)
         label.zPosition = 3002
         addChild(label)
         

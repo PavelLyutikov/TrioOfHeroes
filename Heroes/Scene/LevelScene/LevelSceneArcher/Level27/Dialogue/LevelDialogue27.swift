@@ -10,6 +10,7 @@ import Foundation
 import SpriteKit
 import GameplayKit
 
+@available(iOS 11.0, *)
 class LevelDialogue27: SKScene {
 
     var close: SKButton!
@@ -47,12 +48,50 @@ class LevelDialogue27: SKScene {
         dial.zPosition = 3001
         addChild(dial)
         
+        var positionY: CGFloat!
+        var positionX: CGFloat!
+        var fontSize: CGFloat!
+        switch Locale.current.languageCode {
+        case "ru":
+            positionY = -10
+            positionX = -40
+            fontSize = 22
+        case "zh":
+            positionY = -20
+            positionX = -40
+            fontSize = 22
+        case "zh-Hans":
+            positionY = -20
+            positionX = -40
+            fontSize = 22
+        case "zh-Hant":
+            positionY = -20
+            positionX = -40
+            fontSize = 22
+        case "es":
+            positionY = -15
+            positionX = -55
+            fontSize = 22
+        case "ja":
+            positionY = -15
+            positionX = -40
+            fontSize = 22
+        case "de":
+            positionY = -20
+            positionX = -55
+            fontSize = 20
+        default:
+            positionY = 10
+            positionX = -40
+            fontSize = 22
+        }
+        
         label.text = NSLocalizedString("Не думаю, что эти деревья сломал ветер, кажется мне, что это был великан, чьи следы мы нашли.", comment: "27")
         label.fontColor = .black
-        label.fontSize = 22
+        label.fontSize = fontSize
         label.numberOfLines = 10
         label.preferredMaxLayoutWidth = 250
-        label.position = CGPoint(x: -40, y: -10)
+        label.position = CGPoint(x: positionX, y: positionY)
         label.zPosition = 3002
         addChild(label)
         

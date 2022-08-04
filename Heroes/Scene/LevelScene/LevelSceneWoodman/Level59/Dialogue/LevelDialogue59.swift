@@ -10,6 +10,7 @@ import Foundation
 import SpriteKit
 import GameplayKit
 
+@available(iOS 11.0, *)
 class LevelDialogue59: SKScene {
 
     let dial = SKSpriteNode(imageNamed: "dialogue59")
@@ -31,7 +32,7 @@ class LevelDialogue59: SKScene {
                 UserDefaults.standard.set(0, forKey: "levelNumber")
                 
                 let scene = MenuLevel31_60(fileNamed: "MenuLevel31_60")
-                let transition = SKTransition.fade(withDuration: 2)
+                let transition = SKTransition.fade(withDuration: 1.0)
                 scene?.scaleMode = .aspectFill
                 self.view?.presentScene(scene!, transition: transition)
                 
@@ -50,7 +51,7 @@ class LevelDialogue59: SKScene {
             addChild(dial)
             
             
-            label.text = NSLocalizedString("Брат ты слишком слаб чтобы сражаться. Ты должен бежать к Ардану и расказать ему все, лишь он может помочь нам! Беги брат, я справлюсь!!", comment: "59")
+            label.text = NSLocalizedString("Брат, ты слишком слаб чтобы сражаться. Ты должен бежать к Ардану и рассказать ему все, лишь он может помочь нам! Беги брат, я справлюсь!!", comment: "59")
             label.fontColor = .black
             label.fontSize = 24
             label.numberOfLines = 6

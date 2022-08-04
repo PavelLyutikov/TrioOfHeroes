@@ -10,6 +10,7 @@ import Foundation
 import SpriteKit
 import GameplayKit
 
+@available(iOS 11.0, *)
 class LevelDialogue52: SKScene {
 
     var close: SKButton!
@@ -64,12 +65,24 @@ class LevelDialogue52: SKScene {
         dial.zPosition = 3001
         addChild(dial)
         
+        var positionY: CGFloat!
+        switch Locale.current.languageCode {
+        case "ru":
+            positionY = -60
+        case "es":
+            positionY = -60
+        case "ja":
+            positionY = -60
+        default:
+            positionY = -40
+        }
+        
         label.text = NSLocalizedString("Он прошел дальше, чем я предполагал, нам нужно подкрепление.", comment: "52")
         label.fontColor = .black
         label.fontSize = 30
         label.numberOfLines = 10
         label.preferredMaxLayoutWidth = 400
-        label.position = CGPoint(x: -90, y: -60)
+        label.position = CGPoint(x: -90, y: positionY)
         label.zPosition = 3002
         addChild(label)
         
@@ -85,15 +98,6 @@ class LevelDialogue52: SKScene {
         dial2.position = CGPoint(x: -90, y: 0)
         dial2.zPosition = 3001
         addChild(dial2)
-        
-//        label2.text = NSLocalizedString("Я вырублю всю вашу пещеру и каждого кто будет стоять на моем пути, если потребуется!", comment: "52")
-//        label2.fontColor = .black
-//        label2.fontSize = 30
-//        label2.numberOfLines = 10
-//        label2.preferredMaxLayoutWidth = 400
-//        label2.position = CGPoint(x: 80, y: -60)
-//        label2.zPosition = 3002
-//        addChild(label2)
     }
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesBegan(touches, with: event)

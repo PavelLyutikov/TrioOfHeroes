@@ -10,6 +10,7 @@ import Foundation
 import SpriteKit
 import GameplayKit
 
+@available(iOS 11.0, *)
 class LevelDialogue35: SKScene {
 
     let dial = SKSpriteNode(imageNamed: "dialogue35")
@@ -115,13 +116,20 @@ class LevelDialogue35: SKScene {
             dial.zPosition = 3001
             addChild(dial)
             
+            var positionY: CGFloat!
+            switch Locale.current.languageCode {
+            case "es":
+                positionY = -60
+            default:
+                positionY = -80
+            }
             
             label.text = NSLocalizedString("Здравствуй дедушка. Что ты делаешь в такой глуши?", comment: "35")
             label.fontColor = .black
             label.fontSize = 26
             label.numberOfLines = 6
             label.preferredMaxLayoutWidth = 350
-            label.position = CGPoint(x: 0, y: -80)
+            label.position = CGPoint(x: 0, y: positionY)
             label.zPosition = 3002
             addChild(label)
             
@@ -138,12 +146,19 @@ class LevelDialogue35: SKScene {
             dial2.zPosition = 3001
             addChild(dial2)
             
+            var sizeX: CGFloat!
+            switch Locale.current.languageCode {
+            case "ru":
+                sizeX = 380
+            default:
+                sizeX = 350
+            }
             
-            label2.text = NSLocalizedString("Для кого-то глуш, а для кого-то дом. Моя хижина здесь не далеко. Зайдешь в гости?", comment: "35_2")
+            label2.text = NSLocalizedString("Для кого-то глуш, а для кого-то дом. Моя хижина здесь недалеко. Зайдешь в гости?", comment: "35_2")
             label2.fontColor = .black
             label2.fontSize = 26
             label2.numberOfLines = 6
-            label2.preferredMaxLayoutWidth = 380
+            label2.preferredMaxLayoutWidth = sizeX
             label2.position = CGPoint(x: 0, y: -90)
             label2.zPosition = 3002
             addChild(label2)
@@ -155,13 +170,26 @@ class LevelDialogue35: SKScene {
             dial3.zPosition = 3001
             addChild(dial3)
             
+            var sizeX: CGFloat!
+            var positionY: CGFloat!
+            switch Locale.current.languageCode {
+            case "ru":
+                sizeX = 380
+                positionY = -80
+            case "es":
+                sizeX = 350
+                positionY = -80
+            default:
+                sizeX = 350
+                positionY = -70
+            }
             
             label3.text = NSLocalizedString("Спасибо, но мне нужно спешить! Моего брата похитили.", comment: "35_3")
             label3.fontColor = .black
             label3.fontSize = 26
             label3.numberOfLines = 6
-            label3.preferredMaxLayoutWidth = 380
-            label3.position = CGPoint(x: 0, y: -80)
+            label3.preferredMaxLayoutWidth = sizeX
+            label3.position = CGPoint(x: 0, y: positionY)
             label3.zPosition = 3002
             addChild(label3)
         }
@@ -172,13 +200,20 @@ class LevelDialogue35: SKScene {
             dial4.zPosition = 3001
             addChild(dial4)
             
+            var positionY: CGFloat!
+            switch Locale.current.languageCode {
+            case "es":
+                positionY = -120
+            default:
+                positionY = -100
+            }
             
             label4.text = NSLocalizedString("Я видел как какого-то парня зеленые твари тащили за реку, что за лесом. Они обитают в пещерах, туда и утащили.", comment: "35_4")
             label4.fontColor = .black
             label4.fontSize = 26
             label4.numberOfLines = 6
             label4.preferredMaxLayoutWidth = 380
-            label4.position = CGPoint(x: 0, y: -100)
+            label4.position = CGPoint(x: 0, y: positionY)
             label4.zPosition = 3002
             addChild(label4)
         }
